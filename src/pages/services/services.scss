@@ -54,6 +54,7 @@
                         color: themed("text-light-gray");
                         display: inline-block;
                         width: 460px;
+                        text-align: left;
                     }
                 }
 
@@ -62,6 +63,9 @@
 
                     .left-box {
                         align-items: flex-end;
+                        p{
+                            text-align: right;
+                        }
                     }
                 }
             }
