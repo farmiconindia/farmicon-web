@@ -1,0 +1,152 @@
+@import "../../style.scss";
+
+
+.footer {
+    @include themify($themes) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        background-color: themed("brand");
+        color: #ffff;
+
+        .upper-box {
+
+            display: flex;
+            width: 90%;
+            margin: auto;
+            gap: 70px;
+            justify-content: center;
+
+            .first-box {
+                display: flex;
+                flex-direction: column;
+                gap: 61px;
+
+                .brand {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 192px;
+
+                    .logo {
+
+                        display: inline-block;
+                        width: 41px;
+                        height: 41px;
+                        background-color: #ffff;
+                        border-radius: 4px;
+                    }
+
+                    span {
+
+                        font-size: 1.5rem;
+                        font-weight: 700;
+
+                    }
+                }
+
+                .socials {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+
+                        transform: scale(0.33);
+                    }
+                }
+            }
+
+            .second-box{
+
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+                span{
+                    font-weight: 500;
+                    font-size: 1rem;
+                }
+            }
+            .third-box{
+
+                display: flex;
+                gap: 20px;
+
+                span{
+                    font-size: 1rem;
+                    font-weight: 500;
+                }
+
+                .add-desc{
+
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    span{
+                        font-weight: 400;
+                    }
+
+                }
+            }
+            .fourth-box{
+
+                display: flex;
+                flex-direction: column;
+                gap: 34px;
+                .upper{
+                    display: flex;
+                    gap: 20px;
+                    span{
+                        font-size: 1rem;
+                        font-weight: 500;
+                    }
+                    .contact-desc{
+
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        span{
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+                    }
+                }
+                .lower{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+        }
+
+        .lower-box {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            margin: auto;
+            gap: 36px;
+
+            .hr {
+                display: block;
+                width: 100%;
+            }
+
+            .policy {
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+
+                span {
+                    color: #ffff;
+                    font-size: 12px;
+                    font-weight: 300;
+                }
+            }
+        }
+
+    }
+}

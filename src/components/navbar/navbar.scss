@@ -1,0 +1,59 @@
+@import "../../style.scss";
+
+
+
+.Navbar {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 10000;
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        height: 99px;
+        margin: auto;
+
+
+        @include themify($themes) {
+
+            .brand {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 192px;
+
+                .logo {
+
+                    display: inline-block;
+                    width: 41px;
+                    height: 41px;
+                    background-color: themed("brand");
+                    border-radius: 4px;
+                }
+
+                span {
+
+                    color: #404040;
+                    font-size: 1.5rem;
+                    font-weight: 700;
+
+                }
+            }
+
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 600px;
+
+                span {
+                    color: #000000;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}

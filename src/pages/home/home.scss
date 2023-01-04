@@ -1,0 +1,293 @@
+@import "../../style.scss";
+
+
+.home {
+    @include themify($themes) {
+
+
+        .sec-1 {
+            height: 88vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                position: absolute;
+                top: 45%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .intro {
+
+                display: flex;
+                gap: 1rem;
+                width: 75%;
+                margin: auto;
+                z-index: 100;
+                align-items: center;
+
+                .left {
+
+                    display: flex;
+                    flex-direction: column;
+                    width: 40%;
+                    align-items: flex-end;
+
+                    .span-1 {
+                        width: auto;
+                        font-size: 2rem;
+                        font-weight: 500;
+                        color: #404040;
+                        line-height: 40px;
+                    }
+
+                    .span-2 {
+                        font-size: 4rem;
+                        width: auto;
+                        font-weight: 700;
+                        color: #404040;
+                        line-height: 70px;
+                    }
+
+                }
+
+                span {
+                    display: inline-block;
+                    width: 60%;
+                    font-size: 8rem;
+                    font-weight: 700;
+                    color: themed("brand");
+
+                }
+            }
+
+            .button-and-arrow {
+                margin-bottom: 5rem;
+                z-index: 100;
+
+                a {
+                    text-decoration: none;
+                    border: 1px solid themed("brand");
+                    border-radius: 4px;
+                    padding: 0.5rem 1rem;
+
+                    span {
+                        color: themed("brand");
+                    }
+                }
+            }
+
+        }
+
+        .sec-2 {
+            height: 100vh;
+            background-color: themed("brand");
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .container {
+
+                display: flex;
+                width: 80%;
+                color: #ffff;
+                justify-content: center;
+                align-items: center;
+                gap: 100px;
+
+                .left-box {
+
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 78px;
+
+                    span {
+
+                        font-size: 4rem;
+                        font-weight: 700;
+
+                    }
+
+                    p {
+                        font-weight: 400;
+                        font-size: 18px;
+
+                        em {
+                            font-weight: 700;
+                            font-size: 18px;
+                        }
+                    }
+
+                    a {
+                        text-decoration: none;
+                        border: 1px solid #ffff;
+                        border-radius: 4px;
+                        padding: 0.5rem 1rem;
+                        color: #ffff;
+                        margin-top: 6px;
+
+                    }
+                }
+            }
+        }
+
+        .sec-3 {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            height: 207px;
+            background-color: #F5F5F5;
+
+            .container {
+                display: flex;
+                width: 80%;
+                justify-content: space-between;
+                align-items: center;
+
+                .left-box {
+                    display: flex;
+                    flex-direction: column;
+
+                    span {
+                        font-size: 3rem;
+                        font-weight: 700;
+                        color: themed("brand");
+
+                        span {
+                            color: #ffff;
+                            -moz-text-stroke: 1px themed("brand");
+                            -webkit-text-stroke: 1px themed("brand");
+
+                        }
+                    }
+
+                    p {
+                        color: #434343;
+                    }
+                }
+
+                .right-box {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 48px;
+
+                    .logo {
+                        display: inline-block;
+                        width: 41px;
+                        height: 41px;
+                        background-color: themed("brand");
+                        border-radius: 4px;
+                    }
+                }
+
+            }
+        }
+
+        .sec-4 {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            height: 100vh;
+            position: relative;
+
+            a {
+                text-decoration: none;
+                color: #ffff;
+
+                .up {
+                    position: absolute;
+                    bottom: 36px;
+                    right: 100px;
+                    display: flex;
+                    width: 72px;
+                    height: 72px;
+                    background-color: themed("brand");
+                    border-radius: 50%;
+                    text-align: center;
+                    align-items: center;
+                    justify-content: center;
+
+
+
+                }
+            }
+
+            .container {
+                display: flex;
+                width: 80%;
+                flex-direction: column;
+                gap: 68px;
+
+                justify-content: center;
+
+                span {
+                    font-size: 4rem;
+                    font-weight: 700;
+                    color: themed("brand");
+                }
+
+                .blogs {
+                    display: flex;
+                    justify-content: center;
+                    gap: 50px;
+
+                    .blog {
+                        display: flex;
+                        flex-direction: column;
+                        max-width: 346px;
+                        background-color: #F5F5F5;
+                        border-radius: 8px;
+
+
+                        img {
+                            object-fit: cover;
+                        }
+
+                        .desc {
+                            width: 90%;
+                            margin: 1.3rem auto;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 35px;
+
+
+                            p {
+                                font-size: 1rem;
+                                font-weight: 600;
+                                color: #434343;
+                            }
+
+                            .blog-more {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+
+                                a {
+                                    text-decoration: none;
+                                    border-radius: 4px;
+                                    padding: 0.25rem 0.5rem;
+                                    color: #ffff;
+                                    margin-top: 6px;
+                                    background-color: themed("brand");
+
+                                }
+
+                                span {
+                                    font-size: 12px;
+                                    font-weight: 400;
+                                    color: #838383;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
