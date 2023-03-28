@@ -3,6 +3,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import NavBar from "./components/navbar/NavBar";
 import Home from "./pages/home/Home";
+import CropPrice from "./pages/services/CropPrice/CropPrice";
 import Services from "./pages/services/Services";
 import "./style.scss";
 
@@ -30,6 +31,10 @@ function App() {
           path: "/services",
           element: <Services />,
         },
+        {
+          path: "/services/cropPrice",
+          element : <CropPrice />
+        }
       ],
     },
   ]);
