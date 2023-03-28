@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import mobile from "../../assets/mobile.png";
 import "./services.scss";
 
@@ -24,12 +25,15 @@ const Services = () => {
           </div>
           <div className="container two">
             <div className="left-box">
-              <span>Predict Crop Price</span>
+              <Link to="/services/cropPrice"><span>
+                Predict Crop Price
+              </span></Link>
               <p>
                 Predict the crop and veggies price based on real-time data,
                 historical data and market requirements.
               </p>
             </div>
+
             <div className="right-box">
               <img src={mobile} alt="" />
             </div>
