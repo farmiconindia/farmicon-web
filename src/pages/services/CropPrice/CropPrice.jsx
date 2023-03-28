@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
-import { Line } from "react-chartjs-2";
 import "./cropPrice.scss";
 import {
   Chart as ChartJS,
