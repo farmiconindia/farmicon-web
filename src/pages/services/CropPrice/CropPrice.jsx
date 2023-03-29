@@ -102,7 +102,7 @@ const CropPrice = () => {
   };
 
   return (
-    <div className="container">
+    <div className="crop-container">
       <h1>Crop Price History</h1>
       <div className="selects">
         <select onChange={handleStateChange} name="" id="">
