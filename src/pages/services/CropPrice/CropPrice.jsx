@@ -49,7 +49,7 @@ const CropPrice = () => {
 
   const getStates = async () => {
     try {
-      const res = await axios.get("http://170.187.249.130:5000/get_data");
+      const res = await axios.get("https://data.parthapaul.me/get_data");
       const states = [...new Set(res.data.message.map((item) => item.state))];
       const commodities = [
         ...new Set(res.data.message.map((item) => item.commodity)),
@@ -71,7 +71,7 @@ const CropPrice = () => {
     setIsLoading(true);
     try {
       const res = await axios.get(
-        `http://170.187.249.130:5000/get_data?state=${selectedStateRef.current}&commodity=${selectedCommodityRef.current}`
+        `https://data.parthapaul.me/get_data?state=${selectedStateRef.current}&commodity=${selectedCommodityRef.current}`
       );
       const dates = res.data.message?.map((d) => d?.arrival_date);
       const prices = res.data.message?.map((d) => Number(d?.modal_price));
@@ -138,9 +138,9 @@ const CropPrice = () => {
         <div style={{ textAlign: "center", marginTop: "16vh" }}>Loading...</div>
       )}
       {!isLoading && (
-        <div style={{ display :"flex" , justifyContent :"center" , alignItems : "center" , marginTop: "6vh" }}>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "6vh" }}>
           {isChart === false && (
-            <span style={{ textAlign: "center" ,marginTop: "10vh"}}>
+            <span style={{ textAlign: "center", marginTop: "10vh" }}>
               No Data Found
             </span>
           )}
