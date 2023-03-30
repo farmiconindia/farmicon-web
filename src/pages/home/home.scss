@@ -16,6 +16,7 @@
             background-size: cover;
             image-rendering: -webkit-optimize-contrast;
             image-rendering: optimizeQuality;
+            animation: fadeIn 2s;
 
             img {
                 position: absolute;
@@ -296,5 +297,15 @@
 
             }
         }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
