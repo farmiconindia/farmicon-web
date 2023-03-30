@@ -6,11 +6,16 @@
 
 
         .sec-1 {
-            height: 88vh;
+            height: 100vh;
             position: relative;
             display: flex;
             flex-direction: column;
             align-items: center;
+            background: url("../../assets/background.webp");
+            background-repeat: no-repeat;
+            background-size: cover;
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: optimizeQuality;
 
             img {
                 position: absolute;
@@ -69,12 +74,14 @@
 
                 a {
                     text-decoration: none;
-                    border: 1px solid themed("brand");
+                    background-color: rgba(255, 255, 255, 0.372);
                     border-radius: 4px;
                     padding: 0.5rem 1rem;
+                    border: 2px solid themed("brand");
 
                     span {
                         color: themed("brand");
+                        font-weight: bold;
                     }
                 }
             }

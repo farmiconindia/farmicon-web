@@ -52,7 +52,9 @@ const Services = () => {
           </div>
           <div className="container four">
             <div className="left-box">
-              <span>Crop Health Monitoring</span>
+              <Link to="/services/checkDisease"><span>
+                Crop Health Monitoring
+              </span></Link>
               <p>
                 Turn your mobile phone into crop doctor: send us picture of your
                 crop and get diagnosis of infected crop and its solution.
