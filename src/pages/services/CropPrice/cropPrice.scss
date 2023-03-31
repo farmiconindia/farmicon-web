@@ -5,6 +5,12 @@
         height: 130vh;
         width: 80%;
         margin: auto;
+
+        @include tablet {}
+
+        @include mobile {
+            height: 70vh;
+        }
     }
 
     h1 {
@@ -17,11 +23,21 @@
     .selects {
         display: flex;
         margin: auto;
-        width: 50%;
+        width: 60%;
         gap: 10px;
         height: 5vh;
         justify-content: space-around;
         align-items: center;
+
+        @include tablet {
+            width: 100%;
+        }
+
+        @include mobile {
+            flex-direction: column;
+            height: 20vh;
+            gap: 5vw;
+        }
 
         select {
             border-radius: 4px;
