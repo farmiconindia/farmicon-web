@@ -30,7 +30,7 @@
                 height: 200vh;
             }
             @include mobile {
-                height: 180vh;
+                height: 250vh;
             }
 
 
@@ -73,6 +73,7 @@
 
                         }
                         @include mobile {
+                            text-align: center;
                             font-size: calc(0.5rem + 3vw);
                         }
                     }
@@ -114,10 +115,10 @@
                     .left-box {
                         align-items: flex-end;
                         @include tablet {
-                            align-items: flex-end;
                         }
                         @include mobile {
                             align-items: center;
+                            text-align: center;
                         }
 
                         p {
