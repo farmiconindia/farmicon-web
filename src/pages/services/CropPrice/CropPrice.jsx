@@ -37,11 +37,15 @@ export const options = {
 const CropPrice = () => {
   const [stateNames, setStateName] = useState([]);
   const [commodityNames, setCommodityNames] = useState([]);
+  const [districtNames, setDistrictNames] = useState([]);
+  const [marketNames, setMarketNames] = useState([]);
   const [chartData, setChartData] = useState([]);
   const [isChart, setIsChart] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const selectedCommodityRef = useRef("");
   const selectedStateRef = useRef("");
+  const selectedDistrictRef = useRef("");
+  const selectedMarketRef = useRef("");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -54,8 +58,16 @@ const CropPrice = () => {
       const commodities = [
         ...new Set(res.data.message.map((item) => item.commodity)),
       ];
+      const districts = [
+        ...new Set(res.data.message.map((item) => item.district)),
+      ];
+      const markets = [
+        ...new Set(res.data.message.map((item) => item.district)),
+      ];
       setStateName(states);
       setCommodityNames(commodities);
+      setDistrictNames(districts);
+      setMarketNames(markets);
     } catch (error) {
       console.log(error);
     }
@@ -71,7 +83,7 @@ const CropPrice = () => {
     setIsLoading(true);
     try {
       const res = await axios.get(
-        `https://data.parthapaul.me/get_data?state=${selectedStateRef.current}&commodity=${selectedCommodityRef.current}`
+        `https://data.parthapaul.me/get_data?state=${selectedStateRef.current}&&district=${selectedDistrictRef.current}&market=${selectedMarketRef.current}&commodity=${selectedCommodityRef.current}`
       );
       const dates = res.data.message?.map((d) => d?.arrival_date);
       const prices = res.data.message?.map((d) => Number(d?.modal_price));
@@ -100,6 +112,12 @@ const CropPrice = () => {
   const handleStateChange = (event) => {
     selectedStateRef.current = event.target.value;
   };
+  const handleDistrictChange = (event) => {
+    selectedDistrictRef.current = event.target.value;
+  };
+  const handleMarketChange = (event) => {
+    selectedMarketRef.current = event.target.value;
+  };
 
   return (
     <div className="crop-container">
@@ -111,6 +129,26 @@ const CropPrice = () => {
             return (
               <option key={i} value={state}>
                 {state}
+              </option>
+            );
+          })}
+        </select>
+        <select onChange={handleDistrictChange} name="" id="">
+          <option value="">SELECT DISTRICT</option>
+          {districtNames.map((district, i) => {
+            return (
+              <option key={i} value={district}>
+                {district}
+              </option>
+            );
+          })}
+        </select>
+        <select onChange={handleMarketChange} name="" id="">
+          <option value="">SELECT MANDI</option>
+          {marketNames.map((market, i) => {
+            return (
+              <option key={i} value={market}>
+                {market}
               </option>
             );
           })}
@@ -138,7 +176,14 @@ const CropPrice = () => {
         <div style={{ textAlign: "center", marginTop: "16vh" }}>Loading...</div>
       )}
       {!isLoading && (
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", marginTop: "6vh" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: "6vh",
+          }}
+        >
           {isChart === false && (
             <span style={{ textAlign: "center", marginTop: "10vh" }}>
               No Data Found
