@@ -6,6 +6,7 @@ import blog1 from "../../assets/blog-image-1.png";
 import blog2 from "../../assets/blog-image-2.png";
 import blog3 from "../../assets/blog-image-3.png";
 import upArrow from "../../assets/up-arrow.png";
+import mobileHome from "../../assets/home-mobile.png"
 import "./home.scss";
 import { Link } from "react-router-dom";
 
@@ -14,7 +15,7 @@ const Home = () => {
     <>
       <div className="home">
         <section className="sec-1" id="sec-1">
-          <img src={zigzag} alt="" draggable="false" />
+          {/* <img src={zigzag} alt="" draggable="false" />
           <div className="intro">
             <div className="left">
               <span className="span-1">Increase your</span>
@@ -26,8 +27,22 @@ const Home = () => {
             <a href="#sec-2">
               <span>Get Started</span>
             </a>
+          </div> */}
+          <div className="left">
+            <div className="content">
+              <span>Transforming agriculture with intelligent solutions</span>
+              <p>Efficiency, profitability and sustainability</p>
+              <a href="#">Download App</a>
+            </div>
+          </div>
+          <div className="right">
+          <div className="white"></div>
+            <img src={mobileHome} alt="" />
+            <div className="green"></div>
           </div>
         </section>
+
+
         <section className="sec-2" id="sec-2">
           <div className="container">
             <div className="left-box">

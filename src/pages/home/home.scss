@@ -7,149 +7,130 @@
 
         .sec-1 {
             height: 100vh;
-            position: relative;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            background: url("../../assets/background.webp");
-            background-repeat: no-repeat;
-            background-size: cover;
-            image-rendering: -webkit-optimize-contrast;
-            image-rendering: optimizeQuality;
-            animation: fadeIn 2s;
+            // background-repeat: no-repeat;
+            // background-size: cover;
+            // image-rendering: -webkit-optimize-contrast;
+            // image-rendering: optimizeQuality;
+            // animation: fadeIn 2s;
 
-            img {
-                position: absolute;
-                top: 45%;
-                left: 50%;
-                transform: translate(-50%, -50%);
 
-                @include tablet {
-                    display: none;
-                }
 
-                @include mobile {
-                    display: none;
-                }
-            }
-
-            .intro {
-
+            .left {
                 display: flex;
-                gap: 1rem;
-                width: 75%;
-                margin: auto;
-                z-index: 100;
+                width: 55%;
+                height: 100%;
+                justify-content: right;
                 align-items: center;
-
                 @include tablet {
-                    flex-direction: column;
+                    width: 100%;
                 }
 
                 @include mobile {
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    align-items: center;
+                    width: 100%;
                 }
+                
 
-                .left {
-
+                .content {
                     display: flex;
                     flex-direction: column;
-                    width: 40%;
-                    align-items: flex-end;
-
+                    justify-content: center;
+                    width: 80%;
+                    height: 100%;
+                    gap: 2rem;
                     @include tablet {
-                        width: 100%;
+                        width: 90%;
+                        margin: auto;
                         align-items: center;
-                        justify-content: center;
                     }
-
+    
                     @include mobile {
-                        width: 100%;
+                        width: 90%;
+                        margin: auto;
                         align-items: center;
-                        justify-content: center;
                     }
+                    
 
-                    .span-1 {
-                        width: auto;
-                        font-size: 2rem;
-                        font-weight: 500;
-                        color: #404040;
-                        line-height: 40px;
-
+                    span {
+                        font-size: calc(2vw + 1rem);
+                        font-weight: 800;
+                        color: #023731;
                         @include tablet {
-                            font-size: calc(0.5rem + 3vw);
+                            text-align: center;
                         }
-
+        
                         @include mobile {
-                            font-size: calc(0.5rem + 2vw);
+                            text-align: center;
                         }
+                        
                     }
 
-                    .span-2 {
-                        font-size: calc(1.5rem + 1.8vw);
-                        width: auto;
+                    p {
+                        color: #000000CC;
+                        font-size: calc(0.8vw + 0.6rem);
+                    }
+
+                    a{
+                        background-color: #953E20;
+                        display: flex;
+                        aspect-ratio: 3;
+                        width: calc(10vw + 5rem);
+                        justify-content: center;
+                        align-items: center;
+                        color: white;
+                        border-radius: 1.1vw;
                         font-weight: 700;
-                        color: #404040;
-                        line-height: 70px;
-
-                        @include tablet {
-                            font-size: 3rem;
-                        }
-
-                        @include mobile {
-                            font-size: calc(1rem + 3vw);
-                        }
+                        font-size: calc(0.8vw + 0.6rem);
                     }
-
-                }
-
-                span {
-                    display: inline-block;
-                    width: 100%;
-                    text-align: center;
-                    font-size: calc(4vw + 4rem);
-                    font-weight: 700;
-                    color: themed("brand");
-
-                    @include tablet {
-                        font-size: calc(2rem + 6vw);
-                    }
-
-                    @include mobile {
-                        font-size: calc(1rem + 6vw);
-                    }
-
-
                 }
             }
 
-            .button-and-arrow {
-                margin-bottom: 5rem;
-                z-index: 100;
-
+            .right {
+                display: flex;
+                width: 50%;
+                height: 100%;
+                position: relative;
                 @include tablet {
-                    margin-bottom: 10rem;
+                    display: none;
                 }
 
                 @include mobile {
-                    margin-bottom: 10rem;
+                    display: none;
                 }
 
-                a {
-                    text-decoration: none;
-                    background-color: rgba(255, 255, 255, 0.372);
-                    border-radius: 4px;
-                    padding: 0.5rem 1rem;
-                    border: 2px solid themed("brand");
+                .white {
+                    display: block;
+                    background-color: rgb(255, 255, 255);
+                    height: 100%;
+                    width: 20%;
+                }
 
-                    span {
-                        color: themed("brand");
-                        font-weight: bold;
+                img {
+                    position: absolute;
+                    display: block;
+                    background-color: transparent;
+                    object-fit: cover;
+
+                    @include tablet {
+                        display: none;
+                    }
+
+                    @include mobile {
+                        display: none;
                     }
                 }
+
+                .green {
+                    display: block;
+                    height: 100%;
+                    width: 80%;
+                    background-color: #023731;
+                }
             }
+
+
+
 
         }
 
@@ -341,7 +322,7 @@
             height: 100vh;
             position: relative;
 
-        
+
 
             a {
                 text-decoration: none;
