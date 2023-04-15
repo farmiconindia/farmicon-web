@@ -8,6 +8,10 @@ const NavBar = () => {
 
   const [showNav, setShowNav] = useState(false)
 
+  window.addEventListener("scroll" , () =>{
+    setShowNav(false)
+  })
+
   return (
     <>
       <div className="Navbar">

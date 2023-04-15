@@ -82,19 +82,25 @@
 
     .nav-down {
         background-color: #a0a0a068;
+        position: relative;
 
         .nav {
             display: flex;
             flex-direction: column;
-            height: 20vh;
-            justify-content: space-around;
+            height: 25vh;
             align-items: center;
-
+            position: fixed;
+            width: 100%;
+            background-color: #eeeeee;
             a {
                 color: #000000;
                 width: 100%;
                 text-align: center;
                 padding: 5px 0;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
                 &:hover {
                     color: #ffffff;
