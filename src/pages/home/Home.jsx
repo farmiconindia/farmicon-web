@@ -6,7 +6,7 @@ import blog1 from "../../assets/blog-image-1.png";
 import blog2 from "../../assets/blog-image-2.png";
 import blog3 from "../../assets/blog-image-3.png";
 import upArrow from "../../assets/up-arrow.png";
-import mobileHome from "../../assets/home-mobile.png";
+import mobileHome from "../../assets/home-mobile.webp";
 import "./home.scss";
 import { Link } from "react-router-dom";
 
