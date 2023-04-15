@@ -9,7 +9,7 @@
         @include tablet {}
 
         @include mobile {
-            height: 70vh;
+            height: 100vh;
         }
     }
 
@@ -18,7 +18,8 @@
         height: 10vh;
         text-align: center;
         margin: auto;
-        @include mobile{
+
+        @include mobile {
             font-size: calc(0.5rem + 5vw);
         }
     }
