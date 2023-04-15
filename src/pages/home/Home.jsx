@@ -6,7 +6,7 @@ import blog1 from "../../assets/blog-image-1.png";
 import blog2 from "../../assets/blog-image-2.png";
 import blog3 from "../../assets/blog-image-3.png";
 import upArrow from "../../assets/up-arrow.png";
-import mobileHome from "../../assets/home-mobile.png"
+import mobileHome from "../../assets/home-mobile.png";
 import "./home.scss";
 import { Link } from "react-router-dom";
 
@@ -36,12 +36,11 @@ const Home = () => {
             </div>
           </div>
           <div className="right">
-          <div className="white"></div>
-            <img src={mobileHome} alt="" />
+            <div className="white"></div>
+            <img loading="lazy" src={mobileHome} alt="" />
             <div className="green"></div>
           </div>
         </section>
-
 
         <section className="sec-2" id="sec-2">
           <div className="container">
