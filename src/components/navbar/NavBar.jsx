@@ -43,15 +43,15 @@ const NavBar = () => {
         </header>
         {showNav && <div className="nav-down">
           <nav className="nav">
-            <Link onClick={() => { setShowNav(!showNav) }} style={{ textDecoration: "none" }} to="/">
+            <Link onClick={() => { setShowNav(!showNav) }} style={{ textDecoration: "none" }} to="/about">
               <span> About</span>
             </Link>
             <Link onClick={() => { setShowNav(!showNav) }} style={{ textDecoration: "none" }} to="/services">
               <span> Services</span>
             </Link>
-            <Link onClick={() => { setShowNav(!showNav) }} style={{ textDecoration: "none" }} to="/">
+            <a onClick={() => { setShowNav(!showNav) }} style={{ textDecoration: "none" }} href="#sec-4">
               <span> Blog</span>
-            </Link>
+            </a>
             <Link onClick={() => { setShowNav(!showNav) }} style={{ textDecoration: "none" }} to="/">
               <span> Contact Us</span>
             </Link>

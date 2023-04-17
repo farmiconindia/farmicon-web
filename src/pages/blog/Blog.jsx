@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import blogData from "../../store/blogData";
 import "./blog.scss";
 
 const Blog = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   const { id } = useParams();
   const blog = blogData.find((blog) => blog.id === Number(id));
   return (

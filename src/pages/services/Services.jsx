@@ -22,7 +22,7 @@ const Services = () => {
             </div>
             <div className="right-box">
               <img
-                style={{ height: "375px", objectFit: "contain" }}
+                style={{ height: "375px", objectFit: "contain", boxShadow : "0px 0px 20px gray" , borderRadius : "1rem"}}
                 src={cropDoc}
                 alt=""
               />

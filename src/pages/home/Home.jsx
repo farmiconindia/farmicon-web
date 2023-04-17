@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import zigzag from "../../assets/zigzag-arrow.png";
 import ourService from "../../assets/our-service.png";
 import googlePlay from "../../assets/google-play.png";
@@ -12,6 +12,13 @@ import { Link } from "react-router-dom";
 import blogData from "../../store/blogData";
 
 const Home = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+
+
   return (
     <>
       <div className="home">

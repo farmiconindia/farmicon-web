@@ -20,17 +20,19 @@
 
         .sec-2 {
             display: flex;
-            height: 400vh;
+            height: calc(100vh + 150vw);
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 64px;
             background-color: #F5F5F7;
+
             @include tablet {
-                height: 200vh;
+                height: calc(180vh + 120vw);
             }
+
             @include mobile {
-                height: 250vh;
+                height: calc(150vh + 100vw);
             }
 
 
@@ -57,9 +59,11 @@
                     justify-content: center;
                     gap: 23px;
                     width: 70%;
+
                     @include tablet {
                         width: 85%;
                     }
+
                     @include mobile {
                         width: 100%;
                         align-items: center;
@@ -69,9 +73,9 @@
                         font-size: 3rem;
                         font-weight: 700;
                         color: themed("text-gray");
-                        @include tablet {
 
-                        }
+                        @include tablet {}
+
                         @include mobile {
                             text-align: center;
                             font-size: calc(0.5rem + 3vw);
@@ -83,9 +87,9 @@
                         display: inline-block;
                         width: auto;
                         text-align: left;
-                        @include tablet {
 
-                        }
+                        @include tablet {}
+
                         @include mobile {
                             text-align: center;
                         }
@@ -114,8 +118,9 @@
 
                     .left-box {
                         align-items: flex-end;
-                        @include tablet {
-                        }
+
+                        @include tablet {}
+
                         @include mobile {
                             align-items: center;
                             text-align: center;
@@ -123,9 +128,9 @@
 
                         p {
                             text-align: right;
-                            @include tablet {
 
-                            }
+                            @include tablet {}
+
                             @include mobile {
                                 text-align: center;
                             }
@@ -145,6 +150,7 @@
             @include tablet {
                 height: 40vh;
             }
+
             @include mobile {
                 height: 100vh;
             }
@@ -155,13 +161,13 @@
                 justify-content: space-between;
                 width: 80%;
                 gap: 4vw;
+
                 @include tablet {
                     gap: 8vw;
                     width: 90%;
                 }
-                @include mobile {
-                    
-                }
+
+                @include mobile {}
 
                 .upper-box {
                     display: flex;
@@ -172,9 +178,9 @@
                         color: themed("text-gray");
                         font-size: 2.5rem;
                         font-weight: 600;
-                        @include tablet {
 
-                        }
+                        @include tablet {}
+
                         @include mobile {
                             font-size: calc(1rem + 4vw);
                             text-align: center;
@@ -191,6 +197,7 @@
                     @include tablet {
                         width: 100%;
                     }
+
                     @include mobile {
                         flex-direction: column;
                         height: 70vh;
@@ -215,6 +222,7 @@
                                 height: 100px;
                                 border-radius: 15px;
                             }
+
                             @include mobile {
                                 width: 100px;
                                 height: 100px;

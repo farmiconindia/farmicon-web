@@ -13,7 +13,7 @@
         width: auto;
 
         @include tablet {
-            height: 70vh;
+            height: calc(50vh + 50vw);
         }
 
         @include mobile {

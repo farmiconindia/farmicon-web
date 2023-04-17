@@ -23,7 +23,15 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                width: 192px;
+                width: calc(8rem + 4vw);
+
+                @include tablet {
+                    width: calc(9rem + 5vw);
+                }
+
+                @include mobile {
+                    width: calc(10rem + 5vw);
+                }
 
                 .logo {
 
