@@ -23,7 +23,7 @@ const NavBar = () => {
             </Link>
           </div>
           <nav className="nav">
-            <Link style={{ textDecoration: "none" }} to="/">
+            <Link style={{ textDecoration: "none" }} to="/about">
               <span> About</span>
             </Link>
             <Link style={{ textDecoration: "none" }} to="/services">

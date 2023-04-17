@@ -7,6 +7,7 @@ import CheckDisease from "./pages/services/checkDisease/CheckDisease";
 import CropPrice from "./pages/services/CropPrice/CropPrice";
 import Services from "./pages/services/Services";
 import "./style.scss";
+import About from "./pages/about/About";
 
 function App() {
   const Layout = () => {
@@ -39,6 +40,10 @@ function App() {
         {
           path: "/services/checkDisease",
           element : <CheckDisease />
+        },
+        {
+          path: "/about",
+          element : <About />
         }
       ],
     },
