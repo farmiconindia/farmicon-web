@@ -8,6 +8,7 @@ import CropPrice from "./pages/services/CropPrice/CropPrice";
 import Services from "./pages/services/Services";
 import "./style.scss";
 import About from "./pages/about/About";
+import Blog from "./pages/blog/Blog";
 
 function App() {
   const Layout = () => {
@@ -35,16 +36,20 @@ function App() {
         },
         {
           path: "/services/cropPrice",
-          element : <CropPrice />
+          element: <CropPrice />,
         },
         {
           path: "/services/checkDisease",
-          element : <CheckDisease />
+          element: <CheckDisease />,
         },
         {
           path: "/about",
-          element : <About />
-        }
+          element: <About />,
+        },
+        {
+          path: "/blogs/:id",
+          element: <Blog />,
+        },
       ],
     },
   ]);

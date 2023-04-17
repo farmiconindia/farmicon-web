@@ -29,12 +29,12 @@ const NavBar = () => {
             <Link style={{ textDecoration: "none" }} to="/services">
               <span> Services</span>
             </Link>
-            <Link style={{ textDecoration: "none" }} to="/">
-              <span> Blog</span>
-            </Link>
-            <Link style={{ textDecoration: "none" }} to="/">
+            <a style={{ textDecoration: "none" }} href="#sec-4">
+              <span> Blogs</span>
+            </a>
+            <a style={{ textDecoration: "none" }} href="#footer">
               <span> Contact Us</span>
-            </Link>
+            </a>
           </nav>
           <div className="burger" onClick={() => { setShowNav(!showNav) }}>
             {!showNav&&<GiHamburgerMenu />}

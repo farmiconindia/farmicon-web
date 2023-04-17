@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import mobile from "../../assets/mobile.png";
+import cropDoc from "../../assets/crop-doc.jpg";
 import "./services.scss";
 
 const Services = () => {
@@ -20,14 +21,18 @@ const Services = () => {
               </p>
             </div>
             <div className="right-box">
-              <img src={mobile} alt="" />
+              <img
+                style={{ height: "375px", objectFit: "contain" }}
+                src={cropDoc}
+                alt=""
+              />
             </div>
           </div>
           <div className="container two">
             <div className="left-box">
-              <Link to="/services/cropPrice"><span>
-                Predict Crop Price
-              </span></Link>
+              <Link to="/services/cropPrice">
+                <span>Predict Crop Price</span>
+              </Link>
               <p>
                 Predict the crop and veggies price based on real-time data,
                 historical data and market requirements.
@@ -52,9 +57,9 @@ const Services = () => {
           </div>
           <div className="container four">
             <div className="left-box">
-              <Link to="/services/checkDisease"><span>
-                Crop Health Monitoring
-              </span></Link>
+              <Link to="/services/checkDisease">
+                <span>Crop Health Monitoring</span>
+              </Link>
               <p>
                 Turn your mobile phone into crop doctor: send us picture of your
                 crop and get diagnosis of infected crop and its solution.

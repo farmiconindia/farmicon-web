@@ -353,7 +353,7 @@
                 justify-content: center;
 
                 span {
-                    font-size: 4rem;
+                    font-size: calc(3vw + 1rem);
                     font-weight: 700;
                     color: themed("brand");
                 }

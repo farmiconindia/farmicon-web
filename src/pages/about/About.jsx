@@ -13,10 +13,11 @@ const About = () => {
             <div className="intro">
               <span>About Us</span>
               <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-                odio. Quisque volutpat mattis eros. Nullam malesuada erat ut
-                turpis. Suspendisse urna nibh, viverra non, semper suscipit,
-                posuere a, pede.
+                Welcome to Farmicon, where we're transforming the agriculture
+                industry through innovative technology solutions. Our startup
+                was founded in 2021 with a mission to empower farmers with
+                advanced farming tools that increase efficiency, productivity,
+                and profitability.
               </p>
             </div>
           </div>

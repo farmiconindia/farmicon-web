@@ -9,6 +9,7 @@ import upArrow from "../../assets/up-arrow.png";
 import mobileHome from "../../assets/home-mobile.webp";
 import "./home.scss";
 import { Link } from "react-router-dom";
+import blogData from "../../store/blogData";
 
 const Home = () => {
   return (
@@ -83,45 +84,20 @@ const Home = () => {
           <div className="container">
             <span>Blogs</span>
             <div className="blogs">
-              <div className="blog">
-                <img src={blog1} alt="" />
-                <div className="desc">
-                  <p>
-                    B.C. Farmers , Ranchers benefit with extreme weather
-                    support.
-                  </p>
-                  <div className="blog-more">
-                    <Link to="/">Read More</Link>
-                    <span>July 2021</span>
+              {blogData.map((blog, i) => {
+                return (
+                  <div className="blog" key={i}>
+                    <img src={blog2} alt="" />
+                    <div className="desc">
+                      <p>{blog.title}</p>
+                      <div className="blog-more">
+                        <Link to={`/blogs/${blog.id}`}>Read More</Link>
+                        <span>July 2021</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div className="blog">
-                <img src={blog2} alt="" />
-                <div className="desc">
-                  <p>
-                    B.C. Farmers , Ranchers benefit with extreme weather
-                    support.
-                  </p>
-                  <div className="blog-more">
-                    <Link to="/">Read More</Link>
-                    <span>July 2021</span>
-                  </div>
-                </div>
-              </div>
-              <div className="blog">
-                <img src={blog3} alt="" />
-                <div className="desc">
-                  <p>
-                    B.C. Farmers , Ranchers benefit with extreme weather
-                    support.
-                  </p>
-                  <div className="blog-more">
-                    <Link to="/">Read More</Link>
-                    <span>July 2021</span>
-                  </div>
-                </div>
-              </div>
+                );
+              })}
             </div>
           </div>
         </section>

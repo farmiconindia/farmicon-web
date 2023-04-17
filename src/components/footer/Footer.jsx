@@ -10,7 +10,7 @@ import "./footer.scss";
 const Footer = () => {
   return (
     <>
-      <div className="footer">
+      <div className="footer" id="footer">
         <div className="upper-box">
           <div className="first-box">
             <div className="brand">
