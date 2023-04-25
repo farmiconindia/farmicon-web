@@ -7,6 +7,7 @@ import blog2 from "../../assets/blog-image-2.png";
 import blog3 from "../../assets/blog-image-3.png";
 import upArrow from "../../assets/up-arrow.png";
 import mobileHome from "../../assets/home-mobile.webp";
+import liningHome from "../../assets/lining.png"
 import "./home.scss";
 import { Link } from "react-router-dom";
 import blogData from "../../store/blogData";
@@ -45,8 +46,10 @@ const Home = () => {
           </div>
           <div className="right">
             <div className="white"></div>
-            <img loading="lazy" src={mobileHome} alt="" />
-            <div className="green"></div>
+            <img loading="lazy" src={mobileHome} draggable="false" alt="" />
+            <div className="green">
+              <img src={liningHome} loading="lazy" draggable="false" alt="" />
+            </div>
           </div>
         </section>
 
