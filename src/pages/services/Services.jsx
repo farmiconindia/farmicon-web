@@ -19,10 +19,20 @@ const Services = () => {
                 Turn your mobile phone into crop doctor: send us picture of your
                 crop and get diagnosis of infected crop and its solution.
               </p>
+              <div className="blog-more">
+                <Link to={``} className="">
+                  Read More
+                </Link>
+              </div>
             </div>
             <div className="right-box">
               <img
-                style={{ height: "375px", objectFit: "contain", boxShadow : "0px 0px 20px gray" , borderRadius : "1rem"}}
+                style={{
+                  height: "375px",
+                  objectFit: "contain",
+                  boxShadow: "0px 0px 20px gray",
+                  borderRadius: "1rem",
+                }}
                 src={cropDoc}
                 alt=""
               />
@@ -37,6 +47,9 @@ const Services = () => {
                 Predict the crop and veggies price based on real-time data,
                 historical data and market requirements.
               </p>
+              <div className="blog-more">
+                <Link to="/services/cropPrice">Read More</Link>
+              </div>
             </div>
 
             <div className="right-box">
@@ -50,6 +63,9 @@ const Services = () => {
                 Predict the crop and veggies price based on real-time data,
                 historical data and market requirements.
               </p>
+              <div className="blog-more">
+                <Link to="/services/cropPrice">Read More</Link>
+              </div>
             </div>
             <div className="right-box">
               <img src={mobile} alt="" />
@@ -64,6 +80,9 @@ const Services = () => {
                 Turn your mobile phone into crop doctor: send us picture of your
                 crop and get diagnosis of infected crop and its solution.
               </p>
+              <div className="blog-more">
+                <Link to="/services/cropPrice">Read More</Link>
+              </div>
             </div>
             <div className="right-box">
               <img src={mobile} alt="" />
@@ -76,6 +95,9 @@ const Services = () => {
                 Predict the crop and veggies price based on real-time data,
                 historical data and market requirements.
               </p>
+              <div className="blog-more">
+                <Link to="/services/cropPrice">Read More</Link>
+              </div>
             </div>
             <div className="right-box">
               <img src={mobile} alt="" />

@@ -7,18 +7,15 @@ import blog2 from "../../assets/blog-image-2.png";
 import blog3 from "../../assets/blog-image-3.png";
 import upArrow from "../../assets/up-arrow.png";
 import mobileHome from "../../assets/home-mobile.webp";
-import liningHome from "../../assets/lining.png"
+import liningHome from "../../assets/lining.png";
 import "./home.scss";
 import { Link } from "react-router-dom";
 import blogData from "../../store/blogData";
 
 const Home = () => {
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
-
-
 
   return (
     <>
@@ -94,20 +91,36 @@ const Home = () => {
           <div className="container">
             <span>Blogs</span>
             <div className="blogs">
-              {blogData.map((blog, i) => {
-                return (
-                  <div className="blog" key={i}>
-                    <img src={blog2} alt="" />
-                    <div className="desc">
-                      <p>{blog.title}</p>
-                      <div className="blog-more">
-                        <Link to={`/blogs/${blog.id}`}>Read More</Link>
-                        <span>July 2021</span>
-                      </div>
-                    </div>
+              <div className="blog">
+                <img src={blog1} alt="" />
+                <div className="desc">
+                  <p>{blogData[0].title}</p>
+                  <div className="blog-more">
+                    <Link to={`/blogs/${blogData[0].id}`}>Read More</Link>
+                    <span>July 2021</span>
                   </div>
-                );
-              })}
+                </div>
+              </div>
+              <div className="blog">
+                <img src={blog2} alt="" />
+                <div className="desc">
+                  <p>{blogData[1].title}</p>
+                  <div className="blog-more">
+                    <Link to={`/blogs/${blogData[1].id}`}>Read More</Link>
+                    <span>July 2021</span>
+                  </div>
+                </div>
+              </div>
+              <div className="blog">
+                <img src={blog3} alt="" />
+                <div className="desc">
+                  <p>{blogData[2].title}</p>
+                  <div className="blog-more">
+                    <Link to={`/blogs/${blogData[2].id}`}>Read More</Link>
+                    <span>July 2021</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
