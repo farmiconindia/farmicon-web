@@ -53,7 +53,16 @@ const Services = () => {
             </div>
 
             <div className="right-box">
-              <img src={mobile} alt="" />
+              <img
+                style={{
+                  height: "375px",
+                  objectFit: "contain",
+                  boxShadow: "0px 0px 20px gray",
+                  borderRadius: "1rem",
+                }}
+                src={cropDoc}
+                alt=""
+              />
             </div>
           </div>
           <div className="container three">
@@ -64,11 +73,20 @@ const Services = () => {
                 historical data and market requirements.
               </p>
               <div className="blog-more">
-                <Link to="/services/cropPrice">Read More</Link>
+                <Link to="">Read More</Link>
               </div>
             </div>
             <div className="right-box">
-              <img src={mobile} alt="" />
+              <img
+                style={{
+                  height: "375px",
+                  objectFit: "contain",
+                  boxShadow: "0px 0px 20px gray",
+                  borderRadius: "1rem",
+                }}
+                src={cropDoc}
+                alt=""
+              />
             </div>
           </div>
           <div className="container four">
@@ -81,11 +99,20 @@ const Services = () => {
                 crop and get diagnosis of infected crop and its solution.
               </p>
               <div className="blog-more">
-                <Link to="/services/cropPrice">Read More</Link>
+                <Link to="">Read More</Link>
               </div>
             </div>
             <div className="right-box">
-              <img src={mobile} alt="" />
+              <img
+                style={{
+                  height: "375px",
+                  objectFit: "contain",
+                  boxShadow: "0px 0px 20px gray",
+                  borderRadius: "1rem",
+                }}
+                src={cropDoc}
+                alt=""
+              />
             </div>
           </div>
           <div className="container five">
@@ -96,11 +123,20 @@ const Services = () => {
                 historical data and market requirements.
               </p>
               <div className="blog-more">
-                <Link to="/services/cropPrice">Read More</Link>
+                <Link to="">Read More</Link>
               </div>
             </div>
             <div className="right-box">
-              <img src={mobile} alt="" />
+              <img
+                style={{
+                  height: "375px",
+                  objectFit: "contain",
+                  boxShadow: "0px 0px 20px gray",
+                  borderRadius: "1rem",
+                }}
+                src={cropDoc}
+                alt=""
+              />
             </div>
           </div>
         </section>
