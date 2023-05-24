@@ -58,17 +58,21 @@ const CropPrice = () => {
 
   const getStates = async () => {
     try {
-      const res = await axios.get("https://data.parthapaul.me/get_data?arrival_date=05/05/2023");
+      const res = await axios.get("https://data.parthapaul.me/get_data?arrival_date=24/05/2023");
+
       const states = [...new Set(res.data.message.map((item) => item.state))];
-      const commodities = [
-        ...new Set(res.data.message.map((item) => item.commodity)),
-      ];
-      const districts = [
-        ...new Set(res.data.message.map((item) => item.district)),
-      ];
-      const markets = [
-        ...new Set(res.data.message.map((item) => item.district)),
-      ];
+
+      // console.log(states.length);
+
+      // const commodities = [
+      //   ...new Set(res.data.message.map((item) => item.commodity)),
+      // ];
+      // const districts = [
+      //   ...new Set(res.data.message.map((item) => item.district)),
+      // ];
+      // const markets = [
+      //   ...new Set(res.data.message.map((item) => item.district)),
+      // ];
       setStateName(states);
 
     } catch (error) {
