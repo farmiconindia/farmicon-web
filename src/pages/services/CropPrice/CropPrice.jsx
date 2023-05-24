@@ -21,6 +21,7 @@ ChartJS.register(
   Legend
 );
 
+
 export const options = {
   responsive: true,
   plugins: {
@@ -32,7 +33,11 @@ export const options = {
       text: "Price v/s Date",
     },
   },
+  maxBarThickness: 30, // Change this value to adjust the width of the bars
 };
+
+ 
+
 
 const CropPrice = () => {
   const [stateNames, setStateName] = useState([]);
@@ -53,21 +58,12 @@ const CropPrice = () => {
 
   const getStates = async () => {
     try {
-      const res = await axios.get("https://data.parthapaul.me/get_data");
+      const res = await axios.get("https://data.parthapaul.me/get_data?arrival_date=24/05/2023");
+
       const states = [...new Set(res.data.message.map((item) => item.state))];
-      const commodities = [
-        ...new Set(res.data.message.map((item) => item.commodity)),
-      ];
-      const districts = [
-        ...new Set(res.data.message.map((item) => item.district)),
-      ];
-      const markets = [
-        ...new Set(res.data.message.map((item) => item.district)),
-      ];
+
       setStateName(states);
-      setCommodityNames(commodities);
-      setDistrictNames(districts);
-      setMarketNames(markets);
+
     } catch (error) {
       console.log(error);
     }
@@ -109,14 +105,45 @@ const CropPrice = () => {
   const handleCommodityChange = (event) => {
     selectedCommodityRef.current = event.target.value;
   };
-  const handleStateChange = (event) => {
+  const handleStateChange = async (event) => {
+    // set next values zero 
+    setDistrictNames([]);
+    setMarketNames([]);
+    setCommodityNames([]);
     selectedStateRef.current = event.target.value;
+    // set values for state
+    const res = await axios.get(`https://data.parthapaul.me/get_data?state=${selectedStateRef.current}`);
+     const districts = [
+        ...new Set(res.data.message.map((item) => item.district)),
+      ]; 
+     setDistrictNames(districts); 
   };
-  const handleDistrictChange = (event) => {
+  const handleDistrictChange = async (event) => {
+    // set next values zero
+    setMarketNames([]);
+    setCommodityNames([]);
     selectedDistrictRef.current = event.target.value;
+    // set values for district
+    const res = await axios.get(`https://data.parthapaul.me/get_data?state=${selectedStateRef.current}&&district=${selectedDistrictRef.current}`);
+      const markets = [
+        ...new Set(res.data.message.map((item) => item.market)),
+      ];
+      setMarketNames(markets);
   };
-  const handleMarketChange = (event) => {
+  const handleMarketChange = async (event) => {
+    // set next values zero
+    setCommodityNames([]);
     selectedMarketRef.current = event.target.value;
+    // set values for market
+    const res = await axios.get(`https://data.parthapaul.me/get_data?state=${selectedStateRef.current}&district=${selectedDistrictRef.current}&market=${selectedMarketRef.current}`);
+      const commodities = [
+        ...new Set(res.data.message.map((item) => item.commodity)),
+      ];
+      if(commodities.length > 0){
+        setCommodityNames(commodities);
+      }else{
+        setCommodityNames(["No data found"]);
+      } 
   };
 
   return (
