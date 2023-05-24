@@ -62,17 +62,6 @@ const CropPrice = () => {
 
       const states = [...new Set(res.data.message.map((item) => item.state))];
 
-      // console.log(states.length);
-
-      // const commodities = [
-      //   ...new Set(res.data.message.map((item) => item.commodity)),
-      // ];
-      // const districts = [
-      //   ...new Set(res.data.message.map((item) => item.district)),
-      // ];
-      // const markets = [
-      //   ...new Set(res.data.message.map((item) => item.district)),
-      // ];
       setStateName(states);
 
     } catch (error) {
@@ -118,7 +107,7 @@ const CropPrice = () => {
   };
   const handleStateChange = async (event) => {
     // set next values zero 
-    setDistrictNames(["loading"]);
+    setDistrictNames([]);
     setMarketNames([]);
     setCommodityNames([]);
     selectedStateRef.current = event.target.value;
@@ -131,7 +120,7 @@ const CropPrice = () => {
   };
   const handleDistrictChange = async (event) => {
     // set next values zero
-    setMarketNames(["loading"]);
+    setMarketNames([]);
     setCommodityNames([]);
     selectedDistrictRef.current = event.target.value;
     // set values for district
@@ -143,7 +132,7 @@ const CropPrice = () => {
   };
   const handleMarketChange = async (event) => {
     // set next values zero
-    setCommodityNames(["loading"]);
+    setCommodityNames([]);
     selectedMarketRef.current = event.target.value;
     // set values for market
     const res = await axios.get(`https://data.parthapaul.me/get_data?state=${selectedStateRef.current}&district=${selectedDistrictRef.current}&market=${selectedMarketRef.current}`);
