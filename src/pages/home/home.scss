@@ -57,7 +57,7 @@
                     span {
                         font-size: calc(2vw + 1rem);
                         font-weight: 800;
-                        color: #023731;
+                        color: themed("brand");
 
                         @include tablet {
                             text-align: center;
@@ -133,7 +133,7 @@
                     display: block;
                     height: 100%;
                     width: 80%;
-                    background-color: #023731;
+                    background-color: themed("brand");
                     overflow: hidden;
                     object-fit: cover;
                     position: relative;
