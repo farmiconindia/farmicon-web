@@ -9,6 +9,7 @@ const Blog = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const speech = useRef(null);
   const pRef = useRef(null);
+  const [isEnglish, setIsEnglish] = useState(false);
 
   const handlePlay = () => {
     if (!isPlaying) {

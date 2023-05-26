@@ -8,6 +8,18 @@
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
 }
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+
+}
+
+:hover::-webkit-scrollbar-thumb {
+    background-color: #023731;
+    border-radius: 8px;
+}
+
 a{
     text-decoration: none;
 }

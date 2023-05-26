@@ -91,7 +91,7 @@ const CropPrice = () => {
           {
             label: "Price (in Rupees)",
             data: prices,
-            backgroundColor: "#3D5A27",
+            backgroundColor: "#023731",
           },
         ],
       };
