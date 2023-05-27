@@ -5,7 +5,7 @@ import "./navbar.scss";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 
-const NavBar = () => {
+const NavBar = ({changeLang, setChangeLang}) => {
   const [showNav, setShowNav] = useState(false);
 
   window.addEventListener("scroll", () => {
@@ -40,6 +40,13 @@ const NavBar = () => {
             <a style={{ textDecoration: "none" }} href="#footer">
               <span> Contact Us</span>
             </a>
+            <div style={{ textDecoration: "none" , cursor: "pointer"}}  
+            onClick={() => {
+              setChangeLang(!changeLang);
+            }} 
+            >
+              <span>Translate</span>
+            </div>
           </nav>
           <div
             className="burger"

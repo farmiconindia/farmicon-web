@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import NavBar from "./components/navbar/NavBar";
@@ -11,11 +11,13 @@ import About from "./pages/about/About";
 import Blog from "./pages/blog/Blog";
 
 function App() {
+
+  const [changeLang, setChangeLang] = useState(false);
   const Layout = () => {
     return (
       <div className={`theme-${"light"}`}>
-        <NavBar />
-        <Outlet />
+        <NavBar setChangeLang = {setChangeLang} changeLang={changeLang}/>
+        <Outlet  />
         <Footer />
       </div>
     );
@@ -28,7 +30,7 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: <Home changeLang={changeLang}/>,
         },
         {
           path: "/services",
@@ -44,11 +46,11 @@ function App() {
         },
         {
           path: "/about",
-          element: <About />,
+          element: <About changeLang={changeLang}/>,
         },
         {
           path: "/blogs/:id",
-          element: <Blog />,
+          element: <Blog changeLang={changeLang} />,
         },
       ],
     },

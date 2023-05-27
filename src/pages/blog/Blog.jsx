@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import blogData from "../../store/blogData";
 import "./blog.scss";
 
-const Blog = () => {
+const Blog = ({changeLang}) => {
   const { id } = useParams();
   const blog = blogData.find((blog) => blog.id === Number(id));
   const [isPlaying, setIsPlaying] = useState(false);
@@ -79,7 +79,7 @@ const Blog = () => {
           </button>
         </div>
         <div className="desc" ref={pRef}>
-          <p>{blog?.description}</p>
+          {!changeLang?<p>{blog?.description}</p>:<p>{blog?.descriptionHin}</p>}
           <div className="blog-more">
             <span>{blog.date}</span>
           </div>
