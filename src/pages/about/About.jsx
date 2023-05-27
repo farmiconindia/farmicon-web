@@ -102,8 +102,6 @@ const About = ({changeLang}) => {
               </p>
               </div>
             }  
-
-////////////////////////
           </div>
         </div>
         <div className="right">
