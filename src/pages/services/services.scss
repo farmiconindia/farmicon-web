@@ -11,7 +11,7 @@
             height: calc(10vh + 10vw);
 
             h1 {
-                font-size: 6vw;
+                font-size: calc(3vw + 2.5rem);
                 font-weight: 700;
                 color: #ffff;
 
@@ -224,8 +224,8 @@
                     @include mobile {
                         flex-direction: column;
                         height: auto;
-                        padding: 5vh 0;
-                        gap: calc(2vw + 1rem);
+                        
+                        gap: calc(4vw + 2rem);
                     }
 
                     .box {
