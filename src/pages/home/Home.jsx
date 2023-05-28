@@ -12,7 +12,7 @@ import "./home.scss";
 import { Link } from "react-router-dom";
 import blogData from "../../store/blogData";
 
-const Home = () => {
+const Home = ({changeLang}) => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -38,11 +38,16 @@ const Home = () => {
             </a>
           </div> */}
           <div className="left">
-            <div className="content">
+            {!changeLang ? <div className="content">
               <span>Transforming agriculture with intelligent solutions</span>
               <p>Efficiency, profitability and sustainability</p>
               <a href="#">Download App</a>
+            </div> : <div className="content">
+              <span>बुद्धिमान समाधानों के साथ कृषि को बदलना</span>
+              <p>दक्षता, लाभप्रदता और स्थिरता</p>
+              <a href="#">Download App</a>
             </div>
+            }
           </div>
           <div className="right">
             <div className="white"></div>
@@ -55,7 +60,9 @@ const Home = () => {
 
         <section className="sec-2" id="sec-2">
           <div className="container">
-            <div className="left-box">
+            {/* translation */}
+
+            {!changeLang?<div className="left-box">
               <span>Our Services</span>
               <p>
                 We are single click platform where farmers can get the guidance,
@@ -65,7 +72,17 @@ const Home = () => {
                 weather information to save the crops, account management etc.
               </p>
               <Link to="/services">All Services</Link>
-            </div>
+            </div>:<div className="left-box">
+              <span>हमारी सेवाएँ</span>
+              <p>हम सिंगल क्लिक प्लेटफॉर्म हैं जहां किसान मार्गदर्शन प्राप्त कर सकते हैं,
+                बाजार पहुंच, फसलों और सब्जियों के लिए सभी आवश्यक सेवाएं,
+                फसल रोग के लिए समाधान का उपयोग कर {" "}
+                <em> गतिशीलता एकीकृत आर्टिफिशियल इंटेलिजेंस</em> नमूना, 
+               फसलों को बचाने के लिए मौसम की जानकारी, खाता प्रबंधन आदि। 
+                </p>
+                <Link to="/services">सभी सेवाएं</Link>
+              </div>
+            }
             <div className="right-box">
               <img src={ourService} alt="" draggable="false" />
             </div>
@@ -73,16 +90,26 @@ const Home = () => {
         </section>
         <section className="sec-3" id="sec-3">
           <div className="container">
+
+            {!changeLang?
             <div className="left-box">
               <span>
                 Do More<span> on the app</span>
               </span>
               <p>We have some exclusive features packed in our application</p>
-            </div>
+            </div>:
+            <div className="left-box">
+              <span>
+                ऐप पर<span> अधिक करें</span>
+              </span>
+              <p>हमारे एप्लिकेशन में कुछ विशेषताएं भरी हुई हैं</p>
+            </div>}
+
             <div className="right-box">
               <div className="logo"></div>
               <img src={googlePlay} alt="" />
             </div>
+
           </div>
         </section>
         <section className="sec-4" id="sec-4">
