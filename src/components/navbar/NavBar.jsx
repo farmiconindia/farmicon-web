@@ -5,7 +5,7 @@ import "./navbar.scss";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 
-const NavBar = ({changeLang, setChangeLang}) => {
+const NavBar = ({ changeLang, setChangeLang }) => {
   const [showNav, setShowNav] = useState(false);
 
   window.addEventListener("scroll", () => {
@@ -24,28 +24,33 @@ const NavBar = ({changeLang, setChangeLang}) => {
           >
             <div className="logo"></div>
             <Link style={{ textDecoration: "none" }} to="/">
-              <span> Farmicon</span>
+              <span>{!changeLang ? "Farmicon" : "फार्मिकॉन"} </span>
             </Link>
           </div>
           <nav className="nav">
             <Link style={{ textDecoration: "none" }} to="/about">
-              <span> About</span>
+              <span>{!changeLang ? "About" : "के बारे में"}</span>
             </Link>
             <Link style={{ textDecoration: "none" }} to="/services">
-              <span> Services</span>
+              <span>{!changeLang ? "Services" : "सेवाएं"}</span>
             </Link>
             <HashLink style={{ textDecoration: "none" }} to="/#sec-4">
-              <span> Blogs</span>
+              <span>{!changeLang ? "Blogs" : "ब्लॉग"}</span>
             </HashLink>
             <a style={{ textDecoration: "none" }} href="#footer">
-              <span> Contact Us</span>
+              <span>{!changeLang ? "Contact Us" : "संपर्क करें"}</span>
             </a>
-            <div style={{ textDecoration: "none" , cursor: "pointer"}}  
-            onClick={() => {
-              setChangeLang(!changeLang);
-            }} 
+            <div
+              style={{ textDecoration: "none", cursor: "pointer" }}
+              onClick={() => {
+                setChangeLang(!changeLang);
+              }}
             >
-              <span>Translate</span>
+              {!changeLang ? (
+                <span>हिंदी में देखें</span>
+              ) : (
+                <span>See in English</span>
+              )}
             </div>
           </nav>
           <div
@@ -68,7 +73,7 @@ const NavBar = ({changeLang, setChangeLang}) => {
                 style={{ textDecoration: "none" }}
                 to="/about"
               >
-                <span> About</span>
+                <span>{!changeLang ? "About" : "के बारे में"}</span>
               </Link>
               <Link
                 onClick={() => {
@@ -77,7 +82,7 @@ const NavBar = ({changeLang, setChangeLang}) => {
                 style={{ textDecoration: "none" }}
                 to="/services"
               >
-                <span> Services</span>
+                <span>{!changeLang ? "Services" : "सेवाएं"}</span>
               </Link>
               <HashLink
                 onClick={() => {
@@ -86,17 +91,29 @@ const NavBar = ({changeLang, setChangeLang}) => {
                 style={{ textDecoration: "none" }}
                 to="/#sec-4"
               >
-                <span> Blogs</span>
+                <span>{!changeLang ? "Blogs" : "ब्लॉग"}</span>
               </HashLink>
-              <Link
+              <a
                 onClick={() => {
                   setShowNav(!showNav);
                 }}
                 style={{ textDecoration: "none" }}
-                to="/"
+                href="/#footer"
               >
-                <span> Contact Us</span>
-              </Link>
+                <span>{!changeLang ? "Contact Us" : "संपर्क करें"}</span>
+              </a>
+              <div
+                style={{ textDecoration: "none", cursor: "pointer" }}
+                onClick={() => {
+                  setChangeLang(!changeLang);
+                }}
+              >
+                {!changeLang ? (
+                  <span>हिंदी में देखें</span>
+                ) : (
+                  <span>See in English</span>
+                )}
+              </div>
             </nav>
           </div>
         )}

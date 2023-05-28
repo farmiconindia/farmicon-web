@@ -20,25 +20,27 @@
 
         .sec-2 {
             display: flex;
-            height: calc(100vh + 150vw);
+            height: auto;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 64px;
             background-color: #F5F5F7;
 
             @include tablet {
-                height: calc(180vh + 120vw);
+                height: auto;
+
             }
 
             @include mobile {
-                height: calc(220vh + 60vw);
+                height: auto;
+
             }
 
 
             .container {
                 display: flex;
                 width: 70%;
+                margin: 12vh 0;
                 background-color: #ffff;
                 border-radius: 24px;
                 padding: 60px;
@@ -46,10 +48,12 @@
 
                 @include tablet {
                     width: 90%;
+                    margin: 8vh 0;
                 }
 
                 @include mobile {
                     width: 95%;
+                    margin: 5vh 0;
                 }
 
                 .left-box {
@@ -70,9 +74,18 @@
                     }
 
                     span {
-                        font-size: 3rem;
+                        font-size: calc(2.2vw + 0.8rem);
                         font-weight: 700;
                         color: themed("text-gray");
+                        background-color: #e2e2e2;
+                        padding: 10px 15px;
+                        border-radius: 8px;
+                        transition: all 0.2s ease-in-out;
+
+                        &:hover {
+                            background-color: #2f2f2f;
+                            color: #ffff;
+                        }
 
                         @include tablet {}
 
@@ -142,17 +155,19 @@
 
         .sec-3 {
             display: flex;
-            height: 70vh;
+            height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 12vh 0;
 
             @include tablet {
-                height: 40vh;
+                height: auto;
             }
 
             @include mobile {
-                height: 100vh;
+                height: auto;
+                margin: 6vh 0;
             }
 
             .container {
@@ -167,7 +182,9 @@
                     width: 90%;
                 }
 
-                @include mobile {}
+                @include mobile {
+                    margin: 5vh 0;
+                }
 
                 .upper-box {
                     display: flex;
@@ -176,7 +193,7 @@
 
                     span {
                         color: themed("text-gray");
-                        font-size: 2.5rem;
+                        font-size: calc(2vw + 1rem);
                         font-weight: 600;
 
                         @include tablet {}
@@ -193,6 +210,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
+                    
 
                     @include tablet {
                         width: 100%;
@@ -200,7 +218,9 @@
 
                     @include mobile {
                         flex-direction: column;
-                        height: 70vh;
+                        height: auto;
+                        padding: 5vh 0;
+                        gap: calc(2vw + 1rem);
                     }
 
                     .box {
@@ -212,20 +232,21 @@
 
                         .blank {
                             display: block;
-                            width: 134px;
-                            height: 134px;
+                            width: calc(5vw + 3rem);
+                            aspect-ratio: 1;
                             background: themed("brand");
-                            border-radius: 30px;
+                            border-radius: calc(1vw + 0.6rem);
 
                             @include tablet {
-                                width: 100px;
-                                height: 100px;
-                                border-radius: 15px;
+                                width: calc(5vw + 3rem);
+                                aspect-ratio: 1;
+                                border-radius: calc(1vw + 0.4rem);
                             }
 
                             @include mobile {
-                                width: 100px;
-                                height: 100px;
+                                width: calc(5vw + 3rem);
+                                aspect-ratio: 1;
+                                border-radius: calc(1vw + 0.2rem);
                             }
                         }
 
