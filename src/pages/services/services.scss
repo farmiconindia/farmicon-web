@@ -130,7 +130,12 @@
                     flex-direction: row-reverse;
 
                     .left-box {
+                        display: flex;
                         align-items: flex-end;
+                        span{
+                           display: block;
+                           margin: auto;
+                        }
 
                         @include tablet {}
 

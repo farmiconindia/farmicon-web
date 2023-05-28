@@ -96,7 +96,7 @@ const Services = ({ changeLang }) => {
         <section className="sec-3">
           <div className="container">
             <div className="upper-box">
-              <span>{!changeLang ? "Additional Features" : "अतिरिक्त सुविधाओं"}</span>
+              <span>{!changeLang ? "Additional Features" : "अतिरिक्त सुविधाएँ"}</span>
             </div>
             <div className="lower-box">
               <div className="box">
