@@ -21,7 +21,6 @@ ChartJS.register(
   Legend
 );
 
-
 export const options = {
   responsive: true,
   plugins: {
@@ -36,10 +35,7 @@ export const options = {
   maxBarThickness: 30, // Change this value to adjust the width of the bars
 };
 
- 
-
-
-const CropPrice = () => {
+const CropPrice = ({ changeLang }) => {
   const [stateNames, setStateName] = useState([]);
   const [commodityNames, setCommodityNames] = useState([]);
   const [districtNames, setDistrictNames] = useState([]);
@@ -58,12 +54,13 @@ const CropPrice = () => {
 
   const getStates = async () => {
     try {
-      const res = await axios.get("https://data.parthapaul.me/get_data?arrival_date=24/05/2023");
+      const res = await axios.get(
+        "https://data.parthapaul.me/get_data?arrival_date=24/05/2023"
+      );
 
       const states = [...new Set(res.data.message.map((item) => item.state))];
 
       setStateName(states);
-
     } catch (error) {
       console.log(error);
     }
@@ -106,17 +103,19 @@ const CropPrice = () => {
     selectedCommodityRef.current = event.target.value;
   };
   const handleStateChange = async (event) => {
-    // set next values zero 
+    // set next values zero
     setDistrictNames([]);
     setMarketNames([]);
     setCommodityNames([]);
     selectedStateRef.current = event.target.value;
     // set values for state
-    const res = await axios.get(`https://data.parthapaul.me/get_data?state=${selectedStateRef.current}`);
-     const districts = [
-        ...new Set(res.data.message.map((item) => item.district)),
-      ]; 
-     setDistrictNames(districts); 
+    const res = await axios.get(
+      `https://data.parthapaul.me/get_data?state=${selectedStateRef.current}`
+    );
+    const districts = [
+      ...new Set(res.data.message.map((item) => item.district)),
+    ];
+    setDistrictNames(districts);
   };
   const handleDistrictChange = async (event) => {
     // set next values zero
@@ -124,34 +123,36 @@ const CropPrice = () => {
     setCommodityNames([]);
     selectedDistrictRef.current = event.target.value;
     // set values for district
-    const res = await axios.get(`https://data.parthapaul.me/get_data?state=${selectedStateRef.current}&&district=${selectedDistrictRef.current}`);
-      const markets = [
-        ...new Set(res.data.message.map((item) => item.market)),
-      ];
-      setMarketNames(markets);
+    const res = await axios.get(
+      `https://data.parthapaul.me/get_data?state=${selectedStateRef.current}&&district=${selectedDistrictRef.current}`
+    );
+    const markets = [...new Set(res.data.message.map((item) => item.market))];
+    setMarketNames(markets);
   };
   const handleMarketChange = async (event) => {
     // set next values zero
     setCommodityNames([]);
     selectedMarketRef.current = event.target.value;
     // set values for market
-    const res = await axios.get(`https://data.parthapaul.me/get_data?state=${selectedStateRef.current}&district=${selectedDistrictRef.current}&market=${selectedMarketRef.current}`);
-      const commodities = [
-        ...new Set(res.data.message.map((item) => item.commodity)),
-      ];
-      if(commodities.length > 0){
-        setCommodityNames(commodities);
-      }else{
-        setCommodityNames(["No data found"]);
-      } 
+    const res = await axios.get(
+      `https://data.parthapaul.me/get_data?state=${selectedStateRef.current}&district=${selectedDistrictRef.current}&market=${selectedMarketRef.current}`
+    );
+    const commodities = [
+      ...new Set(res.data.message.map((item) => item.commodity)),
+    ];
+    if (commodities.length > 0) {
+      setCommodityNames(commodities);
+    } else {
+      setCommodityNames(["No data found"]);
+    }
   };
 
   return (
     <div className="crop-container">
-      <h1>Crop Price History</h1>
+      <h1> {!changeLang ? "Crop Price History" : "फसल मूल्य इतिहास"}</h1>
       <div className="selects">
         <select onChange={handleStateChange} name="" id="">
-          <option value="">SELECT STATE</option>
+          <option value="">{!changeLang?"SELECT STATE":"राज्य चुनें"}</option>
           {stateNames.map((state, i) => {
             return (
               <option key={i} value={state}>
@@ -161,7 +162,7 @@ const CropPrice = () => {
           })}
         </select>
         <select onChange={handleDistrictChange} name="" id="">
-          <option value="">SELECT DISTRICT</option>
+          <option value="">{!changeLang?"SELECT DISTRICT":"जिले का चयन करें"}</option>
           {districtNames.map((district, i) => {
             return (
               <option key={i} value={district}>
@@ -171,7 +172,7 @@ const CropPrice = () => {
           })}
         </select>
         <select onChange={handleMarketChange} name="" id="">
-          <option value="">SELECT MANDI</option>
+          <option value="">{!changeLang?"SELECT MANDI":"मंडी का चयन करें"}</option>
           {marketNames.map((market, i) => {
             return (
               <option key={i} value={market}>
@@ -181,7 +182,7 @@ const CropPrice = () => {
           })}
         </select>
         <select onChange={handleCommodityChange} name="" id="">
-          <option value="">SELECT COMMODITY</option>
+          <option value="">{!changeLang?"SELECT COMMODITY":"कमोडिटी का चयन करें"}</option>
           {commodityNames.map((state, i) => {
             return (
               <option key={i} value={state}>
@@ -196,7 +197,7 @@ const CropPrice = () => {
             getPriceAndDate();
           }}
         >
-          Show
+          {!changeLang ? "Show" : "दिखाना"}
         </button>
       </div>
       {isLoading && (

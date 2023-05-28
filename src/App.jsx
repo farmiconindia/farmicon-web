@@ -18,7 +18,7 @@ function App() {
       <div className={`theme-${"light"}`}>
         <NavBar setChangeLang = {setChangeLang} changeLang={changeLang}/>
         <Outlet  />
-        <Footer />
+        <Footer changeLang={changeLang} />
       </div>
     );
   };
@@ -34,15 +34,15 @@ function App() {
         },
         {
           path: "/services",
-          element: <Services />,
+          element: <Services changeLang={changeLang} />,
         },
         {
           path: "/services/cropPrice",
-          element: <CropPrice />,
+          element: <CropPrice changeLang={changeLang} />,
         },
         {
           path: "/services/checkDisease",
-          element: <CheckDisease />,
+          element: <CheckDisease changeLang={changeLang} />,
         },
         {
           path: "/about",

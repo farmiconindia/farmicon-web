@@ -16,6 +16,10 @@
         height: calc(2.5vw + 2.2rem);
         margin: auto;
 
+        @include mobile{
+            height: calc(3vw + 3rem);
+        }
+
 
         @include themify($themes) {
 
@@ -76,6 +80,7 @@
             .burger {
 
                 display: none;
+                font-size:  calc(1.8vw + 1rem);
 
                 @include tablet {
                     display: block;

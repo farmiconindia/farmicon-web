@@ -10,15 +10,15 @@
         @include tablet {}
 
         @include mobile {
-            height: 100vh;
+            height: 80vh;
         }
 
 
         h1 {
             color: #434343;
-            height: 10vh;
+            
             text-align: center;
-            margin: auto;
+            margin: 5vh auto;
 
             @include mobile {
                 font-size: calc(0.5rem + 5vw);
