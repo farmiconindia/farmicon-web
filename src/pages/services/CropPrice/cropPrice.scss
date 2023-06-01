@@ -24,6 +24,11 @@
                 font-size: calc(0.5rem + 5vw);
             }
         }
+        .loading{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
         .selects {
             display: flex;

@@ -43,6 +43,7 @@ const CropPrice = ({ changeLang }) => {
   const [chartData, setChartData] = useState([]);
   const [isChart, setIsChart] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isStateLoading, setIsStateLoading] = useState(false);
   const selectedCommodityRef = useRef("");
   const selectedStateRef = useRef("");
   const selectedDistrictRef = useRef("");
@@ -53,6 +54,7 @@ const CropPrice = ({ changeLang }) => {
   }, [location]);
 
   const getStates = async () => {
+    setIsStateLoading(true);
     try {
       const res = await axios.get(
         "https://data.parthapaul.me/get_data?arrival_date=24/05/2023"
@@ -61,8 +63,10 @@ const CropPrice = ({ changeLang }) => {
       const states = [...new Set(res.data.message.map((item) => item.state))];
 
       setStateName(states);
+      setIsStateLoading(false);
     } catch (error) {
       console.log(error);
+      setIsStateLoading(false);
     }
   };
 
@@ -150,56 +154,71 @@ const CropPrice = ({ changeLang }) => {
   return (
     <div className="crop-container">
       <h1> {!changeLang ? "Crop Price History" : "फसल मूल्य इतिहास"}</h1>
-      <div className="selects">
-        <select onChange={handleStateChange} name="" id="">
-          <option value="">{!changeLang?"SELECT STATE":"राज्य चुनें"}</option>
-          {stateNames.map((state, i) => {
-            return (
-              <option key={i} value={state}>
-                {state}
-              </option>
-            );
-          })}
-        </select>
-        <select onChange={handleDistrictChange} name="" id="">
-          <option value="">{!changeLang?"SELECT DISTRICT":"जिले का चयन करें"}</option>
-          {districtNames.map((district, i) => {
-            return (
-              <option key={i} value={district}>
-                {district}
-              </option>
-            );
-          })}
-        </select>
-        <select onChange={handleMarketChange} name="" id="">
-          <option value="">{!changeLang?"SELECT MANDI":"मंडी का चयन करें"}</option>
-          {marketNames.map((market, i) => {
-            return (
-              <option key={i} value={market}>
-                {market}
-              </option>
-            );
-          })}
-        </select>
-        <select onChange={handleCommodityChange} name="" id="">
-          <option value="">{!changeLang?"SELECT COMMODITY":"कमोडिटी का चयन करें"}</option>
-          {commodityNames.map((state, i) => {
-            return (
-              <option key={i} value={state}>
-                {state}
-              </option>
-            );
-          })}
-        </select>
-        <button
-          type="button"
-          onClick={() => {
-            getPriceAndDate();
-          }}
-        >
-          {!changeLang ? "Show" : "दिखाना"}
-        </button>
-      </div>
+      {isStateLoading && (
+        <div className="loading">
+          <span>Loading...</span>
+        </div>
+      )}
+      {!isStateLoading && (
+        <div className="selects">
+          <select onChange={handleStateChange} name="" id="">
+            <option value="">
+              {!changeLang ? "SELECT STATE" : "राज्य चुनें"}
+            </option>
+            {stateNames.map((state, i) => {
+              return (
+                <option key={i} value={state}>
+                  {state}
+                </option>
+              );
+            })}
+          </select>
+          <select onChange={handleDistrictChange} name="" id="">
+            <option value="">
+              {!changeLang ? "SELECT DISTRICT" : "जिले का चयन करें"}
+            </option>
+            {districtNames.map((district, i) => {
+              return (
+                <option key={i} value={district}>
+                  {district}
+                </option>
+              );
+            })}
+          </select>
+          <select onChange={handleMarketChange} name="" id="">
+            <option value="">
+              {!changeLang ? "SELECT MANDI" : "मंडी का चयन करें"}
+            </option>
+            {marketNames.map((market, i) => {
+              return (
+                <option key={i} value={market}>
+                  {market}
+                </option>
+              );
+            })}
+          </select>
+          <select onChange={handleCommodityChange} name="" id="">
+            <option value="">
+              {!changeLang ? "SELECT COMMODITY" : "कमोडिटी का चयन करें"}
+            </option>
+            {commodityNames.map((state, i) => {
+              return (
+                <option key={i} value={state}>
+                  {state}
+                </option>
+              );
+            })}
+          </select>
+          <button
+            type="button"
+            onClick={() => {
+              getPriceAndDate();
+            }}
+          >
+            {!changeLang ? "Show" : "दिखाना"}
+          </button>
+        </div>
+      )}
       {isLoading && (
         <div style={{ textAlign: "center", marginTop: "16vh" }}>Loading...</div>
       )}
