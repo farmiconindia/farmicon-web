@@ -7,7 +7,7 @@ import yt from "../../assets/yt-icon.png";
 import googlePlay from "../../assets/google-play.png";
 import "./footer.scss";
 
-const Footer = () => {
+const Footer = ({ changeLang }) => {
   return (
     <>
       <div className="footer" id="footer">
@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="first-box">
             <div className="brand">
               <div className="logo"></div>
-              <span> Farmicon</span>
+              <span>{!changeLang ? "Farmicon" : "फार्मिकॉन"}</span>
             </div>
             <div className="socials">
               <img src={fb} alt="" />

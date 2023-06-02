@@ -7,18 +7,15 @@ import blog2 from "../../assets/blog-image-2.png";
 import blog3 from "../../assets/blog-image-3.png";
 import upArrow from "../../assets/up-arrow.png";
 import mobileHome from "../../assets/home-mobile.webp";
-import liningHome from "../../assets/lining.png"
+import liningHome from "../../assets/lining.png";
 import "./home.scss";
 import { Link } from "react-router-dom";
 import blogData from "../../store/blogData";
 
-const Home = ({changeLang}) => {
-
+const Home = ({ changeLang }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
-
-
 
   return (
     <>
@@ -38,16 +35,21 @@ const Home = ({changeLang}) => {
             </a>
           </div> */}
           <div className="left">
-            {!changeLang ? <div className="content">
-              <span>Transforming agriculture with intelligent solutions</span>
-              <p>Efficiency, profitability and sustainability</p>
-              <a href="#">Download App</a>
-            </div> : <div className="content">
-              <span>बुद्धिमान समाधानों के साथ कृषि को बदलना</span>
-              <p>दक्षता, लाभप्रदता और स्थिरता</p>
-              <a href="#">Download App</a>
-            </div>
-            }
+            {!changeLang ? (
+              <div className="content">
+                <span>Transforming agriculture with intelligent solutions</span>
+                <p>Efficiency, profitability and sustainability</p>
+                <a href="#">Download App</a>
+              </div>
+            ) : (
+              <div className="content">
+                <span>बुद्धिमान समाधानों के साथ कृषि को बदलना</span>
+                <p>दक्षता, लाभप्रदता और स्थिरता</p>
+                <a href="#">
+                  {!changeLang ? "Download App" : "ऐप डाउनलोड करें"}
+                </a>
+              </div>
+            )}
           </div>
           <div className="right">
             <div className="white"></div>
@@ -62,27 +64,31 @@ const Home = ({changeLang}) => {
           <div className="container">
             {/* translation */}
 
-            {!changeLang?<div className="left-box">
-              <span>Our Services</span>
-              <p>
-                We are single click platform where farmers can get the guidance,
-                market reach, all the essential services for crops and veggies,
-                solutions for crop disease using the{" "}
-                <em> Mobility Integrated Artificial Intelligence </em> model,
-                weather information to save the crops, account management etc.
-              </p>
-              <Link to="/services">All Services</Link>
-            </div>:<div className="left-box">
-              <span>हमारी सेवाएँ</span>
-              <p>हम सिंगल क्लिक प्लेटफॉर्म हैं जहां किसान मार्गदर्शन प्राप्त कर सकते हैं,
-                बाजार पहुंच, फसलों और सब्जियों के लिए सभी आवश्यक सेवाएं,
-                फसल रोग के लिए समाधान का उपयोग कर {" "}
-                <em> गतिशीलता एकीकृत आर्टिफिशियल इंटेलिजेंस</em> नमूना, 
-               फसलों को बचाने के लिए मौसम की जानकारी, खाता प्रबंधन आदि। 
+            {!changeLang ? (
+              <div className="left-box">
+                <span>Our Services</span>
+                <p>
+                  We are single click platform where farmers can get the
+                  guidance, market reach, all the essential services for crops
+                  and veggies, solutions for crop disease using the{" "}
+                  <em> Mobility Integrated Artificial Intelligence </em> model,
+                  weather information to save the crops, account management etc.
+                </p>
+                <Link to="/services">All Services</Link>
+              </div>
+            ) : (
+              <div className="left-box">
+                <span>हमारी सेवाएँ</span>
+                <p>
+                  हम सिंगल क्लिक प्लेटफॉर्म हैं जहां किसान मार्गदर्शन प्राप्त कर
+                  सकते हैं, बाजार पहुंच, फसलों और सब्जियों के लिए सभी आवश्यक
+                  सेवाएं, फसल रोग के लिए समाधान का उपयोग कर{" "}
+                  <em> गतिशीलता एकीकृत आर्टिफिशियल इंटेलिजेंस</em> नमूना, फसलों
+                  को बचाने के लिए मौसम की जानकारी, खाता प्रबंधन आदि।
                 </p>
                 <Link to="/services">सभी सेवाएं</Link>
               </div>
-            }
+            )}
             <div className="right-box">
               <img src={ourService} alt="" draggable="false" />
             </div>
@@ -90,26 +96,26 @@ const Home = ({changeLang}) => {
         </section>
         <section className="sec-3" id="sec-3">
           <div className="container">
-
-            {!changeLang?
-            <div className="left-box">
-              <span>
-                Do More<span> on the app</span>
-              </span>
-              <p>We have some exclusive features packed in our application</p>
-            </div>:
-            <div className="left-box">
-              <span>
-                ऐप पर<span> अधिक करें</span>
-              </span>
-              <p>हमारे एप्लिकेशन में कुछ विशेषताएं भरी हुई हैं</p>
-            </div>}
+            {!changeLang ? (
+              <div className="left-box">
+                <span>
+                  Do More<span> on the app</span>
+                </span>
+                <p>We have some exclusive features packed in our application</p>
+              </div>
+            ) : (
+              <div className="left-box">
+                <span>
+                  ऐप पर<span> अधिक करें</span>
+                </span>
+                <p>हमारे एप्लिकेशन में कुछ विशेषताएं भरी हुई हैं</p>
+              </div>
+            )}
 
             <div className="right-box">
               <div className="logo"></div>
               <img src={googlePlay} alt="" />
             </div>
-
           </div>
         </section>
         <section className="sec-4" id="sec-4">
@@ -119,17 +125,19 @@ const Home = ({changeLang}) => {
             </div>
           </a>
           <div className="container">
-            <span>Blogs</span>
+            <span>{!changeLang ? "Blogs" : "ब्लॉग"}</span>
             <div className="blogs">
               {blogData.map((blog, i) => {
                 return (
                   <div className="blog" key={i}>
                     <img src={blog2} alt="" />
                     <div className="desc">
-                      <p>{blog.title}</p>
+                      <p>{!changeLang ? blog.title : blog?.titleHin}</p>
                       <div className="blog-more">
-                        <Link to={`/blogs/${blog.id}`}>Read More</Link>
-                        <span>July 2021</span>
+                        <Link to={`/blogs/${blog.id}`}>
+                          {!changeLang ? "Read More" : "और पढ़ें"}
+                        </Link>
+                        <span>{!changeLang ? "July 2021" : "जुलाई 2021"} </span>
                       </div>
                     </div>
                   </div>

@@ -1,7 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import mobile from "../../assets/mobile.png";
-import cropDoc from "../../assets/crop-doc.jpg";
+import cropDoc from "../../assets/crop-doc.png";
+import cropPrice from "../../assets/crop-price.png";
+import cropHealth from "../../assets/crop-health.png";
+import drone from "../../assets/drone.png";
+import soilHealth from "../../assets/soil-health.png";
+import lining from "../../assets/lining.png";
 import "./services.scss";
 
 const Services = ({ changeLang }) => {
@@ -12,9 +17,14 @@ const Services = ({ changeLang }) => {
           <h1>{!changeLang ? "Our Services" : "हमारी सेवाएँ"}</h1>
         </section>
         <section className="sec-2">
+          <img className="lining" src={lining} alt="" />
           <div className="container one">
             <div className="left-box">
-              <span>{!changeLang ? "Consult our Crop Doctor" : "हमारे फसल चिकित्सक से परामर्श करें"}</span>
+              <span>
+                {!changeLang
+                  ? "Consult our Crop Doctor"
+                  : "हमारे फसल चिकित्सक से परामर्श करें"}
+              </span>
               <p>
                 {!changeLang
                   ? "Turn your mobile phone into crop doctor: send us picture of your crop and get diagnosis of infected crop and its solution."
@@ -22,22 +32,17 @@ const Services = ({ changeLang }) => {
               </p>
             </div>
             <div className="right-box">
-              <img
-                style={{
-                  height: "375px",
-                  objectFit: "contain",
-                  boxShadow: "0px 0px 20px gray",
-                  borderRadius: "1rem",
-                }}
-                src={cropDoc}
-                alt=""
-              />
+              <img src={cropDoc} alt="" />
             </div>
           </div>
           <div className="container two">
             <div className="left-box">
               <Link to="/services/cropPrice">
-                <span>{!changeLang ? "Predict Crop Price" : "फसल मूल्य की भविष्यवाणी करें"}</span>
+                <span>
+                  {!changeLang
+                    ? "Predict Crop Price"
+                    : "फसल मूल्य की अनुमान लगाए"}
+                </span>
               </Link>
               <p>
                 {!changeLang
@@ -47,12 +52,14 @@ const Services = ({ changeLang }) => {
             </div>
 
             <div className="right-box">
-              <img src={mobile} alt="" />
+              <img src={cropPrice} alt="" />
             </div>
           </div>
           <div className="container three">
             <div className="left-box">
-              <span>{!changeLang ? "Hi-Tech Drone Spray" : "हाई-टेक ड्रोन स्प्रे"}</span>
+              <span>
+                {!changeLang ? "Hi-Tech Drone Spray" : "हाई-टेक ड्रोन स्प्रे"}
+              </span>
               <p>
                 {!changeLang
                   ? "Predict the crop and veggies price based on real-time data, historical data and market requirements"
@@ -61,13 +68,17 @@ const Services = ({ changeLang }) => {
               </p>
             </div>
             <div className="right-box">
-              <img src={mobile} alt="" />
+              <img src={drone} alt="" />
             </div>
           </div>
           <div className="container four">
             <div className="left-box">
               <Link to="/services/checkDisease">
-                <span>{!changeLang ? "Crop Health Monitoring" : "फसल स्वास्थ्य निगरानी"}</span>
+                <span>
+                  {!changeLang
+                    ? "Crop Health Monitoring"
+                    : "फसल स्वास्थ्य निगरानी"}
+                </span>
               </Link>
               <p>
                 {!changeLang
@@ -76,12 +87,14 @@ const Services = ({ changeLang }) => {
               </p>
             </div>
             <div className="right-box">
-              <img src={mobile} alt="" />
+              <img src={cropHealth} alt="" />
             </div>
           </div>
           <div className="container five">
             <div className="left-box">
-              <span>{!changeLang ? "Soil Health Testing" : "मृदा स्वास्थ्य परीक्षण"}</span>
+              <span>
+                {!changeLang ? "Soil Health Testing" : "मृदा स्वास्थ्य परीक्षण"}
+              </span>
               <p>
                 {!changeLang
                   ? "Predict the crop and veggies price based on real-time data,historical data and market requirements."
@@ -89,14 +102,16 @@ const Services = ({ changeLang }) => {
               </p>
             </div>
             <div className="right-box">
-              <img src={mobile} alt="" />
+              <img src={soilHealth} alt="" />
             </div>
           </div>
         </section>
         <section className="sec-3">
           <div className="container">
             <div className="upper-box">
-              <span>{!changeLang ? "Additional Features" : "अतिरिक्त सुविधाएँ"}</span>
+              <span>
+                {!changeLang ? "Additional Features" : "अतिरिक्त सुविधाएँ"}
+              </span>
             </div>
             <div className="lower-box">
               <div className="box">
