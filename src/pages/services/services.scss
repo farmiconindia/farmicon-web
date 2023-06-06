@@ -38,12 +38,47 @@
 
             }
 
-            .lining{
+            .lining-1{
                 position: absolute;
-                width: 50rem;
+                width: calc(30rem + 25vw);
                 aspect-ratio: 1;
-                top: 0;
+                top: -7rem;
+                left: -20rem;
+                display: inline-block;
+                transform: rotate(180deg);
+            }
+
+            .lining-2 {
+                position: absolute;
+                width: calc(30rem + 25vw);
+                aspect-ratio: 1;
+                top: 20rem;
                 right: -20rem;
+                display: inline-block;
+            }
+            .lining-3 {
+                position: absolute;
+                width: calc(30rem + 25vw);
+                aspect-ratio: 1;
+                top: 60rem;
+                left: -20rem;
+                display: inline-block;
+            }
+            .lining-4{
+                position: absolute;
+                width: calc(30rem + 25vw);
+                aspect-ratio: 1;
+                top: 100rem;
+                right: -20rem;
+                display: inline-block;
+                transform: rotate(180deg);
+            }
+            .lining-5{
+                position: absolute;
+                width: calc(30rem + 25vw);
+                aspect-ratio: 1;
+                top: 140rem;
+                left: -20rem;
                 display: inline-block;
             }
 

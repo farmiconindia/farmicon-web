@@ -17,7 +17,11 @@ const Services = ({ changeLang }) => {
           <h1>{!changeLang ? "Our Services" : "हमारी सेवाएँ"}</h1>
         </section>
         <section className="sec-2">
-          <img className="lining" src={lining} alt="" />
+          <img className="lining-1" src={lining} alt="" />
+          <img className="lining-2" src={lining} alt="" />
+          <img className="lining-3" src={lining} alt="" />
+          <img className="lining-4" src={lining} alt="" />
+          <img className="lining-5" src={lining} alt="" />
           <div className="container one">
             <div className="left-box">
               <span>
