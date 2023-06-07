@@ -4,9 +4,10 @@
 .about {
     @include themify($themes) {
         .sec-1 {
-            height: 100vh;
+            height: auto;
             background-color: #023731;
             display: flex;
+            padding: 3rem 0;
 
             .left {
                 display: flex;
@@ -14,6 +15,7 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
+                
 
                 @include mobile {
                     width: 100%;
@@ -23,16 +25,12 @@
 
                 .content {
                     width: 100%;
-                    height: 90%;
+                    height: auto;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    overflow-y: auto;
 
-                    &:hover::-webkit-scrollbar-thumb {
-                        background-color: #ffff;
-                        border-radius: 8px;
-                    }
+                    
 
                     .intro {
                         width: 80%;
@@ -79,8 +77,9 @@
                 .img-1 {
                     display: inline-block;
                     position: absolute;
-                    width: calc(27vw + 5.5rem);
+                    width: calc(29vw + 6rem);
                     aspect-ratio: 1;
+                    top: 1%;
                     right: 0;
                     clip-path: polygon(39% 0, 79% 0, 100% 22%, 100% 60%, 59% 100%, 0 39%);
                 }
@@ -88,7 +87,7 @@
                 .img-2 {
                     display: inline-block;
                     position: absolute;
-                    width: calc(14vw + 4rem);
+                    width: calc(20vw + 8rem);
                     aspect-ratio: 1;
                     top: 50%;
                     left: 50%;
@@ -101,8 +100,8 @@
                     display: inline-block;
                     position: absolute;
                     right: 0;
-                    top: 50%;
-                    width: calc(10vw + 3rem);
+                    top: 45%;
+                    width: calc(12vw + 4rem);
                     aspect-ratio: 0;
                     transform: translateY(-22%);
 

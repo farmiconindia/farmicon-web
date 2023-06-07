@@ -44,7 +44,7 @@ const Footer = ({ changeLang }) => {
               <span>Contact Us:</span>
               <div className="contact-desc">
                 <span>farmiconindia@gmail.com</span>
-                <span>+91 9983583593</span>
+                <span>+91 8650505520</span>
               </div>
             </div>
             <div className="lower">
