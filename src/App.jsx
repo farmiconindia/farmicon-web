@@ -12,7 +12,7 @@ import Blog from "./pages/blog/Blog";
 
 import Weather from "./pages/weather/Weather";
 import Contact from "./pages/contact/Contact";
-import BlogPage from "./pages/blogPage/BlogPage";
+import BlogPage from "./pages/blogPage/BlogPag";
 
 function App() {
   const [changeLang, setChangeLang] = useState(false);
