@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./WeatherComp.scss";
+import "./weatherComp.scss";
 
 const WeatherComp = () => {
   const [weatherData, setWeatherData] = useState(null);
