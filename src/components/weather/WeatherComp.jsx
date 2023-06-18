@@ -14,6 +14,7 @@ const WeatherComp = () => {
           `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=a35d4300d8490d8af0872e49d8798180`
         );
         setWeatherData(response.data);
+        console.log(response.data)
       } catch (error) {
         console.error("Error fetching weather data:", error);
         setError("Error fetching weather data. Please try again later.");
@@ -53,7 +54,7 @@ const WeatherComp = () => {
     );
   }
 
-  const { main, weather, wind } = weatherData;
+  const { main, weather, wind , name } = weatherData;
   const { temp, humidity, pressure } = main;
   const { speed, deg } = wind;
   const { description, icon } = weather[0];
@@ -67,6 +68,7 @@ const WeatherComp = () => {
             alt="Weather Icon"
           />
         </div>
+        <div>{name}</div>
         <div className="temperature">{Math.round(temp - 273.15)}°C</div>
         <div className="description">{description}</div>
         <div className="additional-data">
