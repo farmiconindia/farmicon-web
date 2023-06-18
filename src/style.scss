@@ -2,8 +2,12 @@
 
 $themes: (
   light: (brand : #023731,
+  brand-light : #02373165,
     text-gray : #434343,
     text-light-gray : #8D8D8D,
+    text-lg : calc(2vw + 1rem),
+    text-sm : calc(1vw + 0.7rem),
+    text-xs : calc(0.8vw + 0.6rem),
   ),
 );
 
@@ -39,8 +43,7 @@ $themes: (
 }
 
 @mixin tablet {
-  @media (max-width: 960px) {
+  @media (max-width: 1000px) {
     @content;
   }
 }
-

@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Footer from "./components/footer/Footer";
 import NavBar from "./components/navbar/NavBar";
@@ -9,15 +9,16 @@ import Services from "./pages/services/Services";
 import "./style.scss";
 import About from "./pages/about/About";
 import Blog from "./pages/blog/Blog";
+import BlogPage from "./pages/blogPage/blogPage";
+import Weather from "./pages/weather/Weather";
 
 function App() {
-
   const [changeLang, setChangeLang] = useState(false);
   const Layout = () => {
     return (
       <div className={`theme-${"light"}`}>
-        <NavBar setChangeLang = {setChangeLang} changeLang={changeLang}/>
-        <Outlet  />
+        <NavBar setChangeLang={setChangeLang} changeLang={changeLang} />
+        <Outlet />
         <Footer changeLang={changeLang} />
       </div>
     );
@@ -30,7 +31,7 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home changeLang={changeLang}/>,
+          element: <Home changeLang={changeLang} />,
         },
         {
           path: "/services",
@@ -46,7 +47,15 @@ function App() {
         },
         {
           path: "/about",
-          element: <About changeLang={changeLang}/>,
+          element: <About changeLang={changeLang} />,
+        },
+        {
+          path: "/blogs",
+          element: <BlogPage changeLang={changeLang} />,
+        },
+        {
+          path: "/weather",
+          element: <Weather changeLang={changeLang} />,
         },
         {
           path: "/blogs/:id",

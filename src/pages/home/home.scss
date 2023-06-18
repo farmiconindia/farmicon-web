@@ -55,7 +55,7 @@
 
 
                     span {
-                        font-size: calc(2vw + 1rem);
+                        font-size: themed("text-lg");
                         font-weight: 800;
                         color: themed("brand");
 
@@ -72,6 +72,10 @@
                     p {
                         color: #000000CC;
                         font-size: calc(0.8vw + 0.6rem);
+
+                        @include tablet {
+                            font-size: themed("text-sm");
+                        }
                     }
 
                     a {
@@ -159,11 +163,17 @@
         }
 
         .sec-2 {
-            height: 100vh;
+            height: auto;
+            padding: 2rem 0;
             background-color: themed("brand");
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @include mobile {
+                height: auto;
+                padding: 1rem 0;
+            }
 
             .container {
 
@@ -186,7 +196,7 @@
                     align-items: flex-start;
                     flex-direction: column;
                     justify-content: center;
-                    gap: calc(1rem + 6vw);
+                    gap: calc(1rem + 3vw);
                     width: 50%;
 
                     @include tablet {}
@@ -199,7 +209,7 @@
 
                     span {
 
-                        font-size: calc(1rem + 3vw);
+                        font-size: themed("text-lg");
                         font-weight: 700;
 
                         @include tablet {}
@@ -252,7 +262,7 @@
                     @include tablet {}
 
                     @include mobile {
-                        width: 60%;
+                        width: 100%;
                     }
 
                 }
@@ -298,7 +308,7 @@
                     }
 
                     span {
-                        font-size: calc(1rem + 2vw);
+                        font-size: themed("text-lg");
                         font-weight: 700;
                         color: themed("brand");
 
@@ -312,6 +322,7 @@
 
                     p {
                         color: #434343;
+                        font-size: themed("text-xs");
                     }
                 }
 
@@ -343,7 +354,8 @@
             display: flex;
             justify-content: center;
             align-content: center;
-            height: 100vh;
+            height: auto;
+            padding: 4rem 0;
             position: relative;
 
 
@@ -355,16 +367,19 @@
                 .up {
                     position: absolute;
                     bottom: 36px;
-                    right: calc(0.5rem + 5vw);
+                    right: calc(0.5rem + 3vw);
                     display: flex;
-                    width: calc(2rem + 3vw);
-                    height: calc(2rem + 3vw);
+                    width: calc(1.5rem + 2vw);
+                    height: calc(1.5rem + 2vw);
                     background-color: themed("brand");
                     border-radius: 50%;
                     text-align: center;
                     align-items: center;
                     justify-content: center;
 
+                    img{
+                        width: 50%;
+                    }
 
                 }
             }
@@ -373,11 +388,11 @@
                 display: flex;
                 width: 80%;
                 flex-direction: column;
-                gap: 68px;
+                gap: 2rem;
                 justify-content: center;
 
                 span {
-                    font-size: calc(3vw + 1rem);
+                    font-size: themed("text-lg");
                     font-weight: 700;
                     color: themed("brand");
                 }
@@ -387,7 +402,12 @@
                     justify-content: space-between;
                     width: 100%;
                     gap: 70px;
-                    overflow: auto;
+
+                    @include mobile {
+                        flex-direction: column;
+                        gap: 20px;
+                        align-items: center;
+                    }
 
                     .blog {
                         display: flex;

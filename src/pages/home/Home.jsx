@@ -127,7 +127,7 @@ const Home = ({ changeLang }) => {
           <div className="container">
             <span>{!changeLang ? "Blogs" : "ब्लॉग"}</span>
             <div className="blogs">
-              {blogData.map((blog, i) => {
+              {blogData.slice(0, 3).map((blog, i) => {
                 return (
                   <div className="blog" key={i}>
                     <img src={blog2} alt="" />
@@ -144,6 +144,7 @@ const Home = ({ changeLang }) => {
                 );
               })}
             </div>
+            <Link style={{color : "gray"}} to="/blogs">{!changeLang ? "Show All Blogs" : "ब्लॉग"}</Link>
           </div>
         </section>
       </div>

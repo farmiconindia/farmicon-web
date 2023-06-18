@@ -120,7 +120,7 @@ const Services = ({ changeLang }) => {
             <div className="lower-box">
               <div className="box">
                 <div className="blank"></div>
-                <span>{!changeLang ? "Weather Info" : "मौसम की जानकारी"}</span>
+                <Link to={"/weather"}>{!changeLang ? "Weather Info" : "मौसम की जानकारी"}</Link>
               </div>
               <div className="box">
                 <div className="blank"></div>
