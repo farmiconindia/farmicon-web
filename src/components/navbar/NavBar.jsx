@@ -37,9 +37,9 @@ const NavBar = ({ changeLang, setChangeLang }) => {
             <HashLink style={{ textDecoration: "none" }} to="/#sec-4">
               <span>{!changeLang ? "Blogs" : "ब्लॉग"}</span>
             </HashLink>
-            <a style={{ textDecoration: "none" }} href="#footer">
+            <Link style={{ textDecoration: "none" }} to="/contact">
               <span>{!changeLang ? "Contact Us" : "संपर्क करें"}</span>
-            </a>
+            </Link>
             <div
               style={{ textDecoration: "none", cursor: "pointer" }}
               onClick={() => {

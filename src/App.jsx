@@ -11,6 +11,7 @@ import About from "./pages/about/About";
 import Blog from "./pages/blog/Blog";
 import BlogPage from "./pages/blogPage/blogPage";
 import Weather from "./pages/weather/Weather";
+import Contact from "./pages/contact/Contact";
 
 function App() {
   const [changeLang, setChangeLang] = useState(false);
@@ -56,6 +57,10 @@ function App() {
         {
           path: "/weather",
           element: <Weather changeLang={changeLang} />,
+        },
+        {
+          path: "/contact",
+          element: <Contact changeLang={changeLang} />,
         },
         {
           path: "/blogs/:id",
