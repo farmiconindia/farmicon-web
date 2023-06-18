@@ -9,7 +9,7 @@ import Services from "./pages/services/Services";
 import "./style.scss";
 import About from "./pages/about/About";
 import Blog from "./pages/blog/Blog";
-import BlogPage from "./pages/blogPage/blogPage";
+// import BlogPage from "./pages/blogPage/blogPage";
 import Weather from "./pages/weather/Weather";
 import Contact from "./pages/contact/Contact";
 
@@ -50,10 +50,10 @@ function App() {
           path: "/about",
           element: <About changeLang={changeLang} />,
         },
-        {
-          path: "/blogs",
-          element: <BlogPage changeLang={changeLang} />,
-        },
+        // {
+        //   path: "/blogs",
+        //   element: <BlogPage changeLang={changeLang} />,
+        // },
         {
           path: "/weather",
           element: <Weather changeLang={changeLang} />,
