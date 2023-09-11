@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import zigzag from "../../assets/zigzag-arrow.png";
-import ourService from "../../assets/our-service.png";
+import ourService from "../../assets/services.png";
 import googlePlay from "../../assets/google-play.png";
 import blog1 from "../../assets/blog-image-1.png";
 import blog2 from "../../assets/blog-image-2.png";
@@ -8,6 +8,8 @@ import blog3 from "../../assets/blog-image-3.png";
 import upArrow from "../../assets/up-arrow.png";
 import mobileHome from "../../assets/home-mobile.webp";
 import liningHome from "../../assets/lining.png";
+import Hero from "../../assets/Hero.png";
+import bg from "../../assets/Group (1).png";
 import "./home.scss";
 import { Link } from "react-router-dom";
 import blogData from "../../store/blogData";
@@ -37,8 +39,9 @@ const Home = ({ changeLang }) => {
           <div className="left">
             {!changeLang ? (
               <div className="content">
-                <span>Transforming agriculture with intelligent solutions</span>
-                <p>Efficiency, profitability and sustainability</p>
+                <p className="inc">Increase your</p>
+                <p>Yield with</p>
+                <span className="gradient">FARMICON</span>
                 <a href="#">Download App</a>
               </div>
             ) : (
@@ -51,12 +54,12 @@ const Home = ({ changeLang }) => {
               </div>
             )}
           </div>
-          <div className="right">
+          <div className="">
             <div className="white"></div>
-            <img loading="lazy" src={mobileHome} draggable="false" alt="" />
-            <div className="green">
-              <img src={liningHome} loading="lazy" draggable="false" alt="" />
-            </div>
+            {/* <img loading="lazy" src={mobileHome} draggable="false" alt="" /> */}
+
+            {/* <img src={liningHome} loading="lazy" draggable="false" alt="" /> */}
+            <img src={Hero} loading="lazy" draggable="false" alt="" />
           </div>
         </section>
 
@@ -118,6 +121,37 @@ const Home = ({ changeLang }) => {
             </div>
           </div>
         </section>
+        <section className="sec-5">
+          <div className="container">
+            <div className="content">
+              <div>
+              <div className="name-tag">
+                <p>Name:</p>
+                <input></input>
+              </div>
+              <div className="Whatsapp-tag">
+                <p>WhatsApp No.:</p>
+                <input></input>
+              </div>
+              </div>
+              <div>
+              <div className="Email">
+                <p>E-mail:</p>
+                <input></input>
+              </div>
+              <div className="msg-tag">
+                <p>Your Message:</p>
+                <input className="message-input"></input>
+              </div>
+              </div>
+            </div>
+            <div className="submit">
+
+            <a href="">Submit</a>
+            </div>
+          </div>
+
+        </section>
         <section className="sec-4" id="sec-4">
           <a href="#sec-1">
             <div className="up">
@@ -144,7 +178,9 @@ const Home = ({ changeLang }) => {
                 );
               })}
             </div>
-            <Link style={{color : "gray"}} to="/blogs">{!changeLang ? "Show All Blogs" : "ब्लॉग"}</Link>
+            <Link style={{ color: "gray" }} to="/blogs">
+              {!changeLang ? "Show All Blogs" : "ब्लॉग"}
+            </Link>
           </div>
         </section>
       </div>
