@@ -46,8 +46,8 @@ const Home = ({ changeLang }) => {
               </div>
             ) : (
               <div className="content">
-                <span>बुद्धिमान समाधानों के साथ कृषि को बदलना</span>
-                <p>दक्षता, लाभप्रदता और स्थिरता</p>
+                <p className="hindi">बुद्धिमान समाधानों के साथ कृषि को बदलना</p>
+                <p className="gradient hindi">दक्षता, लाभप्रदता और स्थिरता</p>
                 <a href="#">
                   {!changeLang ? "Download App" : "ऐप डाउनलोड करें"}
                 </a>
@@ -125,32 +125,30 @@ const Home = ({ changeLang }) => {
           <div className="container">
             <div className="content">
               <div>
-              <div className="name-tag">
-                <p>Name:</p>
-                <input></input>
-              </div>
-              <div className="Whatsapp-tag">
-                <p>WhatsApp No.:</p>
-                <input></input>
-              </div>
+                <div className="name-tag">
+                  {!changeLang ? <p>Name:</p> : <p>नाम:</p>}
+                  <input></input>
+                </div>
+                <div className="Whatsapp-tag">
+                  {!changeLang ? <p>WhatsApp No.:</p> : <p>व्हाट्सएप नंबर:</p>}
+                  <input></input>
+                </div>
               </div>
               <div>
-              <div className="Email">
-                <p>E-mail:</p>
-                <input></input>
-              </div>
-              <div className="msg-tag">
-                <p>Your Message:</p>
-                <input className="message-input"></input>
-              </div>
+                <div className="Email">
+                  {!changeLang ? <p>E-mail:</p> : <p>ईमेल:</p>}
+                  <input></input>
+                </div>
+                <div className="msg-tag">
+                {!changeLang ? <p>Your Message:</p> : <p>आपका संदेश:</p>}
+                  <input className="message-input"></input>
+                </div>
               </div>
             </div>
             <div className="submit">
-
-            <a href="">Submit</a>
+            {!changeLang ? <a href="">Submit</a>: <a href="">जमा करना</a>}
             </div>
           </div>
-
         </section>
         <section className="sec-4" id="sec-4">
           <a href="#sec-1">
