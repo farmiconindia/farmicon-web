@@ -57,7 +57,7 @@ const CropPrice = ({ changeLang }) => {
     setIsStateLoading(true);
     try {
       const res = await axios.get(
-        "https://data.parthapaul.me/get_data?arrival_date=24/05/2023"
+        "https://jiqj9h6n9f.execute-api.ap-south-1.amazonaws.com/prod/api/get_data?arrival_date=24/05/2023"
       );
 
       const states = [...new Set(res.data.message.map((item) => item.state))];
@@ -80,12 +80,12 @@ const CropPrice = ({ changeLang }) => {
     setIsLoading(true);
     try {
       const res = await axios.get(
-        `https://data.parthapaul.me/get_data?state=${selectedStateRef.current}&&district=${selectedDistrictRef.current}&market=${selectedMarketRef.current}&commodity=${selectedCommodityRef.current}`
+        `https://jiqj9h6n9f.execute-api.ap-south-1.amazonaws.com/prod/api/get_data?state=${selectedStateRef.current}&&district=${selectedDistrictRef.current}&market=${selectedMarketRef.current}&commodity=${selectedCommodityRef.current}`
       );
       const dates = res.data.message?.map((d) => d?.arrival_date);
       const prices = res.data.message?.map((d) => Number(d?.modal_price));
       setIsChart(dates.length > 0 && prices.length > 0);
-
+        console.log(res)
       const data = {
         labels: dates,
         datasets: [
@@ -98,6 +98,7 @@ const CropPrice = ({ changeLang }) => {
       };
       setChartData(data);
       setIsLoading(false);
+      console.log(res)
     } catch (error) {
       console.log(error);
     }
@@ -114,7 +115,7 @@ const CropPrice = ({ changeLang }) => {
     selectedStateRef.current = event.target.value;
     // set values for state
     const res = await axios.get(
-      `https://data.parthapaul.me/get_data?state=${selectedStateRef.current}`
+      `https://jiqj9h6n9f.execute-api.ap-south-1.amazonaws.com/prod/api/get_data?state=${selectedStateRef.current}`
     );
     const districts = [
       ...new Set(res.data.message.map((item) => item.district)),
@@ -128,7 +129,7 @@ const CropPrice = ({ changeLang }) => {
     selectedDistrictRef.current = event.target.value;
     // set values for district
     const res = await axios.get(
-      `https://data.parthapaul.me/get_data?state=${selectedStateRef.current}&&district=${selectedDistrictRef.current}`
+      `https://jiqj9h6n9f.execute-api.ap-south-1.amazonaws.com/prod/api/get_data?state=${selectedStateRef.current}&&district=${selectedDistrictRef.current}`
     );
     const markets = [...new Set(res.data.message.map((item) => item.market))];
     setMarketNames(markets);
@@ -139,7 +140,7 @@ const CropPrice = ({ changeLang }) => {
     selectedMarketRef.current = event.target.value;
     // set values for market
     const res = await axios.get(
-      `https://data.parthapaul.me/get_data?state=${selectedStateRef.current}&district=${selectedDistrictRef.current}&market=${selectedMarketRef.current}`
+      `https://jiqj9h6n9f.execute-api.ap-south-1.amazonaws.com/prod/api/get_data?state=${selectedStateRef.current}&district=${selectedDistrictRef.current}&market=${selectedMarketRef.current}`
     );
     const commodities = [
       ...new Set(res.data.message.map((item) => item.commodity)),
