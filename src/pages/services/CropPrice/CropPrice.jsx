@@ -57,10 +57,11 @@ const CropPrice = ({ changeLang }) => {
     setIsStateLoading(true);
     try {
       const res = await axios.get(
-        "https://jiqj9h6n9f.execute-api.ap-south-1.amazonaws.com/prod/api/get_data?arrival_date=24/05/2023"
+        "https://jiqj9h6n9f.execute-api.ap-south-1.amazonaws.com/prod/api/get_data"
       );
 
       const states = [...new Set(res.data.message.map((item) => item.state))];
+       
 
       setStateName(states);
       setIsStateLoading(false);
@@ -72,6 +73,7 @@ const CropPrice = ({ changeLang }) => {
 
   useEffect(() => {
     getStates();
+    // console.log(stateNames)
   }, []);
 
   const getPriceAndDate = async () => {
