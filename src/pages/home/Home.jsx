@@ -9,6 +9,7 @@ import upArrow from "../../assets/up-arrow.png";
 import mobileHome from "../../assets/home-mobile.webp";
 import liningHome from "../../assets/lining.png";
 import Hero from "../../assets/Hero.png";
+import HeroMob from "../../assets/Hero_mob.png";
 import bg from "../../assets/Group (1).png";
 import "./home.scss";
 import { Link } from "react-router-dom";
