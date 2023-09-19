@@ -14,6 +14,8 @@ import bg from "../../assets/Group (1).png";
 import "./home.scss";
 import { Link } from "react-router-dom";
 import blogData from "../../store/blogData";
+import ReactPlayer from 'react-player'
+import HeroVid from '../../assets/HeroNew.mp4'
 
 const Home = ({ changeLang }) => {
   useEffect(() => {
@@ -55,12 +57,15 @@ const Home = ({ changeLang }) => {
               </div>
             )}
           </div>
-          <div className="">
+          <div className="random">
             <div className="white"></div>
             {/* <img loading="lazy" src={mobileHome} draggable="false" alt="" /> */}
 
             {/* <img src={liningHome} loading="lazy" draggable="false" alt="" /> */}
-            <img src={Hero} loading="lazy" draggable="false" alt="" />
+            {/* <img src={Hero} loading="lazy" draggable="false" alt="" /> */}
+            <div className="video">
+            <ReactPlayer   url={HeroVid} loop={true} playing={true} volume={0}/>
+            </div>
           </div>
         </section>
 
