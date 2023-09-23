@@ -23,18 +23,24 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      height: calc(10vh + 10vw);
+      height: calc(8vh + 8vw);
       background-color: #fffff9;
+      @include mobile{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
       h1 {
         font-size: calc(2.5vw + 1.5rem);
         font-weight: 700;
         color: themed("brand");
         margin-left: 8vw;
-        background-color: white;
+        // background-color: white;
         border-color: azure;
-        filter: drop-shadow(4px 4px 30px rgba(0, 0, 0, 0.25));
+        // filter: drop-shadow(2px 4px 30px rgba(0, 0, 0, 0.25));
         padding: 10px;
+        
       }
     }
 
@@ -106,7 +112,7 @@
         margin: 12vh 0;
         background-color: #fffff9;
         border-radius: 24px;
-        padding: 20px;
+        padding: 15px;
         justify-content: space-between;
         z-index: 50;
 

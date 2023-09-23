@@ -127,41 +127,8 @@ const Home = ({ changeLang }) => {
             </div>
           </div>
         </section>
-        <section className="sec-5">
-          <div className="container">
-            <div className="content">
-              <div>
-                <div className="name-tag">
-                  {!changeLang ? <p>Name:</p> : <p>नाम:</p>}
-                  <input></input>
-                </div>
-                <div className="Whatsapp-tag">
-                  {!changeLang ? <p>WhatsApp No.:</p> : <p>व्हाट्सएप नंबर:</p>}
-                  <input></input>
-                </div>
-              </div>
-              <div>
-                <div className="Email">
-                  {!changeLang ? <p>E-mail:</p> : <p>ईमेल:</p>}
-                  <input></input>
-                </div>
-                <div className="msg-tag">
-                {!changeLang ? <p>Your Message:</p> : <p>आपका संदेश:</p>}
-                  <input className="message-input"></input>
-                </div>
-              </div>
-            </div>
-            <div className="submit">
-            {!changeLang ? <a href="">Submit</a>: <a href="">जमा करना</a>}
-            </div>
-          </div>
-        </section>
+        
         <section className="sec-4" id="sec-4">
-          <a href="#sec-1">
-            <div className="up">
-              <img src={upArrow} alt="" draggable="false" />
-            </div>
-          </a>
           <div className="container">
             <span>{!changeLang ? "Blogs" : "ब्लॉग"}</span>
             <div className="blogs">
@@ -186,6 +153,41 @@ const Home = ({ changeLang }) => {
               {!changeLang ? "Show All Blogs" : "ब्लॉग"}
             </Link>
           </div>
+        </section>
+
+        <section className="sec-5">
+          <div className="container">
+            <div className="content">
+              <div className="half">
+                <div className="name-tag">
+                  {!changeLang ? <p>Name:</p> : <p>नाम:</p>}
+                  <input></input>
+                </div>
+                <div className="Whatsapp-tag">
+                  {!changeLang ? <p>WhatsApp No.:</p> : <p>व्हाट्सएप नंबर:</p>}
+                  <input></input>
+                </div>
+              </div>
+              <div className="half">
+                <div className="Email">
+                  {!changeLang ? <p>E-mail:</p> : <p>ईमेल:</p>}
+                  <input></input>
+                </div>
+                <div className="msg-tag">
+                {!changeLang ? <p>Your Message:</p> : <p>आपका संदेश:</p>}
+                  <input className="message-input"></input>
+                </div>
+              </div>
+            </div>
+            <div className="submit">
+            {!changeLang ? <button href="">Submit</button>: <button href="">जमा करना</button>}
+            </div>
+          </div>
+          <a className="arrow" href="#sec-1">
+            <div className="up">
+              <img src={upArrow} alt="" draggable="false" />
+            </div>
+          </a>
         </section>
       </div>
     </>

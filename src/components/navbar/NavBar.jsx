@@ -34,7 +34,7 @@ const NavBar = ({ changeLang, setChangeLang }) => {
             <Link style={{ textDecoration: "none" }} to="/services">
               <span>{!changeLang ? "Services" : "सेवाएं"}</span>
             </Link>
-            <HashLink style={{ textDecoration: "none" }} to="/#sec-4">
+            <HashLink style={{ textDecoration: "none" }} to="/blogs">
               <span>{!changeLang ? "Blogs" : "ब्लॉग"}</span>
             </HashLink>
             <Link style={{ textDecoration: "none" }} to="/contact">

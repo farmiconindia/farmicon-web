@@ -26,15 +26,15 @@ const Services = ({ changeLang }) => {
             <div className="left-box">
               <span>
                 {!changeLang
-                  ? "Consult our Crop Doctor"
-                  : "हमारे फसल चिकित्सक से परामर्श करें"}
+                  ? "Crop Doctor"
+                  : "फसल चिकित्सक"}
               </span>
               <p>
                 {!changeLang
                   ? "Turn your mobile phone into crop doctor: send us picture of your crop and get diagnosis of infected crop and its solution."
                   : "अपने मोबाइल फोन को क्रॉप डॉक्टर बनाएं: हमें अपनी फसल की तस्वीर भेजें और संक्रमित फसल का निदान और उसका समाधान प्राप्त करें।"}
               </p>
-              <a href="" className="">Consult Now</a>
+              <Link to="/services/checkDisease" className="">Consult Now</Link>
             </div>
             <div className="right-box">
               <img src={cropDoc} alt="" />
