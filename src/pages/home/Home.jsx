@@ -9,6 +9,7 @@ import upArrow from "../../assets/up-arrow.png";
 import mobileHome from "../../assets/home-mobile.webp";
 import liningHome from "../../assets/lining.png";
 import Hero from "../../assets/Hero.png";
+import DroneHero from "../../assets/DroneHero.png";
 import HeroMob from "../../assets/Hero_mob.png";
 import bg from "../../assets/Group (1).png";
 import "./home.scss";
@@ -103,6 +104,34 @@ const Home = ({ changeLang }) => {
             </div>
           </div>
         </section>
+
+        <section className="sec-6" id="sec-6">
+          <div className="container">
+            {/* translation */}
+
+            {!changeLang ? (
+              <div className="left-box">
+                <span>Our Product</span>
+                <p>
+                Introducing our game-changing <em>Agricultural Spray Drone</em> – a revolution in farming. This high-tech drone offers precision and efficiency like never before. Imagine a future where precision meets efficiency, where every drop of pesticide or fertilizer is applied with pinpoint accuracy. It swiftly covers large areas, reducing labor costs while ensuring precise pesticide and fertilizer application. The Agricultural Spray Drone is not just a product; it's a partner in your farm's success story. Join the agricultural revolution today and experience the future of farming firsthand.
+                </p>
+                <Link to="">Know More</Link>
+              </div>
+            ) : (
+              <div className="left-box">
+                <span>हमारे उत्पाद</span>
+                <p>
+                पेश है हमारे गेम-चेंजिंग <em>एग्रीकल्चरल स्प्रे ड्रोन</em> - खेती में एक क्रांति। यह हाई-टेक ड्रोन पहले जैसी सटीकता और दक्षता प्रदान करता है। ऐसे भविष्य की कल्पना करें जहां सटीकता दक्षता से मिलती है, जहां कीटनाशक या उर्वरक की हर बूंद को सटीक सटीकता के साथ लागू किया जाता है। यह तेजी से बड़े क्षेत्रों को कवर करता है, श्रम लागत को कम करता है और सटीक कीटनाशक और उर्वरक अनुप्रयोग सुनिश्चित करता है। कृषि स्प्रे ड्रोन सिर्फ एक उत्पाद नहीं है; यह आपके खेत की सफलता की कहानी में भागीदार है। आज ही कृषि क्रांति में शामिल हों और खेती के भविष्य का प्रत्यक्ष अनुभव लें।
+                </p>
+                <Link to="">और जानिए</Link>
+              </div>
+            )}
+            <div className="right-box">
+              <img src={DroneHero} alt="" draggable="false" />
+            </div>
+          </div>
+        </section>
+        
         <section className="sec-3" id="sec-3">
           <div className="container">
             {!changeLang ? (
