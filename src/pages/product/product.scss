@@ -1,0 +1,133 @@
+@import "../../style.scss";
+
+.product{
+    @include themify($themes){
+    .sec-1{
+      margin: 2% 5% 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    //   height: calc(8vh + 8vw);
+    //   background-color: #fffff9;
+      gap: 2rem;
+      h1 {
+        align-self: flex-start;
+        font-size: calc(2vw + 1rem);
+        font-weight: 700;
+        color: themed("brand");
+        // margin-left: 8vw;
+        // background-color: white;
+        border-color: azure;
+        // filter: drop-shadow(2px 4px 30px rgba(0, 0, 0, 0.25));
+        padding: 10px;
+      }
+      .video{
+        @include mobile{
+            transform: scale(0.5);
+        }
+      }
+    }
+    .sec-2{
+        margin: 2% 5% 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      h1 {
+          align-self: flex-start;
+          font-size: calc(1.5vw + 0.9rem);
+          font-weight: 700;
+          color: themed("brand");
+          border-color: azure;
+          margin-bottom: 1%;
+          // padding: 10px;
+        }
+  
+      h2{
+          align-self: flex-start;
+          margin-top: 2%;
+          margin-bottom: 1%;
+          color: themed("brand");
+  
+      }
+      p{
+  
+          em {
+              font-weight: 600;
+              font-size: 18px;
+               font-style: normal;
+            }
+      }
+      .keyfeat{
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1rem;
+      }
+    }
+
+    .sec-3{
+        margin: 2% 5% 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+  
+        h1 {
+            align-self: flex-start;
+            font-size: calc(1.5vw + 0.9rem);
+            font-weight: 700;
+            color: themed("brand");
+            border-color: azure;
+            // margin-bottom: 1%;
+            // padding: 10px;
+          }
+
+        .container{
+            display: flex;
+            align-items: center;
+            display: flex;
+            width: 90%;
+            color: black;
+            justify-content: center;
+            align-items: center;
+            gap: calc(1rem + 9vw);
+
+            @include mobile{
+                flex-direction: column;
+                width: 100%;
+            }
+
+        }
+        .left{
+            width: 50%;
+            @include mobile{
+                width: 90%;
+            }
+
+        }
+        .right{
+            display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40%;
+
+          img {
+            display: block;
+            width: 100%;
+          }
+
+          @include mobile{
+            width: 100%;
+          }
+        }
+
+    }
+
+
+
+}
+
+}

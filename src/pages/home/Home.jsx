@@ -112,10 +112,11 @@ const Home = ({ changeLang }) => {
             {!changeLang ? (
               <div className="left-box">
                 <span>Our Product</span>
+                <span className="heading">Agricultutral Drone</span>
                 <p>
                 Introducing our game-changing <em>Agricultural Spray Drone</em> – a revolution in farming. This high-tech drone offers precision and efficiency like never before. Imagine a future where precision meets efficiency, where every drop of pesticide or fertilizer is applied with pinpoint accuracy. It swiftly covers large areas, reducing labor costs while ensuring precise pesticide and fertilizer application. The Agricultural Spray Drone is not just a product; it's a partner in your farm's success story. Join the agricultural revolution today and experience the future of farming firsthand.
                 </p>
-                <Link to="">Know More</Link>
+                <Link to="/product">Know More</Link>
               </div>
             ) : (
               <div className="left-box">
@@ -130,6 +131,7 @@ const Home = ({ changeLang }) => {
               <img src={DroneHero} alt="" draggable="false" />
             </div>
           </div>
+            <button>BUY NOW</button>
         </section>
         
         <section className="sec-3" id="sec-3">

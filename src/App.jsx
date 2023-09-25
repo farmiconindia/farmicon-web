@@ -13,6 +13,7 @@ import Blog from "./pages/blog/Blog";
 import Weather from "./pages/weather/Weather";
 import Contact from "./pages/contact/Contact";
 import BlogPage from "./pages/blogPage/BlogPag";
+import Product from "./pages/product/Product";
 
 function App() {
   const [changeLang, setChangeLang] = useState(false);
@@ -38,6 +39,11 @@ function App() {
         {
           path: "/services",
           element: <Services changeLang={changeLang} />,
+        },
+        {
+          path:"/product",
+          element: <Product changelang={changeLang}/>
+
         },
         {
           path: "/services/cropPrice",
