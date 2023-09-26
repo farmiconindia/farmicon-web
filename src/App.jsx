@@ -5,6 +5,7 @@ import NavBar from "./components/navbar/NavBar";
 import Home from "./pages/home/Home";
 import CheckDisease from "./pages/services/checkDisease/CheckDisease";
 import CropPrice from "./pages/services/CropPrice/CropPrice";
+import Drone from "./pages/services/drone/Drone";
 import Services from "./pages/services/Services";
 import "./style.scss";
 import About from "./pages/about/About";
@@ -14,6 +15,7 @@ import Weather from "./pages/weather/Weather";
 import Contact from "./pages/contact/Contact";
 import BlogPage from "./pages/blogPage/BlogPag";
 import Product from "./pages/product/Product";
+import CropHealth from "./pages/services/cropHealth/CropHealth";
 
 function App() {
   const [changeLang, setChangeLang] = useState(false);
@@ -53,6 +55,15 @@ function App() {
           path: "/services/checkDisease",
           element: <CheckDisease changeLang={changeLang} />,
         },
+        {
+          path: "/services/cropHealth",
+          element: <CropHealth changeLang={changeLang}/>,
+        },
+        {
+          path: "/services/drone",
+          element: <Drone changeLang={changeLang}/>,
+        },
+        
         {
           path: "/about",
           element: <About changeLang={changeLang} />,

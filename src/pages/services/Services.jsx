@@ -72,7 +72,7 @@ const Services = ({ changeLang }) => {
                   : "वास्तविक समय के डेटा, ऐतिहासिक डेटा और बाजार की आवश्यकताओं के आधार पर फसल और सब्जियों की कीमत का अनुमान लगाएं ।"}
                 .
               </p>
-              <Link className="buttton" >Predict Now</Link>
+              <Link className="buttton" to="/services/drone">Predict Now</Link>
             </div>
             <div className="right-box">
               <img src={drone} alt="" />
@@ -92,7 +92,7 @@ const Services = ({ changeLang }) => {
                   ? "Turn your mobile phone into crop doctor: send us picture of your crop and get diagnosis of infected crop and its solution."
                   : "अपने मोबाइल फोन को क्रॉप डॉक्टर बनाएं: हमें अपनी फसल की तस्वीर भेजें और संक्रमित फसल का निदान और उसका समाधान प्राप्त करें।"}
               </p>
-              <Link className="buttton" to="/services/checkDisease">Predict Now</Link>
+              <Link className="buttton" to="/services/cropHealth">Predict Now</Link>
             </div>
             <div className="right-box">
               <img src={cropHealth} alt="" />
