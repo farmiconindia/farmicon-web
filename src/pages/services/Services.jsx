@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import mobile from "../../assets/mobile.png";
 import cropDoc from "../../assets/crop-doc2.png";
@@ -10,6 +11,9 @@ import lining from "../../assets/lining.png";
 import "./services.scss";
 
 const Services = ({ changeLang }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <div className="services">
