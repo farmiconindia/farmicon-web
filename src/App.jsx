@@ -16,6 +16,7 @@ import Contact from "./pages/contact/Contact";
 import BlogPage from "./pages/blogPage/BlogPag";
 import Product from "./pages/product/Product";
 import CropHealth from "./pages/services/cropHealth/CropHealth";
+import SoilHealth from "./pages/services/soilhealth/SoilHealth";
 
 function App() {
   const [changeLang, setChangeLang] = useState(false);
@@ -58,6 +59,10 @@ function App() {
         {
           path: "/services/cropHealth",
           element: <CropHealth changeLang={changeLang}/>,
+        },
+        {
+          path: "/services/soilHealth",
+          element: <SoilHealth changeLang={changeLang}/>,
         },
         {
           path: "/services/drone",
