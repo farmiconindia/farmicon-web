@@ -74,6 +74,18 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
+
+        button {
+          text-decoration: none;
+          width: 20%;
+          text-align: center;
+          font-size: larger;
+          background-color: #054e45;
+          border-radius: 4px;
+          padding: 0.5rem 1rem;
+          color: white;
+          margin: 2%;
+        }
   
         h1 {
             align-self: flex-start;

@@ -4,58 +4,160 @@
 .contact {
     @include themify($themes) {
         padding: 2rem 0;
+        background-color: #fbf9d4 ;
 
-        .contact-form {
-
-            max-width: 400px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fbf9d4 ;
-            border-radius: 5px;
-            // box-shadow: 0 2px 4px #0000001a;
-
-            h2 {
-                text-align: center;
-                margin-bottom: 20px;
+        .container {
+            display: flex;
+            width: 100%;
+            color: black;
+            justify-content: center;
+            align-items: center;
+            //   gap: calc(1rem + 9vw);
+    
+            @include tablet {
             }
+    
+            @include mobile {
+              flex-direction: column;
+            }
+    
+            .right {
+              display: flex;
+              align-items: flex-start;
+              flex-direction: column;
+              justify-content: center;
+              // gap: calc(1rem + 3vw);
+              gap: 2rem;
+              width: 50%;
+    
+              @include tablet {
+              }
+    
+              @include mobile {
+                width: 100%;
+                justify-content: center;
+                align-items: center;
+              }
 
-            form {
-                .form-group {
-                    display: flex;
-                    flex-direction: column;
-                    margin-bottom: 15px;
+              .contact-form {
 
-                    label {
-                        font-weight: bold;
-                        margin-bottom: 5px;
-                    }
-
-                    input,
-                    textarea {
-                        padding: 10px;
-                        border-radius: 5px;
-                        border: 1px solid #ccc;
-                        font-size: 14px;
-                        outline: none;
-                    }
+                // max-width: 400px;
+                margin: 0 auto;
+                // padding: 20px;
+                width: 60%;
+                background-color: #fbf9d4 ;
+                border-radius: 5px;
+                // box-shadow: 0 2px 4px #0000001a;
+    
+                h2 {
+                    text-align: center;
+                    margin-bottom: 20px;
                 }
-
-                button[type='submit'] {
-                    padding: 10px 20px;
-                    background-color: themed("brand");
-                    color: #fff;
-                    border: none;
-                    border-radius: 5px;
-                    font-size: 16px;
-                    cursor: pointer;
-
-                    &:hover {
+    
+                form {
+                    .form-group {
+                        display: flex;
+                        flex-direction: column;
+            
+    
+                        label {
+                            font-weight: bold;
+                            margin-bottom: 5px;
+                        }
+    
+                        input,
+                        textarea {
+                            padding: 10px;
+                            border-radius: 5px;
+                            width: 100%;
+                            border: 1px solid #ccc;
+                            font-size: 14px;
+                            outline: none;
+                        }
+                    }
+    
+                    button[type='submit'] {
+                        padding: 10px 20px;
                         background-color: themed("brand");
+                        color: #fff;
+                        border: none;
+                        border-radius: 5px;
+                        margin: 10% 0%;
+                        font-size: 16px;
+                        cursor: pointer;
+    
+                        &:hover {
+                            background-color: themed("brand");
+                        }
                     }
                 }
+    
+    
             }
+    
+              span {
+                font-size: xx-large;
+                border-radius: 4px;
+                color: themed("brand");
+                font-weight: 900;
+    
+                @include tablet {
+                }
+    
+                @include mobile {
+                  width: 100%;
+                  text-align: center;
+                }
+              }
+    
+              p {
+                font-weight: 400;
+                font-size: 18px;
+    
+                em {
+                  font-weight: 700;
+                  font-size: 18px;
+                }
+    
+                @include tablet {
+                }
+    
+                @include mobile {
+                  text-align: justify;
+                }
+              }
+    
+              a {
+                text-decoration: none;
+                background-color: #054e45;
+                border-radius: 4px;
+                padding: 0.5rem 1rem;
+                color: white;
+              }
+            }
+    
+            .left {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 40%;
+              // height: 100vh;
+    
+              img {
+                display: block;
+                width: 100%;
+                transform: scale(0.9);
+              }
+    
+              @include tablet {
+              }
+    
+              @include mobile {
+                display: none;
+              }
+            }
+          }
 
-
-        }
+        
     }
 }

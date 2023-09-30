@@ -105,6 +105,7 @@ const Product = ({ changelang }) => {
                 <img src={DroneHero} className="image"/>
             </div>
           </div>
+          <button>Buy Now</button>  
         </section>
       </div>
     </>
