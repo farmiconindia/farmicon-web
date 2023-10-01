@@ -13,6 +13,7 @@ const CropHealth = () => {
   return (
     <>
     <div className='crophealth'>
+    <h1>Crop Health Monitoring System</h1>
         <section className='sec-1'>
             <div className='container'>
                 <div className='left'>

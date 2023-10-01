@@ -22,6 +22,7 @@
         font-size: xxx-large;
         text-decoration: underline;
         @include mobile {
+          font-size: x-large;
           align-self: center;
           justify-self: center;
           text-align: center;
@@ -33,6 +34,14 @@
         color: themed("brand");
         font-weight: 900;
         align-self: flex-start;
+        @include mobile{
+          font-size: larger;
+        }
+      }
+      p{
+        @include mobile{
+          font-size: 15px;
+        }
       }
     }
     .sec-2 {
@@ -56,6 +65,7 @@
         font-size: xxx-large;
         text-decoration: underline;
         @include mobile {
+          font-size: x-large;
           align-self: center;
           justify-self: center;
           text-align: center;
@@ -105,6 +115,7 @@
             }
 
             @include mobile {
+              font-size: x-large;
               width: 100%;
               text-align: center;
             }
@@ -113,10 +124,16 @@
           p {
             font-weight: 400;
             font-size: 18px;
+            @include mobile{
+              font-size: 15px;
+            }
 
             em {
               font-weight: 700;
               font-size: 18px;
+              @include mobile{
+                font-size: 15px;
+              }
             }
 
             @include tablet {
@@ -193,6 +210,7 @@
         font-weight: 900;
 
         @include mobile {
+          font-size: x-large;
           align-self: center;
           justify-self: center;
           text-align: center;
@@ -200,11 +218,17 @@
       }
       p {
         font-size: 18px;
+        @include mobile{
+          font-size: 15px;
+        }
       }
       em {
         font-weight: 600;
         font-size: 18px;
         font-style: normal;
+        @include mobile{
+          font-size: 15px;
+        }
       }
 
       .list {
@@ -273,6 +297,7 @@
             }
 
             @include mobile {
+              font-size: x-large;
               width: 100%;
               text-align: center;
             }
@@ -281,6 +306,9 @@
           p {
             font-weight: 500;
             font-size: 20px;
+            @include mobile{
+              font-size: 18px;
+            }
 
             em {
               font-weight: 700;
@@ -321,7 +349,7 @@
           }
 
           @include mobile {
-            width: 40%;
+            width: 100%;
           }
         }
       }
@@ -333,6 +361,7 @@
       flex-direction: column;
     //   padding: 2rem;
       margin: 0% 5% 0%;
+      margin-bottom: 10%;
       h1 {
         background-color: #054e45;
         width: 100%;
@@ -341,6 +370,9 @@
         color: white;
         padding: 0.3rem;
         margin: 5% 0% 5%;
+        @include mobile{
+          font-size: x-large;
+        }
       }
 
       button {
@@ -360,6 +392,9 @@
 
       h2 {
         align-self: flex-start;
+        @include mobile{
+          font-size: x-large;
+        }
       }
       .heading2 {
         margin-top: 2%;
@@ -392,6 +427,9 @@
           font-style: normal;
           font-weight: 600;
           margin-top: 2%;
+          @include mobile{
+            font-size: 15px;
+          }
         }
       }
     }
