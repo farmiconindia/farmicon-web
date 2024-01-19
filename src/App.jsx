@@ -18,6 +18,8 @@ import Product from "./pages/product/Product";
 import CropHealth from "./pages/services/cropHealth/CropHealth";
 import SoilHealth from "./pages/services/soilhealth/SoilHealth";
 
+import { Analytics } from '@vercel/analytics/react';
+
 function App() {
   const [changeLang, setChangeLang] = useState(false);
   const Layout = () => {
@@ -95,6 +97,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router} />
+      <Analytics />
     </>
   );
 }
