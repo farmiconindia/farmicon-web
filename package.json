@@ -22,7 +22,8 @@
     "react-player": "^2.13.0",
     "react-router-dom": "^6.11.2",
     "react-router-hash-link": "^2.4.3",
-    "sass": "^1.57.1"
+    "sass": "^1.57.1",
+    "@vercel/analytics":"^1.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
