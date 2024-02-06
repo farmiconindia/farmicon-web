@@ -65,7 +65,7 @@ const Home = ({ changeLang }) => {
             {/* <img src={liningHome} loading="lazy" draggable="false" alt="" /> */}
             {/* <img src={Hero} loading="lazy" draggable="false" alt="" /> */}
             <div className="video">
-            <ReactPlayer   url={HeroVid} loop={true} playing={true} volume={0}/>
+            <ReactPlayer  pip={false} url={HeroVid} loop={true} playing={true} volume={0}/>
             </div>
           </div>
         </section>
