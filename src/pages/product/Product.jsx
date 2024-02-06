@@ -2,7 +2,7 @@ import React from "react";
 import ReactPlayer from "react-player";
 import { useEffect } from "react";
 import DroneHero from "../../assets/DroneHero.png";
-import DroneVid from '../../assets/drone_cb.mp4'  //opening drone
+import DroneVid from "../../assets/drone_cb.gif";  //opening drone
 // const VIDEO_PATH = "https://c.effort-tech.com/yft/web/video_en/E616.mp4"; //closing drone
 import "./product.scss";
 
@@ -27,12 +27,18 @@ const Product = ({ changelang }) => {
             revolution today and experience the future of farming firsthand.
           </p>
           <div className="video">
-            <ReactPlayer
+{/*             <ReactPlayer
               url={DroneVid}
               loop={true}
               playing={true}
               volume={0}
-            />
+            /> */}
+              <img src={DroneGif} 
+            loop={true}
+            playing={true}
+            volume={0}
+            alt="Drone GIF"
+            style={{ width: '600px', height: '300px' }} />
           </div>
           <p>
             Welcome to the future of agriculture with our state-of-the-art
