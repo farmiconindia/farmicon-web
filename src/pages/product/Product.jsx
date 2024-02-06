@@ -2,7 +2,7 @@ import React from "react";
 import ReactPlayer from "react-player";
 import { useEffect } from "react";
 import DroneHero from "../../assets/DroneHero.png";
-import DroneVid from "../../assets/drone_cb.gif";  //opening drone
+import DroneGif from "../../assets/drone_cb.gif";  //opening drone
 // const VIDEO_PATH = "https://c.effort-tech.com/yft/web/video_en/E616.mp4"; //closing drone
 import "./product.scss";
 
