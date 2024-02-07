@@ -16,7 +16,9 @@ import "./home.scss";
 import { Link } from "react-router-dom";
 import blogData from "../../store/blogData";
 import ReactPlayer from 'react-player'
-import HeroVid from '../../assets/HeroNew.mp4'
+// import HeroVid from '../../assets/HeroNew.mp4'
+import HeroVid from '../../assets/HeroNew_adobe.gif'
+
 
 const Home = ({ changeLang }) => {
   useEffect(() => {
@@ -65,7 +67,9 @@ const Home = ({ changeLang }) => {
             {/* <img src={liningHome} loading="lazy" draggable="false" alt="" /> */}
             {/* <img src={Hero} loading="lazy" draggable="false" alt="" /> */}
             <div className="video">
-            <ReactPlayer  pip={false} url={HeroVid} loop={true} playing={true} volume={0}/>
+{/*             <ReactPlayer  pip={false} url={HeroVid} loop={true} playing={true} volume={0}/> */}
+              <img src={HeroVid} loop={true} playing={true} volume={0} alt="Drone GIF"
+             style={{ width: '650px', height: 'auto' }} />
             </div>
           </div>
         </section>
