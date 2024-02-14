@@ -8,6 +8,7 @@
     background: #fff;
     z-index: 10000;
 
+
     header {
         display: flex;
         justify-content: space-between;
@@ -47,6 +48,9 @@
                     background-color: themed("brand");
                     border-radius: 4px;
                 }
+                .logo:hover {
+                    transform: scale(1.1);
+                }
 
                 span {
 
@@ -63,6 +67,14 @@
                 align-items: center;
                 width: calc(45vw + 10rem);
 
+                .zoom-in{
+                    transition: ease-in-out;
+                  }
+          
+                  .zoom-in:hover {
+                    transform: scale(1.1);
+                   } 
+
                 @include tablet {
                     display: none;
                 }
@@ -76,7 +88,7 @@
                     font-size: calc(0.8vw + 0.5rem);
                 }
             }
-
+            
             .burger {
 
                 display: none;
