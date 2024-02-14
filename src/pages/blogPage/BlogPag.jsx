@@ -11,7 +11,7 @@ const BlogPage = ({ changeLang }) => {
   return (
     <div className="blog-page">
       <div className="blog-page-container">
-        <span>All Blogs</span>
+        <span>{!changeLang ? "Blogs" : "ब्लॉग"}</span>
 
         <div className="blogs">
           {blogData.map((blog, i) => {
