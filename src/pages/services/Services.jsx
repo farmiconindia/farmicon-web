@@ -3,9 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import mobile from "../../assets/mobile.png";
 import cropDoc from "../../assets/crop-doc2.png";
-
 import cropPrice from "../../assets/crop-price3.png";
-
 import cropHealth from "../../assets/crop_health.jpg";
 import drone from "../../assets/drone2.png";
 
