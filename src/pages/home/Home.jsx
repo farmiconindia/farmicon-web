@@ -16,12 +16,18 @@ import "./home.scss";
 import { Link } from "react-router-dom";
 import blogData from "../../store/blogData";
 import ReactPlayer from 'react-player'
-import HeroVid from '../../assets/HeroNew.mp4'
+import HeroVid from '../../assets/HeroNew_adobe.gif'
+import image1 from '../../assets/Hydroponics.jpg'
+import image2 from '../../assets/organicFarm.jpg'
+import image3 from '../../assets/Tomatotips.jpg'
 
-const Home = ({ changeLang }) => {
+const Home = ({i, changeLang }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
+
+  const images = [image1, image2, image3];
+  // const selectedImage = images[i % images.length];
 
   return (
     <>
@@ -46,18 +52,19 @@ const Home = ({ changeLang }) => {
                 <p className="inc">Increase your</p>
                 <p>Yield with</p>
                 <span className="gradient">FARMICON</span>
-                <a href="#">Download App</a>
+                <a className="downloadApp" href="#">Download App</a>
               </div>
             ) : (
               <div className="content">
                 <p className="hindi">बुद्धिमान समाधानों के साथ कृषि को बदलना</p>
                 <p className="gradient hindi">दक्षता, लाभप्रदता और स्थिरता</p>
-                <a href="#">
+                <a className="downloadApp" href="#">
                   {!changeLang ? "Download App" : "ऐप डाउनलोड करें"}
                 </a>
               </div>
             )}
           </div>
+
           <div className="random">
             <div className="white"></div>
             {/* <img loading="lazy" src={mobileHome} draggable="false" alt="" /> */}
@@ -65,7 +72,9 @@ const Home = ({ changeLang }) => {
             {/* <img src={liningHome} loading="lazy" draggable="false" alt="" /> */}
             {/* <img src={Hero} loading="lazy" draggable="false" alt="" /> */}
             <div className="video">
-            <ReactPlayer   url={HeroVid} loop={true} playing={true} volume={0}/>
+            {/* <ReactPlayer pip={false}  url={HeroVid} loop={true} playing={true} volume={0}/> */}
+            <img src={HeroVid} loop={true} playing={true} volume={0} loading="lazy" alt="Drone GIF"
+             style={{ width: '650px', height: 'auto' }} />
             </div>
           </div>
         </section>
@@ -84,7 +93,10 @@ const Home = ({ changeLang }) => {
                   <em> Mobility Integrated Artificial Intelligence </em> model,
                   weather information to save the crops, account management etc.
                 </p>
+                <div className="allServices">
                 <Link to="/services">All Services</Link>
+                </div>
+
               </div>
             ) : (
               <div className="left-box">
@@ -96,7 +108,10 @@ const Home = ({ changeLang }) => {
                   <em> गतिशीलता एकीकृत आर्टिफिशियल इंटेलिजेंस</em> नमूना, फसलों
                   को बचाने के लिए मौसम की जानकारी, खाता प्रबंधन आदि।
                 </p>
+                <div className="allServices">
                 <Link to="/services">सभी सेवाएं</Link>
+                </div>
+
               </div>
             )}
             <div className="right-box">
@@ -131,7 +146,7 @@ const Home = ({ changeLang }) => {
               <img src={DroneHero} alt="" draggable="false" />
             </div>
           </div>
-            <button>BUY NOW</button>
+            <button  className="buyNow" >BUY NOW</button>
         </section>
         
         <section className="sec-3" id="sec-3">
@@ -164,16 +179,17 @@ const Home = ({ changeLang }) => {
             <span>{!changeLang ? "Blogs" : "ब्लॉग"}</span>
             <div className="blogs">
               {blogData.slice(0, 3).map((blog, i) => {
+                const selectedImage = images[i % images.length];
                 return (
                   <div className="blog" key={i}>
-                    <img src={blog2} alt="" />
+                    <img style={{width: "346px", height: "235px"}} src={selectedImage} alt="" />
                     <div className="desc">
                       <p>{!changeLang ? blog.title : blog?.titleHin}</p>
                       <div className="blog-more">
                         <Link to={`/blogs/${blog.id}`}>
                           {!changeLang ? "Read More" : "और पढ़ें"}
                         </Link>
-                        <span>{!changeLang ? "July 2021" : "जुलाई 2021"} </span>
+                        <span>{!changeLang ? "February 2024" : "फ़रवरी 2024"} </span>
                       </div>
                     </div>
                   </div>
@@ -187,39 +203,84 @@ const Home = ({ changeLang }) => {
         </section>
 
         <section className="sec-5">
-          <div className="container">
-            <div className="content">
-              <div className="half">
-                <div className="name-tag">
-                  {!changeLang ? <p>Name:</p> : <p>नाम:</p>}
-                  <input></input>
-                </div>
-                <div className="Whatsapp-tag">
-                  {!changeLang ? <p>WhatsApp No.:</p> : <p>व्हाट्सएप नंबर:</p>}
-                  <input></input>
-                </div>
-              </div>
-              <div className="half">
-                <div className="Email">
-                  {!changeLang ? <p>E-mail:</p> : <p>ईमेल:</p>}
-                  <input></input>
-                </div>
-                <div className="msg-tag">
-                {!changeLang ? <p>Your Message:</p> : <p>आपका संदेश:</p>}
-                  <input className="message-input"></input>
-                </div>
-              </div>
-            </div>
-            <div className="submit">
-            {!changeLang ? <button href="">Submit</button>: <button href="">जमा करना</button>}
-            </div>
+  <div className="container">
+    <div className="content">
+      <form
+        action="https://formspree.io/f/xbjngblj"
+        method="POST"
+        className="content"
+      >
+        <div className="half">
+          <div className="name-tag">
+            {!changeLang ? <p style={{ marginBottom: "10px" }} >Name:</p> : <p style={{ marginBottom: "10px" }}  >नाम:</p>}
+            <input
+              type="text"
+              name="username"
+              placeholder={!changeLang ? "Username" : "उपयोगकर्ता नाम"}
+              autoComplete="off"
+              required
+            />
           </div>
-          <a className="arrow" href="#sec-1">
-            <div className="up">
-              <img src={upArrow} alt="" draggable="false" />
-            </div>
-          </a>
-        </section>
+          <div className="Whatsapp-tag">
+            {!changeLang ? <p style={{ marginBottom: "10px" }}>WhatsApp No.:</p> : <p style={{ marginBottom: "10px" }}>व्हाट्सएप नंबर:</p>}
+            <input
+              type="text"
+              name="whatsapp"
+              placeholder={!changeLang ? "WhatsApp No." : "व्हाट्सएप नंबर"}
+              autoComplete="off"
+              required
+            />
+          </div>
+          <div className="Email">
+            {!changeLang ? <p style={{ marginBottom: "10px" }}>E-mail:</p> : <p style={{ marginBottom: "10px" }}>ईमेल:</p>}
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              autoComplete="off"
+              required
+            />
+          </div>
+        </div>
+        <div className="half">
+          <div className="msg-tag">
+            {!changeLang ? <p style={{ marginBottom: "10px" }}>Your Message:</p> : <p style={{ marginBottom: "10px" }}>आपका संदेश:</p>}
+            <textarea
+              name="message"
+              cols="30"
+              rows="10"
+              className="message-input"
+              placeholder={!changeLang ? "Your Message" : "आपका संदेश"}
+              autoComplete="off"
+              required
+              
+            ></textarea>
+          </div>
+          <div className="submit">
+            {!changeLang ? (
+              <button type="submit" style={{ cursor: "pointer", width: "200px", height: "40px" , marginBottom: "140px" }}>
+                Submit
+              </button>
+            ) : (
+              <button type="submit">जमा करना</button>
+            )}
+          </div>
+        </div>
+      </form>
+    </div>
+    <a className="arrow" href="#sec-1">
+      <div className="up">
+        <img
+          className="upArrow"
+          src={upArrow}
+          alt=""
+          draggable="false"
+        />
+      </div>
+    </a>
+  </div>
+</section>
+
       </div>
     </>
   );
