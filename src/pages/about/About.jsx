@@ -21,7 +21,7 @@ const About = ({ changeLang }) => {
                   industry through innovative technology solutions. Our startup
                   was founded in 2021 with a mission to empower farmers with
                   advanced farming tools that increase efficiency, productivity,
-                  and profitability.
+                  and profitability..
                 </p>
                 <p>
                   At Farmicon, we understand the challenges farmers face in the
