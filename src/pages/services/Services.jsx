@@ -11,7 +11,7 @@ import soilHealth from "../../assets/soil-health2.png";
 import lining from "../../assets/lining.png";
 import "./services.scss";
 import organicFarming from "../../assets/organic_farming.jpg";
-import WeatherInfo from "../../assets/Weather_info.jpg"
+import WeatherInfo from "../../assets/weather_info.jpg"
 import coldStorage from "../../assets/coldStorage.jpg";
 
 const Services = ({ changeLang }) => {
