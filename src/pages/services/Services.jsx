@@ -3,12 +3,18 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import mobile from "../../assets/mobile.png";
 import cropDoc from "../../assets/crop-doc2.png";
-import cropPrice from "../../assets/crop-price2.png";
-import cropHealth from "../../assets/crop-health2.png";
+// import cropPrice from "../../assets/crop-price2.png";
+import cropPrice from "../../assets/cropPrice.png";
+// import cropHealth from "../../assets/crop-health2.png";
+import cropHealth from "../../assets/crop_health.jpg";
 import drone from "../../assets/drone2.png";
+// import drone from "../../assets/hi-tech_drone.jpg";
 import soilHealth from "../../assets/soil-health2.png";
 import lining from "../../assets/lining.png";
 import "./services.scss";
+import organicFarming from "../../assets/organic_farming.jpg";
+import WeatherInfo from "../../assets/Weather_info.jpg"
+import coldStorage from "../../assets/coldStorage.jpg";
 
 const Services = ({ changeLang }) => {
   useEffect(() => {
@@ -41,7 +47,7 @@ const Services = ({ changeLang }) => {
               <Link to="/services/checkDisease" className="">Consult Now</Link>
             </div>
             <div className="right-box">
-              <img src={cropDoc} alt="" />
+              <img  src={cropDoc} alt="" />
             </div>
           </div>
           <div className="container two">
@@ -79,10 +85,10 @@ const Services = ({ changeLang }) => {
               <Link className="buttton" to="/services/drone">Book Now</Link>
             </div>
             <div className="right-box">
-              <img src={drone} alt="" />
+              <img src={drone} style={{width: "300px"}} alt="" />
             </div>
           </div>
-          <div className="container four">
+          {/* <div className="container four">
             <div className="left-box">
                
                 <span>
@@ -101,7 +107,7 @@ const Services = ({ changeLang }) => {
             <div className="right-box">
               <img src={cropHealth} alt="" />
             </div>
-          </div>
+          </div> */}
           <div className="container five">
             <div className="left-box">
               <span>
@@ -128,15 +134,21 @@ const Services = ({ changeLang }) => {
             </div>
             <div className="lower-box">
               <div className="box">
-                <div className="blank"></div>
+                <div className="WeatherInfo">
+                <img src={WeatherInfo} alt="" />
+                </div>
                 <Link to={"/weather"}>{!changeLang ? "Weather Info" : "मौसम की जानकारी"}</Link>
               </div>
               <div className="box">
-                <div className="blank"></div>
+                <div className="organicFarming">
+                <img src={organicFarming} alt="" />
+                </div>
                 <span>{!changeLang ? "Organic Farming" : "जैविक खेती"}</span>
               </div>
               <div className="box">
-                <div className="blank"></div>
+                <div className="coldStorage">
+                  <img src={coldStorage} alt="" />
+                </div>
                 <span>{!changeLang ? "Cold Storage" : "शीतगृह"}</span>
               </div>
             </div>
