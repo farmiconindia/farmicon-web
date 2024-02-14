@@ -183,11 +183,14 @@
         border-radius: 4px;
         padding: 0.5rem 1rem;
         color: white;
+        margin: 0 auto;
       }
       .submit {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 70px;
+        // margin-bottom: 40px;
       }
       p {
         color: #181818;
@@ -212,6 +215,7 @@
         justify-content: center;
         padding: 5%;
         gap: 2rem;
+        padding: 10px 0;
 
         @include mobile {
           align-items: center;
@@ -228,10 +232,21 @@
         }
       }
 
+      .name-tag,
+      .Whatsapp-tag,
+      .Email,
+      .msg-tag {
+        padding-bottom: 10px;
+            }
+
       .message-input {
-        width: 440px;
-        height: 145px;
+        width: 448px;
+        height: 225px;
         flex-shrink: 0;
+        resize: none;
+        box-sizing: border-box;
+        padding: 10px;
+        
       }
 
       @include mobile {
@@ -336,6 +351,14 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
           }
+          
+          .downloadApp{
+            transition: ease-in-out;
+          }
+
+          .downloadApp:hover {
+            transform: scale(1.1);
+           }
 
           @include tablet {
             width: 90%;
@@ -544,6 +567,16 @@
               width: 100%;
               text-align: center;
             }
+
+            .allServices{
+              transition: ease-in-out;
+            }
+  
+            .allServices:hover {
+              transform: scale(1.1);
+             }
+  
+
           }
 
           p {
@@ -570,6 +603,15 @@
             padding: 0.5rem 1rem;
             color: white;
           }
+
+          .allServices{
+            transition: ease-in-out;
+          }
+
+          .allServices:hover {
+            transform: scale(1.1);
+           }
+
         }
 
         .right-box {
@@ -588,8 +630,16 @@
 
           @include mobile {
             width: 100%;
-          }
+          }          
         }
+
+        .buyNow{
+          transition: ease-in-out;
+        }
+
+        .buyNow:hover {
+          transform: scale(1.1);
+         } 
       }
     }
 
@@ -630,6 +680,8 @@
             justify-content: center;
             text-align: center;
           }
+
+          
 
           span {
             font-size: themed("text-lg");
@@ -697,13 +749,19 @@
           text-align: center;
           align-items: center;
           justify-content: center;
+          
+          
+          
 
           img {
             width: 50%;
           }
         }
-      }
 
+        
+        
+      }
+      
       .container {
         display: flex;
         width: 80%;
@@ -735,7 +793,7 @@
             max-width: 346px;
             background-color: #f5f5f5;
             border-radius: 8px;
-
+            
             img {
               object-fit: cover;
             }
@@ -757,7 +815,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-
+                
                 a {
                   text-decoration: none;
                   border-radius: 4px;
