@@ -7,25 +7,43 @@ const Blog = ({ changeLang }) => {
   const { id } = useParams();
   const blog = blogData.find((blog) => blog.id === Number(id));
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const speech = useRef(null);
   const pRef = useRef(null);
-  const [isEnglish, setIsEnglish] = useState(false);
 
-  const handlePlay = () => {
-    if (!isPlaying) {
-      console.log("play");
-      speech.current = new SpeechSynthesisUtterance(pRef.current.textContent);
-      speech.current.lang = "en-IN";
-      window.speechSynthesis.speak(speech.current);
-      setIsPlaying(true);
+  const handleTogglePlay = () => {
+    if (!isPlaying || isPaused) {
+      let textToSpeak = changeLang ? blog?.descriptionHin : blog?.description;
+      if (!textToSpeak) {
+        // If there's no text for the selected language, use the default language
+        textToSpeak = blog?.description;
+      }
+      if (!speech.current) {
+        speech.current = new SpeechSynthesisUtterance(textToSpeak);
+        speech.current.lang = changeLang ? 'hi-IN' : 'en-IN'; // Hindi: hi-IN, English: en-US
+        speech.current.onend = () => {
+          setIsPlaying(false);
+        };
+        setIsPlaying(true);
+        window.speechSynthesis.speak(speech.current);
+      } else if (isPaused) {
+        setIsPaused(false);
+        window.speechSynthesis.resume();
+        setIsPlaying(true);
+      }
+    } else {
+      setIsPaused(true);
+      window.speechSynthesis.pause();
+      setIsPlaying(false);
     }
   };
 
   const handleStop = () => {
-    if (isPlaying) {
-      console.log("stop");
+    if (isPlaying || isPaused) {
       window.speechSynthesis.cancel();
       setIsPlaying(false);
+      setIsPaused(false);
+      speech.current = null;
     }
   };
 
@@ -58,25 +76,26 @@ const Blog = ({ changeLang }) => {
     return () => {
       window.speechSynthesis.cancel();
       setIsPlaying(false);
+      setIsPaused(false);
       speech.current = null;
     };
   }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [location]);
+    // Stop speech synthesis when language is changed
+    handleStop();
+  }, [changeLang]);
 
   return (
     <div className="blog-container">
       <span>{!changeLang ? blog?.title : blog?.titleHin}</span>
       <div className="blog">
         <div className="btn-grp">
-          <button onClick={handlePlay} disabled={isPlaying}>
-            Play
+          <button onClick={handleTogglePlay}>
+            {isPlaying && !isPaused ? "Pause" : "Play"}
           </button>
-          <button onClick={handleStop} disabled={!isPlaying}>
-            Stop
-          </button>
+          <button onClick={handleStop}>Stop</button>
         </div>
         <div className="desc" ref={pRef}>
           {!changeLang ? (
