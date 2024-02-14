@@ -1,0 +1,62 @@
+@import "../../style.scss";
+
+.blog-comp {
+
+    @include themify($themes) {
+
+        display: flex;
+        flex-direction: column;
+        width: 23%;
+
+        @include tablet {
+            width: 45%;
+        }
+        @include mobile {
+            width: 100%;
+        }
+        background-color: #F5F5F5;
+        border-radius: 8px;
+
+
+        img {
+            object-fit: cover;
+        }
+
+        .desc {
+            width: 90%;
+            margin: 1.3rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+
+
+            p {
+                font-size: 1rem;
+                font-weight: 600;
+                color: #434343;
+            }
+
+            .blog-more {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                a {
+                    text-decoration: none;
+                    border-radius: 4px;
+                    padding: 0.25rem 0.5rem;
+                    color: #ffff;
+                    margin-top: 6px;
+                    background-color: themed("brand");
+
+                }
+
+                span {
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: #838383;
+                }
+            }
+        }
+    }
+}

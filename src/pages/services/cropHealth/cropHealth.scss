@@ -1,0 +1,184 @@
+@import "../../../style.scss";
+
+.crophealth {
+  @include themify($themes) {
+    h1 {
+      height: auto;
+      padding: 2rem 0;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      color: #054e45;
+      font-size: xxx-large;
+      text-decoration: underline;
+      @include mobile{
+          font-size: x-large;
+          align-self: center;
+          justify-self: center;
+          text-align: center;
+      }
+    }
+    .sec-1 {
+
+      
+      height: auto;
+      padding: 2rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0% 5% 0%;
+
+      @include mobile {
+        height: auto;
+        padding: 1rem 0;
+      }
+
+      .container {
+        display: flex;
+        width: 100%;
+        color: black;
+        justify-content: center;
+        align-items: center;
+        //   gap: calc(1rem + 9vw);
+
+        @include tablet {
+        }
+
+        @include mobile {
+          flex-direction: column;
+        }
+
+        .left {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+          justify-content: center;
+          // gap: calc(1rem + 3vw);
+          gap: 2rem;
+          width: 50%;
+
+          @include tablet {
+          }
+
+          @include mobile {
+            gap: 1rem;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+          }
+
+          span {
+            font-size: xx-large;
+            border-radius: 4px;
+            color: themed("brand");
+            font-weight: 900;
+
+            @include tablet {
+            }
+
+            @include mobile {
+              font-size: x-large;
+              width: 100%;
+              text-align: center;
+            }
+          }
+
+          p {
+            font-weight: 400;
+            font-size: 18px;
+            @include mobile{
+              font-size: 15px;
+            }
+
+            em {
+              font-weight: 700;
+              font-size: 18px;
+              @include mobile{
+                font-size: 15px;
+              }
+
+            }
+
+            @include tablet {
+            }
+
+            @include mobile {
+              text-align: justify;
+            }
+          }
+
+          a {
+            text-decoration: none;
+            background-color: #054e45;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            color: white;
+          }
+        }
+
+        .right {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40%;
+        //   height: 100vh;
+
+          img {
+            display: block;
+            width: 100%;
+            transform: scale(0.9);
+          }
+
+          @include tablet {
+          }
+
+          @include mobile {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .sec-2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 5%;
+      margin-bottom: 10%;
+      background-image: url("../../../assets/Group (1).png");
+      h1 {
+        background-color: #054e45;
+        width: 100%;
+        text-align: center;
+        font-size: xx-large;
+        color: white;
+        padding: 0.3rem;
+        margin: 2%;
+        @include mobile{
+          font-size: x-large;
+        }
+      }
+      
+      h2{
+        font-size: x-large;
+        margin: 1% 0% 1%;
+      }
+  
+        em {
+            font-weight: 600;
+            font-size: 18px;
+             font-style: normal;
+          }
+    
+    .list{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        // align-items: center;
+        gap: 1rem;
+    }
+    
+    }
+  }
+}

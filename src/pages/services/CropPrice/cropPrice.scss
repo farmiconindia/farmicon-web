@@ -1,0 +1,90 @@
+@import "../../../style.scss";
+
+.crop-container {
+    @include themify($themes) {
+
+        height: 130vh;
+        width: 80%;
+        margin: auto;
+
+        @include tablet {}
+
+        @include mobile {
+            height: 80vh;
+        }
+
+
+        h1 {
+            color: #434343;
+            
+            text-align: center;
+            margin: 5vh auto;
+
+            @include mobile {
+                font-size: calc(0.5rem + 5vw);
+            }
+        }
+        .loading{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .selects {
+            display: flex;
+            margin: auto;
+            width: 80%;
+            gap: 10px;
+            height: 5vh;
+            justify-content: space-around;
+            align-items: center;
+
+            @include tablet {
+                width: 100%;
+            }
+
+            @include mobile {
+                flex-direction: column;
+                height: auto;
+                gap: 5vw;
+            }
+
+            select {
+                border-radius: 4px;
+                height: 4vh;
+                border: 2px solid themed("brand");
+                padding: 2px 4px;
+                color: themed("brand");
+                font-weight: bold;
+                outline: none;
+
+                option:hover {
+                    background-color: themed("brand");
+                    color: inherit;
+                    box-shadow: inset 0 -1px 0 0 themed("brand");
+                }
+            }
+
+            button {
+                width: 15%;
+                height: 4vh;
+                border: 2px solid themed("brand");
+                background-color: themed("brand");
+                color: white;
+                border-radius: 4px;
+                font-weight: bold;
+                outline: none;
+                transition: ease-in-out 0.25s;
+
+                @include mobile {
+                    width: calc(2rem + 9vw);
+                }
+
+                &:hover {
+                    color: themed("brand");
+                    background-color: white;
+                }
+            }
+        }
+    }
+}

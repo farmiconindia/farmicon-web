@@ -1,0 +1,74 @@
+@import "../../style.scss";
+
+
+.blog-container {
+    @include themify($themes) {
+
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        margin: 20px auto;
+        white-space: pre-wrap;
+
+        @include mobile{
+            width: 95%;
+        }
+
+        span {
+            font-size: calc(1.4rem + 0.4vw);
+            font-weight: 600;
+            padding: 0 1rem;
+            margin: 20px 0;
+        }
+
+        .blog {
+            padding: 0 1rem;
+
+
+            .btn-grp {
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 15px 0;
+                gap: 2rem;
+                
+                button {
+                    width: 15%;
+                    height: 4vh;
+                    border: 2px solid themed("brand");
+                    background-color: themed("brand");
+                    color: white;
+                    border-radius: 4px;
+                    font-weight: bold;
+                    outline: none;
+                    transition: ease-in-out 0.25s;
+                    cursor: pointer;
+
+                    @include mobile {
+                        width: calc(2rem + 9vw);
+                    }
+
+                    &:hover {
+                        color: themed("brand");
+                        background-color: white;
+                    }
+                }
+            }
+
+
+
+            .desc {
+
+                p {
+                    text-align: justify;
+                }
+
+                
+
+            }
+        }
+    }
+}

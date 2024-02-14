@@ -1,0 +1,18 @@
+@import "../../style.scss";
+
+.weather {
+
+    @include themify($themes) {
+
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+
+        @include mobile {
+            width: 100%;
+        }
+
+        background-color: themed("brand-light");
+    }
+}
