@@ -87,10 +87,20 @@ const Blog = ({ changeLang }) => {
     handleStop();
   }, [changeLang]);
 
+  // useEffect(() => {
+  //   // Dynamically import the photo based on the blog.photo field
+  //   import(`../../assets/${blog.photo}`).then((module) => {
+  //     // Set the src attribute of the img element when the photo is loaded
+  //     pRef.current.src = module.default;
+  //   });
+  // }, [blog.photo]);
+
+
   return (
     <div className="blog-container">
       <span>{!changeLang ? blog?.title : blog?.titleHin}</span>
       <div className="blog">
+      <img src={blog.photo} alt="vcg" />
         <div className="btn-grp">
           <button onClick={handleTogglePlay}>
             {isPlaying && !isPaused ? "Pause" : "Play"}

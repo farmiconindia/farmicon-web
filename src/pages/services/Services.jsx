@@ -7,7 +7,7 @@ import cropDoc from "../../assets/crop-doc2.png";
 import cropPrice from "../../assets/cropPrice.png";
 // import cropHealth from "../../assets/crop-health2.png";
 import cropHealth from "../../assets/crop_health.jpg";
-import drone from "../../assets/drone2.png";
+import drone from "../../assets/drone2.png";     
 // import drone from "../../assets/hi-tech_drone.jpg";
 import soilHealth from "../../assets/soil-health2.png";
 import lining from "../../assets/lining.png";

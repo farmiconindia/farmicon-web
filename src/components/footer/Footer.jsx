@@ -6,6 +6,7 @@ import twitter from "../../assets/twitter-icon.png";
 import yt from "../../assets/yt-icon.png";
 import googlePlay from "../../assets/google-play.png";
 import "./footer.scss";
+// import footerimg from "../../assets/footerImage.jpeg"
 
 const Footer = ({ changeLang }) => {
   return (
@@ -13,7 +14,7 @@ const Footer = ({ changeLang }) => {
       <div className="footer" id="footer">
         <div className="upper-box">
           <div className="first-box">
-            <div className="brand">
+            <div className="brand" >
               <div className="logo"></div>
               <span>{!changeLang ? "Farmicon" : "फार्मिकॉन"}</span>
             </div>
@@ -25,21 +26,24 @@ const Footer = ({ changeLang }) => {
               <img src={yt} alt="" />
             </div>
           </div>
-          <div className="second-box">
+          <div className="second-box" >
             <span>Shipping and Refund</span>
             <span>FAQs</span>
             <span>Payment Methods</span>
           </div>
-          <div className="third-box">
+          <div className="third-box" style={{marginTop: "50px"}} >
             <span>Address:</span>
             <div className="add-desc">
-              <span>13, Tides Business Incubator</span>
-              <span>IIT Roorkee</span>
-              <span>Roorkee, Uttarakhand</span>
-              <span>247667</span>
+              <span>I-3, Tides Business Incubator
+                    IIT Roorkee
+                    Roorkee, Uttarakhand
+                    247667</span>
+              {/* <span>IIT Roorkee</span> */}
+              {/* <span>Roorkee, Uttarakhand</span>
+              <span>247667</span> */}
             </div>
           </div>
-          <div className="fourth-box">
+          <div className="fourth-box" >
             <div className="upper">
               <span>Contact Us:</span>
               <div className="contact-desc">
@@ -52,8 +56,8 @@ const Footer = ({ changeLang }) => {
             </div>
           </div>
         </div>
-        <div className="lower-box">
-          <div className="hr">
+        {/* <div className="lower-box" style={{marginTop: "100px"}}>
+          <div className="hr" style={{marginTop: "5px"}}>
             <hr />
           </div>
 
@@ -61,8 +65,8 @@ const Footer = ({ changeLang }) => {
             <span>Terms of Service</span>
             <span>Privacy Policy</span>
             <span>Content Policy</span>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
     </>
   );

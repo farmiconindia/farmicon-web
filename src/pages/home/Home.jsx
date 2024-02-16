@@ -15,11 +15,16 @@ import bg from "../../assets/Group (1).png";
 import "./home.scss";
 import { Link } from "react-router-dom";
 import blogData from "../../store/blogData";
-import ReactPlayer from 'react-player'
-import HeroVid from '../../assets/HeroNew_adobe.gif'
-import image1 from '../../assets/Hydroponics.jpg'
-import image2 from '../../assets/organicFarm.jpg'
-import image3 from '../../assets/Tomatotips.jpg'
+import ReactPlayer from 'react-player';
+import HeroVid from '../../assets/HeroNew_adobe.gif';
+import image1 from '../../assets/Hydroponics.jpg';
+import image2 from '../../assets/organicFarm.jpg';
+import image3 from '../../assets/Tomatotips.jpg';
+import recognition1 from '../../assets/ihub.png';
+import recognition2 from '../../assets/Meity.png';
+import recognition3 from '../../assets/startupIndia.png';
+import recognition4 from '../../assets/tides.png';
+
 
 const Home = ({i, changeLang }) => {
   useEffect(() => {
@@ -202,7 +207,7 @@ const Home = ({i, changeLang }) => {
           </div>
         </section>
 
-        <section className="sec-5">
+    <section className="sec-5">
   <div className="container">
     <div className="content">
       <form
@@ -268,19 +273,40 @@ const Home = ({i, changeLang }) => {
         </div>
       </form>
     </div>
-    <a className="arrow" href="#sec-1">
-      <div className="up">
-        <img
-          className="upArrow"
-          src={upArrow}
-          alt=""
-          draggable="false"
-        />
-      </div>
-    </a>
+
+   
   </div>
 </section>
 
+<section className="sec-8">
+      <div className="container">
+      <span className="recognition-heading">Recognitions</span>
+        <div className="recognition-images">
+          <div className="recognition-item">
+            <img src={recognition1} alt="Recognition 1" />
+            <p>I-Hub Anubhuti</p>
+          </div>
+          <div className="recognition-item">
+            <img src={recognition2} alt="Recognition 2" />
+            <p>Meity Startup Hub</p>
+          </div>
+          <div className="recognition-item">
+            <img src={recognition3} alt="Recognition 3" />
+            <p>Startup India</p>
+          </div>
+          <div className="recognition-item">
+            <img src={recognition4} alt="Recognition 4" />
+            <p>Tides Business Incubator <p> IIT Roorkee</p>  </p>
+           
+          </div>
+        </div>
+        <a className="arrow" href="#sec-1">
+          <div className="up">
+            <img className="upArrow" src={upArrow} alt="" draggable="false" />
+          </div>
+        </a>
+      </div>
+    </section>
       </div>
     </>
   );

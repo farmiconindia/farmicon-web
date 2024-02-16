@@ -1,0 +1,33 @@
+@import "../../style.scss";
+
+.weather-comp {
+    @include themify($themes) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+
+        .weather-details {
+            text-align: center;
+
+            .weather-icon {
+                img {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+
+            .temperature {
+                font-size: 24px;
+                font-weight: bold;
+                margin: 10px 0;
+            }
+
+            .humidity,
+            .wind-speed,
+            .description {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
