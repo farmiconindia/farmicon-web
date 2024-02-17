@@ -34,6 +34,14 @@ const Home = ({i, changeLang }) => {
   const images = [image1, image2, image3];
   // const selectedImage = images[i % images.length];
 
+  function scrollToTop(event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }
+
   return (
     <>
       <div className="home">
@@ -207,6 +215,37 @@ const Home = ({i, changeLang }) => {
           </div>
         </section>
 
+        <section className="sec-7">
+      <div className="container">
+      <span className="recognition-heading">Recognitions</span>
+        <div className="recognition-images">
+          <div className="recognition-item">
+            <img src={recognition1} alt="Recognition 1" />
+            <p>iHub Anubhuti</p>
+          </div>
+          <div className="recognition-item">
+            <img src={recognition2} alt="Recognition 2" />
+            <p>MeitY Startup Hub</p>
+          </div>
+          <div className="recognition-item">
+            <img src={recognition3} alt="Recognition 3" />
+            <p>Startup India</p>
+          </div>
+          <div className="recognition-item">
+            <img src={recognition4} alt="Recognition 4" />
+            <p>TIDES Business Incubator <p> IIT Roorkee</p>  </p>
+           
+          </div>
+        </div>
+        {/* href="#sec-1" */}
+        <a className="arrow" href="#" onClick={scrollToTop}>
+          <div className="up">
+            <img className="upArrow" src={upArrow} alt="" draggable="false" />
+          </div>
+        </a>
+      </div>
+    </section>
+
     <section className="sec-5">
   <div className="container">
     <div className="content">
@@ -273,40 +312,10 @@ const Home = ({i, changeLang }) => {
         </div>
       </form>
     </div>
-
-   
   </div>
 </section>
 
-<section className="sec-8">
-      <div className="container">
-      <span className="recognition-heading">Recognitions</span>
-        <div className="recognition-images">
-          <div className="recognition-item">
-            <img src={recognition1} alt="Recognition 1" />
-            <p>I-Hub Anubhuti</p>
-          </div>
-          <div className="recognition-item">
-            <img src={recognition2} alt="Recognition 2" />
-            <p>Meity Startup Hub</p>
-          </div>
-          <div className="recognition-item">
-            <img src={recognition3} alt="Recognition 3" />
-            <p>Startup India</p>
-          </div>
-          <div className="recognition-item">
-            <img src={recognition4} alt="Recognition 4" />
-            <p>Tides Business Incubator <p> IIT Roorkee</p>  </p>
-           
-          </div>
-        </div>
-        <a className="arrow" href="#sec-1">
-          <div className="up">
-            <img className="upArrow" src={upArrow} alt="" draggable="false" />
-          </div>
-        </a>
-      </div>
-    </section>
+
       </div>
     </>
   );
