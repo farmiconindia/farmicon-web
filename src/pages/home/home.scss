@@ -144,37 +144,23 @@
       padding: 4rem 0;
       padding-bottom: 8rem;
       position: relative;
-
-      .arrow {
-        text-decoration: none;
-        color: #ffff;
-
-        .up {
-          position: absolute;
-          bottom: 36px;
-          right: calc(0.5rem + 3vw);
-          display: flex;
-          width: calc(1.5rem + 2vw);
-          height: calc(1.5rem + 2vw);
-          background-color: themed("brand");
-          border-radius: 50%;
-          text-align: center;
-          align-items: center;
-          justify-content: center;
-
-          img {
-            width: 50%;
-          }
-        }
-      }
-
+    
       .container {
+        z-index: 999;
+        pointer-events: none;
+        overflow: visible;
         width: 1084px;
         height: 467px;
         flex-shrink: 0;
         border-radius: 12px;
         background: #fbf9d4;
+
+        @include mobile {
+          padding: 20px; /* Adjust container padding for mobile */
+          height: fit-content;
+        }
       }
+    
       button {
         text-decoration: none;
         width: 40%;
@@ -184,61 +170,39 @@
         padding: 0.5rem 1rem;
         color: white;
         margin: 0 auto;
+
+        @include mobile {
+          width: 100%; /* Make button full width on mobile */
+          max-width: calc(100% - 20px); /* Ensure button fits within container */
+        }
       }
+    
       .submit {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 70px;
-        // margin-bottom: 40px;
       }
+    
       p {
         color: #181818;
-        // text-align: ;
         font-family: Poppins;
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        margin-bottom: 10px; /* Added margin-bottom for consistency */
       }
-      input {
+    
+      input,
+      .message-input {
         width: 440px;
         height: 47px;
         flex-shrink: 0;
         border-radius: 8px;
         background: #fffff9;
       }
-      .content {
-        display: flex;
-        // flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        padding: 5%;
-        gap: 2rem;
-        padding: 10px 0;
-
-        @include mobile {
-          align-items: center;
-        }
-
-        @include tablet {
-          align-items: center;
-        }
-
-        .half {
-          display: flex;
-          align-items: flex-start;
-          flex-direction: column;
-        }
-      }
-
-      .name-tag,
-      .Whatsapp-tag,
-      .Email,
-      .msg-tag {
-        padding-bottom: 10px;
-            }
-
+    
       .message-input {
         width: 448px;
         height: 225px;
@@ -246,32 +210,94 @@
         resize: none;
         box-sizing: border-box;
         padding: 10px;
-        
+
+        // @include mobile {
+        //   width: 100%; /* Make message input full width on mobile */
+        //   // height: 100px;
+        //   padding: 20px;
+        //   max-width: calc(100% - 20px); /* Ensure input fits within container */
+        // }
+      }
+    
+      .content {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 5%;
+        gap: 2rem;
+        padding: 10px 0;
+    
+        @include mobile {
+          align-items: center;
+        }
+       
+    
+        @include tablet {
+          align-items: center;
+        }
+    
+        .half {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    
+      .name-tag,
+      .Whatsapp-tag,
+      .Email,
+      .msg-tag {
+        padding-bottom: 10px;
+        // margin-left: 120px;
+        position: relative;
+        // margin-top: -10px;
       }
 
-      @include mobile {
-        display: flex;
-        justify-content: center;
-        .container {
-          width: 95%;
-        }
-        .content {
-          flex-direction: column;
-          gap: 0rem;
-        }
-        input {
-          width: 319px;
-        }
-        .message-input {
-          width: 319px;
+      .msg-tag{
+        @include mobile{
+          margin-left: 5px;
+          margin-top: -25px;
+          width: 250px;
+          height: 250px;
         }
       }
-      @include tablet {
+    
+      @include mobile {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        padding: 20px 0; /* Adjust padding for smaller screens */
+        .container {
+          width: 70%;
+          max-width: 500px;
+          height: 650px;
+          padding: 20px; /* Adjust container padding */
+          
+        }
+        button {
+          width: 70%; /* Adjust button width */
+          margin-top: -70px; /* Add margin at the top */
+          margin-left: 20px;
+        }
+        .submit {
+          margin-top: 40px; /* Adjust margin */
+        }
+        input,
+        .message-input {
+          width: 100%; /* Make input width full-width */
+          max-width: calc(100% - 20px); /* Subtract container padding */
+        }
+        .message-input{
+          height: 140px;
+        }
         .content {
-          padding: 2%;
+          padding: 5% 2%; /* Adjust padding */
+          flex-direction: column; /* Display content in one column on mobile */
+          align-items: center; 
         }
       }
     }
+    
     .sec-1 {
       height: 75vh;
       display: flex;
@@ -836,12 +862,15 @@
         }
       }
     }
-    .sec-8 {
+    .sec-7 {
       padding: 40px 0;
       background-color: #ffffff; /* Set background color to white */
       //border: none; /* Remove any border */
+      @include mobile {
+        flex-direction: column;
+      }
     }
-    .sec-8 .container .recognition-heading {
+    .sec-7 .container .recognition-heading {
       display: inline-block; /* Set display to inline-block to enable setting width */
       width: 1200px; /* Set width to 1200px */
       height: 70px; /* Set height to 70px */
@@ -920,21 +949,79 @@
     }
     
     .arrow {
-      display: block;
-      text-align: center;
-      margin-top: 20px;
+      text-decoration: none;
+      color: #ffff;
+      z-index: 9999;
+      pointer-events: auto;
+
+
+      .up {
+        position:fixed;
+        bottom: 36px;
+        right: calc(0.5rem + 3vw);
+        display: flex;
+        width: calc(1.5rem + 2vw);
+        height: calc(1.5rem + 2vw);
+        background-color: themed("brand");
+        border-radius: 50%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 50%;
+        }
+      }
     }
-    
-    .upArrow {
-      width: 40px;
-      height: 40px;
-      transition: transform 0.3s ease;
-    }
-    
     .upArrow:hover {
       transform: translateY(-5px);
     }
+  
+    @media screen and (max-width: 1200px) {
+      .sec-7 .container .recognition-heading {
+        width: 100%;
+        max-width: 1200px; /* Limit width on larger screens */
+        margin: 0 auto;
+      }
     
+      .recognition-images {
+        height: auto;
+      }
+    
+      .recognition-item {
+        width: 100%;
+      }
+    }
+    
+    /* Responsive styles for tablets and mobile devices */
+    @media screen and (max-width: 768px) {
+      .sec-7 .container .recognition-heading {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+      }
+    
+      .recognition-images {
+        height: auto;
+        padding: 10px; /* Adjust padding for smaller screens */
+      }
+    
+      .recognition-item {
+        width: 100%;
+      }
+    
+      .up {
+        width: 50px; /* Adjust size for smaller screens */
+        height: 50px;
+        bottom: 10px;
+        right: 10px;
+      }
+    
+      .up img {
+        width: 30%;
+      }
+    }
     
     
   } 
