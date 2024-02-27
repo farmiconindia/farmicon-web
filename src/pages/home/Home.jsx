@@ -24,12 +24,22 @@ import recognition1 from '../../assets/ihub.png';
 import recognition2 from '../../assets/Meity.png';
 import recognition3 from '../../assets/startupIndia.png';
 import recognition4 from '../../assets/tides.png';
+import AOS from 'aos';
+
 
 
 const Home = ({i, changeLang }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
+  
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, 
+      easing: 'ease-in-out', 
+    });
+  }, []);
+  
 
   const images = [image1, image2, image3];
   // const selectedImage = images[i % images.length];
@@ -61,14 +71,14 @@ const Home = ({i, changeLang }) => {
           </div> */}
           <div className="left">
             {!changeLang ? (
-              <div className="content">
-                <p className="inc">Increase your</p>
+              <div className="content" data-aos="fade-right">
+                <p className="inc" >Increase your</p>
                 <p>Yield with</p>
                 <span className="gradient">FARMICON</span>
                 <a className="downloadApp" href="#">Download App</a>
               </div>
             ) : (
-              <div className="content">
+              <div className="content" data-aos="fade-right">
                 <p className="hindi">बुद्धिमान समाधानों के साथ कृषि को बदलना</p>
                 <p className="gradient hindi">दक्षता, लाभप्रदता और स्थिरता</p>
                 <a className="downloadApp" href="#">
@@ -84,7 +94,7 @@ const Home = ({i, changeLang }) => {
 
             {/* <img src={liningHome} loading="lazy" draggable="false" alt="" /> */}
             {/* <img src={Hero} loading="lazy" draggable="false" alt="" /> */}
-            <div className="video">
+            <div className="video" data-aos="fade-up">
             {/* <ReactPlayer pip={false}  url={HeroVid} loop={true} playing={true} volume={0}/> */}
             <img src={HeroVid} loop={true} playing={true} volume={0} loading="lazy" alt="Drone GIF"
              style={{ width: '650px', height: 'auto' }} />
@@ -97,16 +107,17 @@ const Home = ({i, changeLang }) => {
             {/* translation */}
 
             {!changeLang ? (
-              <div className="left-box">
-                <span>Our Services</span>
-                <p>
+              <div className="left-box" >
+                <span data-aos="fade-up" >Our Services</span>
+                {/* <h1 data-aos="fade-right">hello</h1> */}
+                <p data-aos="fade-up">
                   We are single click platform where farmers can get the
                   guidance, market reach, all the essential services for crops
                   and veggies, solutions for crop disease using the{" "}
                   <em> Mobility Integrated Artificial Intelligence </em> model,
                   weather information to save the crops, account management etc.
                 </p>
-                <div className="allServices">
+                <div className="allServices" data-aos="fade-up">
                 <Link to="/services">All Services</Link>
                 </div>
 
@@ -127,7 +138,7 @@ const Home = ({i, changeLang }) => {
 
               </div>
             )}
-            <div className="right-box">
+            <div className="right-box" data-aos="fade-left">
               <img src={ourService} alt="" draggable="false" />
             </div>
           </div>
@@ -139,9 +150,9 @@ const Home = ({i, changeLang }) => {
 
             {!changeLang ? (
               <div className="left-box">
-                <span>Our Product</span>
-                <span className="heading">Agricultutral Drone</span>
-                <p>
+                <span data-aos="fade-up">Our Product</span>
+                <span className="heading" data-aos="fade-up">Agricultutral Drone</span>
+                <p data-aos="fade-up">
                 Introducing our game-changing <em>Agricultural Spray Drone</em> – a revolution in farming. This high-tech drone offers precision and efficiency like never before. Imagine a future where precision meets efficiency, where every drop of pesticide or fertilizer is applied with pinpoint accuracy. It swiftly covers large areas, reducing labor costs while ensuring precise pesticide and fertilizer application. The Agricultural Spray Drone is not just a product; it's a partner in your farm's success story. Join the agricultural revolution today and experience the future of farming firsthand.
                 </p>
                 <Link to="/product">Know More</Link>
@@ -155,17 +166,17 @@ const Home = ({i, changeLang }) => {
                 <Link to="">और जानिए</Link>
               </div>
             )}
-            <div className="right-box">
+            <div className="right-box" data-aos="fade-left">
               <img src={DroneHero} alt="" draggable="false" />
             </div>
           </div>
-            <button  className="buyNow" >BUY NOW</button>
+            <button  className="buyNow" data-aos="fade-up" >BUY NOW</button>
         </section>
         
         <section className="sec-3" id="sec-3">
           <div className="container">
             {!changeLang ? (
-              <div className="left-box">
+              <div className="left-box" data-aos="fade-right">
                 <span>
                   Do More<span> on the app</span>
                 </span>
@@ -180,7 +191,7 @@ const Home = ({i, changeLang }) => {
               </div>
             )}
 
-            <div className="right-box">
+            <div className="right-box" data-aos="fade-left">
               <div className="logo"></div>
               <img src={googlePlay} alt="" />
             </div>
@@ -189,12 +200,12 @@ const Home = ({i, changeLang }) => {
         
         <section className="sec-4" id="sec-4">
           <div className="container">
-            <span>{!changeLang ? "Blogs" : "ब्लॉग"}</span>
+            <span data-aos="fade-up">{!changeLang ? "Blogs" : "ब्लॉग"}</span>
             <div className="blogs">
               {blogData.slice(0, 3).map((blog, i) => {
                 const selectedImage = images[i % images.length];
                 return (
-                  <div className="blog" key={i}>
+                  <div className="blog" data-aos="flip-left" key={i}>
                     <img style={{width: "346px", height: "235px"}} src={selectedImage} alt="" />
                     <div className="desc">
                       <p>{!changeLang ? blog.title : blog?.titleHin}</p>
@@ -217,12 +228,15 @@ const Home = ({i, changeLang }) => {
 
         <section className="sec-7">
       <div className="container">
-      <span className="recognition-heading">Recognitions</span>
-        <div className="recognition-images">
-          <div className="recognition-item">
-            <img src={recognition1} alt="Recognition 1" />
-            <p>iHub Anubhuti</p>
+      <span className="recognition-heading" data-aos="fade-up">Recognitions</span>
+        <div className="recognition-images" data-aos="fade-right">
+
+        <div className="recognition-item">
+            <img src={recognition4} alt="Recognition 4" />
+            <p>TIDES Business Incubator <p> IIT Roorkee</p>  </p>
+           
           </div>
+         
           <div className="recognition-item">
             <img src={recognition2} alt="Recognition 2" />
             <p>MeitY Startup Hub</p>
@@ -232,23 +246,22 @@ const Home = ({i, changeLang }) => {
             <p>Startup India</p>
           </div>
           <div className="recognition-item">
-            <img src={recognition4} alt="Recognition 4" />
-            <p>TIDES Business Incubator <p> IIT Roorkee</p>  </p>
-           
+            <img src={recognition1} alt="Recognition 1" />
+            <p>iHub Anubhuti</p>
           </div>
         </div>
         {/* href="#sec-1" */}
-        <a className="arrow" href="#" onClick={scrollToTop}>
+        {/* <a className="arrow" href="#" onClick={scrollToTop}>
           <div className="up">
             <img className="upArrow" src={upArrow} alt="" draggable="false" />
           </div>
-        </a>
+        </a> */}
       </div>
     </section>
 
     <section className="sec-5">
   <div className="container">
-    <div className="content">
+    <div className="content" data-aos="fade-up">
       <form
         action="https://formspree.io/f/xbjngblj"
         method="POST"
