@@ -3,7 +3,7 @@ import "./about.scss";
 import about1 from "../../assets/about-1.png";
 import about2 from "../../assets/about-2.png";
 // import about3 from "../../assets/about-3.png";
-import about3 from "../../assets/image.png";
+// import about3 from "../../assets/image.png";
 import AOS from 'aos';
 
 const About = ({ changeLang }) => {
