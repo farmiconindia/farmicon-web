@@ -2,28 +2,38 @@ import React, { useEffect } from "react";
 import "./about.scss";
 import about1 from "../../assets/about-1.png";
 import about2 from "../../assets/about-2.png";
-import about3 from "../../assets/about-3.png";
+// import about3 from "../../assets/about-3.png";
+import about3 from "../../assets/image.png";
+import AOS from 'aos';
 
 const About = ({ changeLang }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
+  
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, 
+      easing: 'ease-in-out', 
+    });
+  }, []);
+
   return (
     <div className="about">
       <section className="sec-1">
-        <div className="left">
+        <div className="left" >
           <div className="content">
             {!changeLang ? (
-              <div className="intro">
-                <span>About Us</span>
-                <p>
+              <div className="intro" >
+                <span data-aos="fade-right">About Us</span>
+                <p data-aos="fade-up">
                   Welcome to Farmicon, where we're transforming the agriculture
                   industry through innovative technology solutions. Our startup
                   was founded in 2021 with a mission to empower farmers with
                   advanced farming tools that increase efficiency, productivity,
-                  and profitability..
+                  and profitability.
                 </p>
-                <p>
+                <p data-aos="fade-up">
                   At Farmicon, we understand the challenges farmers face in the
                   modern world. That's why we've developed a suite of smart
                   farming solutions that leverage cutting-edge technology to
@@ -33,7 +43,7 @@ const About = ({ changeLang }) => {
                   of which are powered by artificial intelligence, machine
                   learning, and the Internet of Things (IoT).
                 </p>
-                <p>
+                <p data-aos="fade-up">
                   Our precision agriculture tools offer farmers real-time
                   insights into their crops, soil conditions, and weather
                   patterns. With these tools, farmers can make data-driven
@@ -42,7 +52,7 @@ const About = ({ changeLang }) => {
                   to provide farmers with accurate and up-to-date information on
                   the health and growth of their crops.
                 </p>
-                <p>
+                <p data-aos="fade-up">
                   We also offer soil analysis technologies that help farmers
                   determine the right nutrients and fertilizers needed for their
                   crops. Our drone-based surveying systems can quickly and
@@ -50,7 +60,7 @@ const About = ({ changeLang }) => {
                   with valuable data on soil health, water management, and crop
                   growth.
                 </p>
-                <p>
+                <p data-aos="fade-up">
                   At Farmicon, we're committed to making agriculture more
                   efficient, productive, and sustainable. Our solutions are
                   designed to help farmers make the most of their resources
@@ -111,10 +121,10 @@ const About = ({ changeLang }) => {
             )}
           </div>
         </div>
-        <div className="right">
-          <img src={about1} className="img-1" alt="" />
-          <img src={about2} className="img-2" alt="" />
-          <img src={about3} className="img-3" alt="" />
+        <div className="right" >
+          <img src={about1} className="img-1" data-aos="fade-left" alt="" />
+          <img src={about2} className="img-2" data-aos="fade-right" alt="" />
+          <img src={about3} className="img-3" data-aos="fade-left" data-aos-offset="200" alt="" />
         </div>
       </section>
       <hr />
