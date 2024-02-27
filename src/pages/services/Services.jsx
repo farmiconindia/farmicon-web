@@ -3,26 +3,37 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import mobile from "../../assets/mobile.png";
 import cropDoc from "../../assets/crop-doc2.png";
-import cropPrice from "../../assets/crop-price3.png";
-import cropHealth from "../../assets/crop-health2.png";
-import drone from "../../assets/drone2.png";
-
+// import cropPrice from "../../assets/crop-price2.png";
+import cropPrice from "../../assets/CropPrice.png";
+// import cropHealth from "../../assets/crop-health2.png";
+import cropHealth from "../../assets/crop_health.jpg";
+import drone from "../../assets/drone2.png";     
+// import drone from "../../assets/hi-tech_drone.jpg";
 import soilHealth from "../../assets/soil-health2.png";
 import lining from "../../assets/lining.png";
 import "./services.scss";
 import organicFarming from "../../assets/organic_farming.jpg";
-import WeatherInfo from "../../assets/weather_info.jpg";
+import WeatherInfo from "../../assets/weather_info.jpg"
 import coldStorage from "../../assets/coldStorage.jpg";
+import AOS from 'aos';
 
 const Services = ({ changeLang }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, 
+      easing: 'ease-in-out', 
+    });
+  }, []);
+
   return (
     <>
       <div className="services">
         <section className="sec-1">
-          <h1>{!changeLang ? "Our Services" : "हमारी सेवाएँ"}</h1>
+          <h1 data-aos="fade-up">{!changeLang ? "Our Services" : "हमारी सेवाएँ"}</h1>
         </section>
         <section className="sec-2">
           {/* <img className="lining-1" src={lining} alt="" /> */}
@@ -31,7 +42,7 @@ const Services = ({ changeLang }) => {
           {/* <img className="lining-4" src={lining} alt="" /> */}
           {/* <img className="lining-5" src={lining} alt="" /> */}
           <div className="container one">
-            <div className="left-box">
+            <div className="left-box" data-aos="fade-right">
               <span>
                 {!changeLang
                   ? "Crop Doctor"
@@ -44,12 +55,12 @@ const Services = ({ changeLang }) => {
               </p>
               <Link to="/services/checkDisease" className="">Consult Now</Link>
             </div>
-            <div className="right-box">
+            <div className="right-box" data-aos="fade-left">
               <img  src={cropDoc} alt="" />
             </div>
           </div>
           <div className="container two">
-            <div className="left-box">
+            <div className="left-box" data-aos="fade-right">
                
                 <span>
                   {!changeLang
@@ -62,15 +73,15 @@ const Services = ({ changeLang }) => {
                   ? "Predict the crop and veggies price based on real-time data, historical data and market requirements."
                   : "वास्तविक समय के डेटा, ऐतिहासिक डेटा और बाजार की आवश्यकताओं के आधार पर फसल और सब्जियों की कीमत का अनुमान लगाएं।"}
               </p>
-              <Link className="buttton" to="/services/cropPrice">Predict Now</Link>
+              <Link className="buttton" data-aos="fade-up" to="/services/cropPrice">Predict Now</Link>
             </div>
 
-            <div className="right-box">
+            <div className="right-box" data-aos="fade-left">
               <img src={cropPrice} alt="" />
             </div>
           </div>
           <div className="container three">
-            <div className="left-box">
+            <div className="left-box" data-aos="fade-right">
               <span>
                 {!changeLang ? "Hi-Tech Drone Spray" : "हाई-टेक ड्रोन स्प्रे"}
               </span>
@@ -80,9 +91,9 @@ const Services = ({ changeLang }) => {
                   : "वास्तविक समय के डेटा, ऐतिहासिक डेटा और बाजार की आवश्यकताओं के आधार पर फसल और सब्जियों की कीमत का अनुमान लगाएं ।"}
                 .
               </p>
-              <Link className="buttton" to="/services/drone">Book Now</Link>
+              <Link className="buttton" data-aos="fade-up" to="/services/drone">Book Now</Link>
             </div>
-            <div className="right-box">
+            <div className="right-box" data-aos="fade-left">
               <img src={drone} style={{width: "300px"}} alt="" />
             </div>
           </div>
@@ -107,7 +118,7 @@ const Services = ({ changeLang }) => {
             </div>
           </div> */}
           <div className="container five">
-            <div className="left-box">
+            <div className="left-box" data-aos="fade-up">
               <span>
                 {!changeLang ? "Soil Health Testing" : "मृदा स्वास्थ्य परीक्षण"}
               </span>
@@ -116,9 +127,9 @@ const Services = ({ changeLang }) => {
                   ? "Predict the crop and veggies price based on real-time data,historical data and market requirements."
                   : "वास्तविक समय के डेटा, ऐतिहासिक डेटा और बाजार की आवश्यकताओं के आधार पर फसल और सब्जियों की कीमत का अनुमान लगाएं।"}
               </p>
-              <Link className="buttton" to="/services/soilHealth">Book Now</Link>
+              <Link className="buttton" data-aos="fade-up" to="/services/soilHealth">Book Now</Link>
             </div>
-            <div className="right-box">
+            <div className="right-box" data-aos="fade-left">
               <img src={soilHealth} alt="" />
             </div>
           </div>
@@ -126,28 +137,28 @@ const Services = ({ changeLang }) => {
         <section className="sec-3">
           <div className="container">
             <div className="upper-box">
-              <span>
+              <span data-aos="fade-up">
                 {!changeLang ? "Additional Features" : "अतिरिक्त सुविधाएँ"}
               </span>
             </div>
             <div className="lower-box">
               <div className="box">
-                <div className="WeatherInfo">
+                <div className="WeatherInfo" data-aos="fade-left">
                 <img src={WeatherInfo} alt="" />
                 </div>
-                <Link to={"/weather"}>{!changeLang ? "Weather Info" : "मौसम की जानकारी"}</Link>
+                <Link data-aos="fade-up" to={"/weather"}>{!changeLang ? "Weather Info" : "मौसम की जानकारी"}</Link>
               </div>
               <div className="box">
-                <div className="organicFarming">
+                <div className="organicFarming" data-aos="fade-up">
                 <img src={organicFarming} alt="" />
                 </div>
-                <span>{!changeLang ? "Organic Farming" : "जैविक खेती"}</span>
+                <Link to="/blogs" data-aos="fade-up">{!changeLang ? "Organic Farming" : "जैविक खेती"}</Link>
               </div>
               <div className="box">
-                <div className="coldStorage">
+                <div className="coldStorage" data-aos="fade-right">
                   <img src={coldStorage} alt="" />
                 </div>
-                <span>{!changeLang ? "Cold Storage" : "शीतगृह"}</span>
+                <span data-aos="fade-up">{!changeLang ? "Cold Storage" : "शीतगृह"}</span>
               </div>
             </div>
           </div>
