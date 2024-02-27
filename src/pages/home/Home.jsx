@@ -20,7 +20,7 @@ import HeroVid from '../../assets/HeroNew_adobe.gif';
 import image1 from '../../assets/Hydroponics.jpg';
 import image2 from '../../assets/organicFarm.jpg';
 import image3 from '../../assets/Tomatotips.jpg';
-import recognition1 from '../../assets/ihub.png';
+import recognition1 from '../../assets/iHub.png';
 import recognition2 from '../../assets/Meity.png';
 import recognition3 from '../../assets/startupIndia.png';
 import recognition4 from '../../assets/tides.png';
