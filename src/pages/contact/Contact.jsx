@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import contactimg from "../../assets/contact.png";
 import "./contact.scss";
+import AOS from 'aos';
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -16,18 +17,25 @@ const Contact = () => {
     setEmail("");
     setMessage("");
   };
+    useEffect( () => {
+      AOS.init({
+        duration: 1000, 
+        easing: 'ease-in-out', 
+      });
+    }, []);
+ 
 
   return (
     <div className="contact">
       <div className="container">
-        <div className="left">
+        <div className="left" data-aos="fade-right">
           <img src={contactimg} />
         </div>
         <div className="right">
           <div className="contact-form">
-            <h2>Contact Us</h2>
+            <h2 data-aos="fade-right">Contact Us</h2>
             <form onSubmit={handleSubmit}>
-              <div className="form-group">
+              <div className="form-group" data-aos="fade-up">
                 <label htmlFor="name">Name:</label>
                 <input
                   type="text"
@@ -37,7 +45,7 @@ const Contact = () => {
                   required
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group" data-aos="fade-up">
                 <label htmlFor="email">Email:</label>
                 <input
                   type="email"
@@ -47,7 +55,7 @@ const Contact = () => {
                   required
                 />
               </div>
-              <div className="form-group">
+              <div className="form-group" data-aos="fade-up">
                 <label htmlFor="message">Message:</label>
                 <textarea
                   id="message"
@@ -56,7 +64,7 @@ const Contact = () => {
                   required
                 ></textarea>
               </div>
-              <button type="submit">Submit</button>
+              <button type="submit" data-aos="fade-up" >Submit</button>
             </form>
           </div>
         </div>
