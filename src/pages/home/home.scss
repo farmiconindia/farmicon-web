@@ -91,7 +91,7 @@
           p {
             font-weight: 400;
             font-size: 15px;
-
+ 
             em {
               font-weight: 700;
               font-size: 18px;
@@ -146,8 +146,8 @@
       position: relative;
     
       .container {
-        z-index: 999;
-        pointer-events: none;
+        // z-index: 999;
+        // pointer-events: none;
         overflow: visible;
         width: 1084px;
         height: 467px;
@@ -170,6 +170,7 @@
         padding: 0.5rem 1rem;
         color: white;
         margin: 0 auto;
+        
 
         @include mobile {
           width: 100%; /* Make button full width on mobile */
@@ -182,6 +183,7 @@
         justify-content: center;
         align-items: center;
         margin-top: 70px;
+        cursor: pointer;
       }
     
       p {
@@ -191,7 +193,7 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
-        margin-bottom: 10px; /* Added margin-bottom for consistency */
+        margin-bottom: 10px;
       }
     
       input,
@@ -232,7 +234,7 @@
         }
        
     
-        @include tablet {
+        @include tablet { 
           align-items: center;
         }
     
@@ -879,6 +881,7 @@
       margin-right: 170px; /* Set margin from right */
       font-weight: bold;
       font-size: 40px; 
+      margin-top: -200px;
     }
     
     .container {
@@ -901,6 +904,7 @@
     .recognition-item {
       text-align: center;
       width: 300px; /* Set a fixed width for each item */
+      margin-top: 0px;
     }
     
     .recognition-item img {
@@ -922,20 +926,62 @@
     
     .recognition-item:nth-child(1) {
       text-align: center;
+      margin-left: -120px;
       margin-bottom: 20px; /* Add margin at the bottom to create space */
-      margin-top: 140px; /* Add negative margin to move it upwards */
+      margin-top: 30px; /* Add negative margin to move it upwards */
+    }
+    .recognition-item:nth-child(2) {
+      text-align: center;
+      margin-left: 0px;
+      margin-bottom: 20px; /* Add margin at the bottom to create space */
+      margin-top: -80px; /* Add negative margin to move it upwards */
     }
     .recognition-item:nth-child(1) img {
-      width: 100%; /* Set the first image to cover the entire width */
+      width: auto; /* Set the first image to cover the entire width */
+      max-width: 100%;
+      height: 50px;
 
     }
     .recognition-item:nth-child(2) img {
-      height: 228px;
+      height: 170px;
       width: auto; /* Set the height of recognition2 same as recognition3 */
       max-width: 100%; /* Ensure the image doesn't exceed the container width */
       border-radius: 8px; /* Rectangular shape */
       object-fit: cover;
+      margin-top: 65px;
+      margin-left: 0px;
     }
+    .recognition-item:nth-child(4) {
+      text-align: center;
+      width: auto;
+      max-width: 100%;
+      height: 200px;
+      margin-left: 50px;
+      // margin-bottom: -30px; /* Add margin at the bottom to create space */
+      margin-top: -110px; /* Add negative margin to move it upwards */
+    }
+    .recognition-item:nth-child(3) {
+      text-align: center;
+      width: auto;
+      max-width: 100%;
+      margin-left: 50px;
+      height: 200px;
+      // margin-bottom: -30px; /* Add margin at the bottom to create space */
+      margin-top: -110px; /* Add negative margin to move it upwards */
+    }
+
+    .recognition-item:nth-child(1) img {
+      width: 100%; /* Set the first image to cover the entire width */
+      height: 150px;
+      width: auto;
+      object-fit: cover;
+      max-width: 100%;
+      // margin-top: 0px;
+
+      // margin-top: 40px;
+    }
+
+    
     
     // .recognition-item:nth-child(n+2) img {
     //   width: calc(50% - 10px); /* Set width for other images with some gap between them */
