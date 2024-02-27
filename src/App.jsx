@@ -10,14 +10,13 @@ import Services from "./pages/services/Services";
 import "./style.scss";
 import About from "./pages/about/About";
 import Blog from "./pages/blog/Blog";
-
 import Weather from "./pages/weather/Weather";
 import Contact from "./pages/contact/Contact";
 import BlogPage from "./pages/blogPage/BlogPag";
 import Product from "./pages/product/Product";
 import CropHealth from "./pages/services/cropHealth/CropHealth";
 import SoilHealth from "./pages/services/soilhealth/SoilHealth";
-
+import GoToTop from './components/GoToTop/GoToTop';
 import { Analytics } from '@vercel/analytics/react';
 
 function App() {
@@ -28,6 +27,7 @@ function App() {
         <NavBar setChangeLang={setChangeLang} changeLang={changeLang} />
         <Outlet />
         <Footer changeLang={changeLang} />
+        <GoToTop />
       </div>
     );
   };
