@@ -17,7 +17,7 @@ const BlogComp = ({ blog, i, changeLang }) => {
   return (
     <>
       <div className="blog-comp" key={i}>
-        <img style={{width:"318px", height: "179px"}}
+        <img style={{ height: "179px"}}
           src={selectedImage}
           alt=""
         />
