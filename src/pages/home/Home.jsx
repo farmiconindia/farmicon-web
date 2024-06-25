@@ -109,12 +109,13 @@ const Home = ({i, changeLang }) => {
 
             {!changeLang ? (
               <div className="left-box" >
-                <span data-aos="fade-up" >Our AI Assistant</span>
+                <span data-aos="fade-up" >Farmicon AI Bot</span>
                 {/* <h1 data-aos="fade-right">hello</h1> */}
                 <p data-aos="fade-up">
-                 This is our AI Assistant testing point we will add description after the complete layout{" "}
-                  <em> HEHEHEHEHE </em>
-                 what to say any more...
+                Welcome to FarmiconBot, your AI-powered agricultural assistant. With a single click, access expert guidance, market reach, and essential services for crops and vegetables.
+                Our AI model offers solutions  {" "}
+                  <em> crop diseases, weather updates and all the agricultural queries </em>
+                 for ensuring your farming success. Simplify your farming with FarmiconBot today!
                 </p>
                 <div className="allServices" data-aos="fade-up">
                 <Link to="/ai">AI Assistant</Link>
