@@ -24,6 +24,7 @@ import recognition1 from '../../assets/iHub.png';
 import recognition2 from '../../assets/Meity.png';
 import recognition3 from '../../assets/startupIndia.png';
 import recognition4 from '../../assets/tides.png';
+import ai_photo from '../../assets/ai_photo.webp';
 import AOS from 'aos';
 
 
@@ -98,6 +99,46 @@ const Home = ({i, changeLang }) => {
             {/* <ReactPlayer pip={false}  url={HeroVid} loop={true} playing={true} volume={0}/> */}
             <img src={HeroVid} loop={true} playing={true} volume={0} loading="lazy" alt="Drone GIF"
              style={{ width: '650px', height: 'auto' }} />
+            </div>
+          </div>
+        </section>
+
+        <section className="sec-2" id="sec-2">
+          <div className="container">
+            {/* translation */}
+
+            {!changeLang ? (
+              <div className="left-box" >
+                <span data-aos="fade-up" >Our AI Assistant</span>
+                {/* <h1 data-aos="fade-right">hello</h1> */}
+                <p data-aos="fade-up">
+                 This is our AI Assistant testing point we will add description after the complete layout{" "}
+                  <em> HEHEHEHEHE </em>
+                 what to say any more...
+                </p>
+                <div className="allServices" data-aos="fade-up">
+                <Link to="/ai">AI Assistant</Link>
+                </div>
+
+              </div>
+            ) : (
+              <div className="left-box">
+                <span>हमारी AI</span>
+                <p>
+                  हम सिंगल क्लिक प्लेटफॉर्म हैं जहां किसान मार्गदर्शन प्राप्त कर
+                  सकते हैं, बाजार पहुंच, फसलों और सब्जियों के लिए सभी आवश्यक
+                  सेवाएं, फसल रोग के लिए समाधान का उपयोग कर{" "}
+                  <em> गतिशीलता एकीकृत आर्टिफिशियल इंटेलिजेंस</em> नमूना, फसलों
+                  को बचाने के लिए मौसम की जानकारी, खाता प्रबंधन आदि।
+                </p>
+                <div className="allServices">
+                <Link to="/ai">सभी सेवाएं</Link>
+                </div>
+
+              </div>
+            )}
+            <div className="right-box" data-aos="fade-left">
+              <img src={ai_photo} alt="" draggable="false" />
             </div>
           </div>
         </section>
@@ -273,27 +314,27 @@ const Home = ({i, changeLang }) => {
             <input
               type="text"
               name="username"
-              placeholder={!changeLang ? "Username" : "उपयोगकर्ता नाम"}
+              placeholder={!changeLang ? " Username " : " उपयोगकर्ता नाम "}
               autoComplete="off"
               required
             />
           </div>
           <div className="Whatsapp-tag">
-            {!changeLang ? <p style={{ marginBottom: "10px" }}>WhatsApp No.:</p> : <p style={{ marginBottom: "10px" }}>व्हाट्सएप नंबर:</p>}
+            {!changeLang ? <p style={{ marginBottom: "10px" }}>WhatsApp No.:</p> : <p style={{ marginBottom: "10px" }}> व्हाट्सएप नंबर:</p>}
             <input
               type="text"
               name="whatsapp"
-              placeholder={!changeLang ? "WhatsApp No." : "व्हाट्सएप नंबर"}
+              placeholder={!changeLang ? " WhatsApp No." : " व्हाट्सएप नंबर "}
               autoComplete="off"
               required
             />
           </div>
           <div className="Email">
-            {!changeLang ? <p style={{ marginBottom: "10px" }}>E-mail:</p> : <p style={{ marginBottom: "10px" }}>ईमेल:</p>}
+            {!changeLang ? <p style={{ marginBottom: "10px" }}> E-mail:</p> : <p style={{ marginBottom: "10px" }}> ईमेल:</p>}
             <input
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder=" Email "
               autoComplete="off"
               required
             />
