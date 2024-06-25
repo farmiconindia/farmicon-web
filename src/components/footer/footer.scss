@@ -33,6 +33,7 @@
       margin: auto;
       gap: 8vw;
       justify-content: center;
+      z-index: 2; /* Added z-index */
 
       @include tablet {
         flex-direction: column;
@@ -150,6 +151,7 @@
       width: 90%;
       margin: auto;
       gap: 36px;
+      z-index: 2; /* Added z-index */
 
       .hr {
         display: block;
@@ -163,10 +165,17 @@
         align-items: center;
         gap: 2rem;
 
-        span {
+        a {
           color: #000;
           font-size: 12px;
           font-weight: 300;
+          text-decoration: none;
+          cursor: pointer;
+          z-index: 3; /* Ensured higher z-index */
+
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
@@ -176,15 +185,14 @@
       z-index: 2;
     }
 
-
     @include mobile {
       padding: 20px; /* Adjust padding for smaller screens */
       height: 550px; /* Remove fixed height for mobile */
       margin-bottom: -20px;
-  
+
       .upper-box {
         flex-direction: column; /* Display items in one column on mobile */
-  
+
         .first-box,
         .second-box,
         .third-box,
@@ -193,37 +201,36 @@
           // margin-bottom: 20px; /* Add margin between boxes */
         }
 
-        .first-box .brand{
+        .first-box .brand {
           display: none;
         }
 
-        .second-box{
+        .second-box {
           margin-bottom: -50px;
         }
-  
+
         .third-box {
-           gap: 10px;
-           margin-bottom: 0px;
+          gap: 10px;
+          margin-bottom: 0px;
           .add-desc {
             gap: 10px; /* Adjust gap between address lines */
           }
         }
-  
+
         .fourth-box {
           .upper,
           .lower {
             flex-direction: row; /* Display upper and lower sections in one column */
-            align-items:start; /* Center items horizontally */
+            align-items: start; /* Center items horizontally */
             margin-bottom: -20px;
           }
         }
       }
-  
+
       .lower-box {
         width: 100%; /* Make lower box full width on mobile */
         // margin-top: 20px; /* Add margin at the top */
       }
-     
     }
   }
 }
