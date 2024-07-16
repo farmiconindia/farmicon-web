@@ -671,6 +671,147 @@
       }
     }
 
+    .sec-11 {
+      background-image: url("../../assets/Group (1).png");
+      height: auto;
+      padding: 2rem 0;
+      //   background-color: themed("brand");
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include mobile {
+        height: auto;
+        padding: 1rem 0;
+      }
+
+      .container {
+        display: flex;
+        width: 80%;
+        color: black;
+        justify-content: center;
+        align-items: center;
+        gap: calc(1rem + 9vw);
+
+        @include tablet {
+        }
+
+        @include mobile {
+          flex-direction: column;
+        }
+
+        .left-box {
+          display: flex;
+          align-items: flex-start;
+          flex-direction: column;
+          justify-content: center;
+          gap: calc(1rem + 3vw);
+          width: 50%;
+
+          @include tablet {
+          }
+
+          @include mobile {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+          }
+
+          span {
+            font-size: themed("text-lg");
+            background-color: #054e45;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            color: white;
+
+            font-weight: 700;
+
+            @include tablet {
+            }
+
+            @include mobile {
+              width: 100%;
+              text-align: center;
+            }
+
+            .allServices{
+              transition: ease-in-out;
+            }
+  
+            .allServices:hover {
+              transform: scale(1.1);
+             }
+  
+
+          }
+
+          p {
+            font-weight: 400;
+            font-size: 18px;
+
+            em {
+              font-weight: 700;
+              font-size: 18px;
+            }
+
+            @include tablet {
+            }
+
+            @include mobile {
+              text-align: justify;
+            }
+          }
+
+          a {
+            text-decoration: none;
+            background-color: #054e45;
+            border-radius: 4px;
+            padding: 0.5rem 1rem;
+            color: white;
+          }
+
+          .allServices{
+            transition: ease-in-out;
+          }
+
+          .allServices:hover {
+            transform: scale(1.1);
+           }
+
+        }
+
+        .right-box {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40%;
+
+          img {
+            display: block;
+            // width: 100%;
+            width: 250px;
+            height: 200px;
+
+          }
+
+          @include tablet {
+          }
+
+          @include mobile {
+            width: 100%;
+          }          
+        }
+
+        .buyNow{
+          transition: ease-in-out;
+        }
+
+        .buyNow:hover {
+          transform: scale(1.1);
+         } 
+      }
+    }
+
     .sec-3 {
       display: flex;
       justify-content: center;
@@ -864,122 +1005,122 @@
         }
       }
     }
-    .sec-7 {
-      padding: 40px 0;
-      background-color: #ffffff; /* Set background color to white */
-      //border: none; /* Remove any border */
-      @include mobile {
-        flex-direction: column;
-      }
-    }
-    .sec-7 .container .recognition-heading {
-      display: inline-block; /* Set display to inline-block to enable setting width */
-      width: 1200px; /* Set width to 1200px */
-      height: 70px; /* Set height to 70px */
-      line-height: 70px; /* Set line height equal to height for vertical centering */
-      margin-left: 120px; /* Set margin from left */
-      margin-right: 170px; /* Set margin from right */
-      font-weight: bold;
-      font-size: 40px; 
-      margin-top: -200px;
-    }
+    // .sec-7 {
+    //   padding: 40px 0;
+    //   background-color: #ffffff; /* Set background color to white */
+    //   //border: none; /* Remove any border */
+    //   @include mobile {
+    //     flex-direction: column;
+    //   }
+    // }
+    // .sec-7 .container .recognition-heading {
+    //   display: inline-block; /* Set display to inline-block to enable setting width */
+    //   width: 1200px; /* Set width to 1200px */
+    //   height: 70px; /* Set height to 70px */
+    //   line-height: 70px; /* Set line height equal to height for vertical centering */
+    //   margin-left: 120px; /* Set margin from left */
+    //   margin-right: 170px; /* Set margin from right */
+    //   font-weight: bold;
+    //   font-size: 40px; 
+    //   margin-top: -200px;
+    // }
     
-    .container {
-      padding: 0 15px;
-      background-color: #ffffff; /* Set background color to white */
-    }
+    // .container {
+    //   padding: 0 15px;
+    //   background-color: #ffffff; /* Set background color to white */
+    // }
     
-    .recognition-images {
-      display: flex;
-      justify-content: center; /* Center images horizontally */
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px; /* Add gap between images */
-      // border: 2px solid rgb(124, 19, 189);
-      height: 350px;
-      padding: 20px;
+    // .recognition-images {
+    //   display: flex;
+    //   justify-content: center; /* Center images horizontally */
+    //   align-items: center;
+    //   flex-wrap: wrap;
+    //   gap: 20px; /* Add gap between images */
+    //   // border: 2px solid rgb(124, 19, 189);
+    //   height: 350px;
+    //   padding: 20px;
 
-    }
+    // }
     
-    .recognition-item {
-      text-align: center;
-      width: 300px; /* Set a fixed width for each item */
-      margin-top: 0px;
-    }
+    // .recognition-item {
+    //   text-align: center;
+    //   width: 300px; /* Set a fixed width for each item */
+    //   margin-top: 0px;
+    // }
     
-    .recognition-item img {
-      height: 100%; /* Set the height of the images to cover the entire height of the container */
-      width: auto; /* Allow the width to adjust accordingly */
-      max-width: 100%; /* Ensure the images don't exceed the container width */
-      border-radius: 8px; /* Rectangular shape */
-      object-fit: cover; /* Ensure the entire image is visible */
-      // border: 2px solid black; //* Optional: Add a border around the images */
-    }
+    // .recognition-item img {
+    //   height: 100%; /* Set the height of the images to cover the entire height of the container */
+    //   width: auto; /* Allow the width to adjust accordingly */
+    //   max-width: 100%; /* Ensure the images don't exceed the container width */
+    //   border-radius: 8px; /* Rectangular shape */
+    //   object-fit: cover; /* Ensure the entire image is visible */
+    //   // border: 2px solid black; //* Optional: Add a border around the images */
+    // }
 
-    .recognition-item p {
-      margin-top: 10px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #434343;
-      margin-bottom: 0; /* Remove bottom margin to align with image */
-    }
+    // .recognition-item p {
+    //   margin-top: 10px;
+    //   font-size: 18px;
+    //   font-weight: bold;
+    //   color: #434343;
+    //   margin-bottom: 0; /* Remove bottom margin to align with image */
+    // }
     
-    .recognition-item:nth-child(1) {
-      text-align: center;
-      margin-left: -120px;
-      margin-bottom: 20px; /* Add margin at the bottom to create space */
-      margin-top: 30px; /* Add negative margin to move it upwards */
-    }
-    .recognition-item:nth-child(2) {
-      text-align: center;
-      margin-left: 0px;
-      margin-bottom: 20px; /* Add margin at the bottom to create space */
-      margin-top: -80px; /* Add negative margin to move it upwards */
-    }
-    .recognition-item:nth-child(1) img {
-      width: auto; /* Set the first image to cover the entire width */
-      max-width: 100%;
-      height: 50px;
+    // .recognition-item:nth-child(1) {
+    //   text-align: center;
+    //   margin-left: -120px;
+    //   margin-bottom: 20px; /* Add margin at the bottom to create space */
+    //   margin-top: 30px; /* Add negative margin to move it upwards */
+    // }
+    // .recognition-item:nth-child(2) {
+    //   text-align: center;
+    //   margin-left: 0px;
+    //   margin-bottom: 20px; /* Add margin at the bottom to create space */
+    //   margin-top: -80px; /* Add negative margin to move it upwards */
+    // }
+    // .recognition-item:nth-child(1) img {
+    //   width: auto; /* Set the first image to cover the entire width */
+    //   max-width: 100%;
+    //   height: 50px;
 
-    }
-    .recognition-item:nth-child(2) img {
-      height: 170px;
-      width: auto; /* Set the height of recognition2 same as recognition3 */
-      max-width: 100%; /* Ensure the image doesn't exceed the container width */
-      border-radius: 8px; /* Rectangular shape */
-      object-fit: cover;
-      margin-top: 65px;
-      margin-left: 0px;
-    }
-    .recognition-item:nth-child(4) {
-      text-align: center;
-      width: auto;
-      max-width: 100%;
-      height: 200px;
-      margin-left: 50px;
-      // margin-bottom: -30px; /* Add margin at the bottom to create space */
-      margin-top: -110px; /* Add negative margin to move it upwards */
-    }
-    .recognition-item:nth-child(3) {
-      text-align: center;
-      width: auto;
-      max-width: 100%;
-      margin-left: 50px;
-      height: 200px;
-      // margin-bottom: -30px; /* Add margin at the bottom to create space */
-      margin-top: -110px; /* Add negative margin to move it upwards */
-    }
+    // }
+    // .recognition-item:nth-child(2) img {
+    //   height: 170px;
+    //   width: auto; /* Set the height of recognition2 same as recognition3 */
+    //   max-width: 100%; /* Ensure the image doesn't exceed the container width */
+    //   border-radius: 8px; /* Rectangular shape */
+    //   object-fit: cover;
+    //   margin-top: 65px;
+    //   margin-left: 0px;
+    // }
+    // .recognition-item:nth-child(4) {
+    //   text-align: center;
+    //   width: auto;
+    //   max-width: 100%;
+    //   height: 200px;
+    //   margin-left: 50px;
+    //   // margin-bottom: -30px; /* Add margin at the bottom to create space */
+    //   margin-top: -110px; /* Add negative margin to move it upwards */
+    // }
+    // .recognition-item:nth-child(3) {
+    //   text-align: center;
+    //   width: auto;
+    //   max-width: 100%;
+    //   margin-left: 50px;
+    //   height: 200px;
+    //   // margin-bottom: -30px; /* Add margin at the bottom to create space */
+    //   margin-top: -110px; /* Add negative margin to move it upwards */
+    // }
 
-    .recognition-item:nth-child(1) img {
-      width: 100%; /* Set the first image to cover the entire width */
-      height: 150px;
-      width: auto;
-      object-fit: cover;
-      max-width: 100%;
-      // margin-top: 0px;
+    // .recognition-item:nth-child(1) img {
+    //   width: 100%; /* Set the first image to cover the entire width */
+    //   height: 150px;
+    //   width: auto;
+    //   object-fit: cover;
+    //   max-width: 100%;
+    //   // margin-top: 0px;
 
-      // margin-top: 40px;
-    }
+    //   // margin-top: 40px;
+    // }
 
     
     
@@ -987,90 +1128,343 @@
     //   width: calc(50% - 10px); /* Set width for other images with some gap between them */
     // }
     
-    .recognition-item p {
-      margin-top: 10px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #434343;
-    }
+    // .recognition-item p {
+    //   margin-top: 10px;
+    //   font-size: 18px;
+    //   font-weight: bold;
+    //   color: #434343;
+    // }
     
-    .arrow {
-      text-decoration: none;
-      color: #ffff;
-      z-index: 9999;
-      pointer-events: auto;
+    // .arrow {
+    //   text-decoration: none;
+    //   color: #ffff;
+    //   z-index: 9999;
+    //   pointer-events: auto;
 
 
-      .up {
-        position:fixed;
-        bottom: 36px;
-        right: calc(0.5rem + 3vw);
-        display: flex;
-        width: calc(1.5rem + 2vw);
-        height: calc(1.5rem + 2vw);
-        background-color: themed("brand");
-        border-radius: 50%;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
+    //   .up {
+    //     position:fixed;
+    //     bottom: 36px;
+    //     right: calc(0.5rem + 3vw);
+    //     display: flex;
+    //     width: calc(1.5rem + 2vw);
+    //     height: calc(1.5rem + 2vw);
+    //     background-color: themed("brand");
+    //     border-radius: 50%;
+    //     text-align: center;
+    //     align-items: center;
+    //     justify-content: center;
 
-        img {
-          width: 50%;
-        }
-      }
-    }
-    .upArrow:hover {
-      transform: translateY(-5px);
-    }
+    //     img {
+    //       width: 50%;
+    //     }
+    //   }
+    // }
+    // .upArrow:hover {
+    //   transform: translateY(-5px);
+    // }
   
-    @media screen and (max-width: 1200px) {
-      .sec-7 .container .recognition-heading {
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
+    // @media screen and (max-width: 1200px) {
+    //   .sec-7 .container .recognition-heading {
+    //     width: 100%;
+    //     max-width: 1200px; /* Limit width on larger screens */
+    //     margin: 0 auto;
+    //   }
     
-      .recognition-images {
-        height: auto;
-      }
+    //   .recognition-images {
+    //     height: auto;
+    //   }
     
-      .recognition-item {
-        width: 100%;
-      }
-    }
+    //   .recognition-item {
+    //     width: 100%;
+    //   }
+    // }
     
     /* Responsive styles for tablets and mobile devices */
-    @media screen and (max-width: 768px) {
-      .sec-7 .container .recognition-heading {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-        text-align: center;
-      }
+    // @media screen and (max-width: 768px) {
+      // .sec-7 .container .recognition-heading {
+      //   width: 100%;
+      //   max-width: 100%;
+      //   margin: 0 auto;
+      //   text-align: center;
+      // }
     
-      .recognition-images {
-        height: auto;
-        padding: 10px; /* Adjust padding for smaller screens */
-      }
+      // .recognition-images {
+      //   height: auto;
+      //   padding: 10px; /* Adjust padding for smaller screens */
+      // }
     
-      .recognition-item {
-        width: 100%;
-      }
+      // .recognition-item {
+      //   width: 100%;
+      // }
     
-      .up {
-        width: 50px; /* Adjust size for smaller screens */
-        height: 50px;
-        bottom: 10px;
-        right: 10px;
-      }
+      // .up {
+      //   width: 50px; /* Adjust size for smaller screens */
+      //   height: 50px;
+      //   bottom: 10px;
+      //   right: 10px;
+      // }
     
-      .up img {
-        width: 30%;
-      }
-    }
+      // .up img {
+      //   width: 30%;
+      // }
+    // }
     
     
   } 
+}
+
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//   }
+
+//   to {
+//     opacity: 1;
+//   }
+// }
+
+
+/* General Media Queries for Mobile responsiveness */
+// @media only screen and (max-width: 768px) {
+//   body, html {
+//       width: 100%;
+//       overflow-x: hidden; /* Prevent horizontal scrolling */
+//   }
+
+//   .container, .sec-7 .container {
+//       max-width: 100%;
+//       padding: 0 15px; /* Ensure padding does not cause width to exceed 100% */
+//       box-sizing: border-box; /* Include padding in the width calculation */
+//   }
+
+//   /* Adjusting button sizes to prevent overflow */
+//   button, .language-btn, #send-btn, #record-btn {
+//       width: 100%; /* Full width to prevent overflow */
+//       margin: 10px 0; /* Proper spacing */
+//   }
+
+  // /* Adjust section-specific styles to prevent overlapping */
+  // .sec-7 .recognition-item {
+  //     width: auto; /* Adjust width to prevent overlap */
+  //     margin: 10px auto; /* Center and add vertical spacing */
+  //     display: block; /* Ensure items do not overlap horizontally */
+  // }
+
+  // .sec-7 .recognition-item img {
+  //     max-width: 100%; /* Ensure images do not exceed their containers */
+  //     height: auto; /* Maintain aspect ratio */
+  // }
+  
+  // .sec-7 .container .recognition-heading {
+  //     margin-top: 0;
+  //     margin-left: auto;
+  //     margin-right: auto;
+  //     text-align: center; /* Center heading */
+  //     width: calc(100% - 30px); /* Adjust width accounting for padding */
+  // }
+// }
+
+
+
+.sec-7 {
+  padding: 40px 0;
+  background-color: #ffffff;
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.sec-7 .container .recognition-heading {
+  display: inline-block;
+  width: 1200px;
+  height: 70px;
+  line-height: 70px;
+  margin-left: 120px;
+  margin-right: 170px;
+  font-weight: bold;
+  font-size: 40px;
+  margin-top: -200px;
+}
+
+.container {
+  padding: 0 15px;
+  background-color: #ffffff;
+}
+
+.recognition-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: 350px;
+  padding: 20px;
+}
+
+.recognition-item {
+  text-align: center;
+  width: 300px;
+  margin-top: 0px;
+}
+
+.recognition-item img {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.recognition-item p {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #434343;
+  margin-bottom: 0;
+}
+
+.recognition-item:nth-child(1) {
+  text-align: center;
+  margin-left: -120px;
+  margin-bottom: 20px;
+  margin-top: 30px;
+}
+
+.recognition-item:nth-child(2) {
+  text-align: center;
+  margin-left: 0px;
+  margin-bottom: 20px;
+  margin-top: -80px;
+}
+
+.recognition-item:nth-child(1) img {
+  width: auto;
+  max-width: 100%;
+  height: 50px;
+}
+
+.recognition-item:nth-child(2) img {
+  height: 170px;
+  width: auto;
+  max-width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-top: 65px;
+  margin-left: 0px;
+}
+
+.recognition-item:nth-child(4) {
+  text-align: center;
+  width: auto;
+  max-width: 100%;
+  height: 200px;
+  margin-left: 50px;
+  margin-top: -110px;
+}
+
+.recognition-item:nth-child(3) {
+  text-align: center;
+  width: auto;
+  max-width: 100%;
+  margin-left: 50px;
+  height: 200px;
+  margin-top: -110px;
+}
+
+.recognition-item:nth-child(1) img {
+  width: 100%;
+  height: 150px;
+  width: auto;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+.arrow {
+  text-decoration: none;
+  color: #ffff;
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.up {
+  position: fixed;
+  bottom: 36px;
+  right: calc(0.5rem + 3vw);
+  display: flex;
+  width: calc(1.5rem + 2vw);
+  height: calc(1.5rem + 2vw);
+  background-color: #007bff; // Replaced themed("brand") with a direct color value
+  border-radius: 50%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.up img {
+  width: 50%;
+}
+
+.upArrow:hover {
+  transform: translateY(-5px);
+}
+
+@media screen and (max-width: 1200px) {
+  .sec-7 .container .recognition-heading {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .recognition-images {
+    height: auto;
+  }
+
+  .recognition-item {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sec-7 {
+    padding: 20px 0;
+  }
+
+  .sec-7 .container .recognition-heading {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 0;
+    font-size: 24px;
+  }
+
+  .recognition-images {
+    height: auto;
+    padding: 10px;
+    flex-direction: column;
+  }
+
+  .recognition-item {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .recognition-item img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .up {
+    width: 50px;
+    height: 50px;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .up img {
+    width: 30%;
+  }
 }
 
 @keyframes fadeIn {
@@ -1080,5 +1474,68 @@
 
   to {
     opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  body, html {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container, .sec-7 .container {
+    max-width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  button, .language-btn, #send-btn, #record-btn {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .sec-7 .recognition-item {
+    width: auto;
+    margin: 10px auto;
+    display: block;
+  }
+
+  .sec-7 .recognition-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .sec-7 .container .recognition-heading {
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: calc(100% - 30px);
+  }
+}
+
+/* Additional Mobile Adjustments for Other Sections */
+@media only screen and (max-width: 768px) {
+  .sec-1, .sec-2, .sec-3, .sec-4, .sec-5, .sec-6, .sec-11 {
+      padding: 1rem 0; /* Uniform padding for sections */
+  }
+
+  .sec-1 .container, .sec-2 .container, .sec-3 .container, .sec-4 .container, .sec-5 .container, .sec-6 .container, .sec-11 .container {
+      flex-direction: column; /* Stack elements vertically on mobile */
+  }
+
+  .sec-1 .left-box, .sec-2 .left-box, .sec-3 .left-box, .sec-4 .left-box, .sec-5 .left-box, .sec-6 .left-box, .sec-11 .left-box {
+      width: 100%; /* Full width for content boxes */
+      align-items: center; /* Center content */
+      text-align: center; /* Center text */
+  }
+
+  .sec-1 .right-box, .sec-2 .right-box, .sec-3 .right-box, .sec-4 .right-box, .sec-5 .right-box, .sec-6 .right-box, .sec-11 .right-box {
+      width: 100%; /* Adjust width for right boxes */
+  }
+
+  .sec-1 img, .sec-2 img, .sec-3 img, .sec-4 img, .sec-5 img, .sec-6 img, .sec-11 img {
+      max-width: 100%; /* Ensure images do not cause overflow */
+      height: auto; /* Adjust height to maintain aspect ratio */
   }
 }
