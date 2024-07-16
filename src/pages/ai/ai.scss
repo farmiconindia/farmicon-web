@@ -1,4 +1,4 @@
-/* General styles */
+// / * General styles */
 // body {
 //     font-family: Arial, sans-serif;
 //     background-color: #f4f4f4;
@@ -131,4 +131,54 @@
     margin-top: 20px;
     margin-left: 300px;
   }
-  
+
+  /* Media Queries for Tablet responsiveness */
+@media (max-width: 1024px) {
+  #languageButtons {
+      width: 100%; /* Adjust width for smaller tablet screens */
+      margin-left: 0;
+      padding: 0 10px; /* Add padding for better touch interaction */
+  }
+
+  #text-input {
+      width: calc(100% - 20px); /* Adjust input width */
+      margin: 10px; /* Add margin for spacing */
+  }
+
+  #record-btn {
+      margin-top: 10px;
+      margin-left: 0;
+  }
+
+  .container {
+      padding: 10px; /* Reduce padding inside the container */
+  }
+}
+
+/* Media Queries for Mobile responsiveness */
+@media (max-width: 768px) {
+  body {
+      flex-direction: column; /* Stack elements vertically on mobile */
+  }
+
+  #languageButtons {
+      flex-direction: column; /* Stack language buttons vertically */
+      margin: 10px 0; /* Adjust margin for better spacing */
+  }
+
+  .language-btn {
+      margin-bottom: 10px; /* Add space between buttons */
+  }
+
+  #text-input, #send-btn, #record-btn {
+      width: calc(100% - 20px); /* Adjust width to fit mobile screens */
+  }
+
+  .chat-area {
+      margin-top: 10px; /* Adjust margin for better spacing */
+  }
+
+  audio {
+      margin-left: 0; /* Adjust audio element positioning */
+  }
+}
