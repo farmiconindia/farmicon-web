@@ -1,247 +1,152 @@
-import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
-import "./cropPrice.scss";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
-import { Bar } from "react-chartjs-2";
+import React, { useState } from 'react';
+import FilterForm from './FilterForm';
+import DataTable from './DataTable';
+import { Box, Button } from '@mui/material';
+import axios from 'axios';
+import CropPriceChart from './CropPriceChart';
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+const CropPrice = () => {
+  const [data, setData] = useState([]);
+  const [noDataMessage, setNoDataMessage] = useState('');
+  const [historicalData, setHistoricalData] = useState([]);
+  const [compareMarketData, setCompareMarketData] = useState([]);
+  const [chartType, setChartType] = useState('bar');
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: "top",
-    },
-    title: {
-      display: true,
-      text: "Price v/s Date",
-    },
-  },
-  maxBarThickness: 30, // Change this value to adjust the width of the bars
-};
+  const handleFilterChange = async (filters) => {
+    const { state, district, market, compareMarket, commodity, dateFrom, dateTo } = filters;
 
-const CropPrice = ({ changeLang }) => {
-  const [stateNames, setStateName] = useState([]);
-  const [commodityNames, setCommodityNames] = useState([]);
-  const [districtNames, setDistrictNames] = useState([]);
-  const [marketNames, setMarketNames] = useState([]);
-  const [chartData, setChartData] = useState([]);
-  const [isChart, setIsChart] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isStateLoading, setIsStateLoading] = useState(false);
-  const selectedCommodityRef = useRef("");
-  const selectedStateRef = useRef("");
-  const selectedDistrictRef = useRef("");
-  const selectedMarketRef = useRef("");
+    let priceUrl = `http://172.212.230.201:5000/recent_crop_prices?state=${state}&district=${district}&market=${market}&commodity=${commodity}`;
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
+    if (dateFrom && dateTo) {
+      priceUrl = `http://172.212.230.201:5000/range_crop_prices?state=${state}&district=${district}&market=${market}&commodity=${commodity}&date_from=${dateFrom}&date_to=${dateTo}`;
+    }
 
-  const getStates = async () => {
-    setIsStateLoading(true);
     try {
-      const res = await axios.get(
-        "https://jiqj9h6n9f.execute-api.ap-south-1.amazonaws.com/prod/api/get_data"
-      );
+      const response = await axios.get(priceUrl);
+      const items = response.data;
 
-      const states = [...new Set(res.data.message.map((item) => item.state))];
-       
-
-      setStateName(states);
-      setIsStateLoading(false);
+      if (items.length === 0) {
+        setData([]);
+        setNoDataMessage('No Data Found');
+      } else {
+        const sortedItems = items.sort((a, b) => new Date(b.arrival_date) - new Date(a.arrival_date));
+        setData(sortedItems);
+        // setData(items);
+        setNoDataMessage('');
+      }
     } catch (error) {
-      console.log(error);
-      setIsStateLoading(false);
+      console.error('Error fetching data:', error);
+      setData([]);
+      setNoDataMessage('Error fetching data');
     }
-  };
 
-  useEffect(() => {
-    getStates();
-    // console.log(stateNames)
-  }, []);
-
-  const getPriceAndDate = async () => {
-    if (selectedCommodityRef.current === "" || selectedStateRef.current === "")
-      return;
-    setIsLoading(true);
+    let trendUrl = `http://172.212.230.201:5000/price_trends?state=${state}&district=${district}&market=${market}&commodity=${commodity}`;
+    
+    if (dateFrom && dateTo) {
+      trendUrl = `http://172.212.230.201:5000/price_trends?state=${state}&district=${district}&market=${market}&commodity=${commodity}&date_from=${dateFrom}&date_to=${dateTo}`;
+    }
+    
     try {
-      const res = await axios.get(
-        `https://jiqj9h6n9f.execute-api.ap-south-1.amazonaws.com/prod/api/get_data?state=${selectedStateRef.current}&&district=${selectedDistrictRef.current}&market=${selectedMarketRef.current}&commodity=${selectedCommodityRef.current}`
-      );
-      const dates = res.data.message?.map((d) => d?.arrival_date);
-      const prices = res.data.message?.map((d) => Number(d?.modal_price));
-      setIsChart(dates.length > 0 && prices.length > 0);
-        console.log(res)
-      const data = {
-        labels: dates,
-        datasets: [
-          {
-            label: "Price (in Rupees)",
-            data: prices,
-            backgroundColor: "#023731",
-          },
-        ],
-      };
-      setChartData(data);
-      setIsLoading(false);
-      console.log(res)
+      const graphResponse = await axios.get(trendUrl);
+      const historicalItems = graphResponse.data;
+
+      if (historicalItems.length === 0) {
+        setHistoricalData([]);
+      } else {
+        setHistoricalData(historicalItems);
+      }
     } catch (error) {
-      console.log(error);
+      console.error('Error fetching data:', error);
+      setHistoricalData([]);
+      setNoDataMessage('Error fetching data');
+    }
+
+    if (compareMarket) {
+      let comparetrendUrl = `http://172.212.230.201:5000/price_trends?state=${state}&district=${district}&market=${compareMarket}&commodity=${commodity}`;
+
+      if (dateFrom && dateTo) {
+        comparetrendUrl = `http://172.212.230.201:5000/price_trends?state=${state}&district=${district}&market=${compareMarket}&commodity=${commodity}&date_from=${dateFrom}&date_to=${dateTo}`;
+      }
+      
+      try {
+        if(compareMarket === 'Nothing') {
+          setCompareMarketData([]);
+          return;
+        }
+        const comparegraphResponse = await axios.get(comparetrendUrl);
+        const comparehistoricalItems = comparegraphResponse.data;
+  
+        if (comparehistoricalItems.length === 0) {
+          setCompareMarketData([]);
+        } else {
+          setCompareMarketData(comparehistoricalItems);
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setCompareMarketData([]);
+        setNoDataMessage('Error fetching data');
+      }
     }
   };
 
-  const handleCommodityChange = (event) => {
-    selectedCommodityRef.current = event.target.value;
-  };
-  const handleStateChange = async (event) => {
-    // set next values zero
-    setDistrictNames([]);
-    setMarketNames([]);
-    setCommodityNames([]);
-    selectedStateRef.current = event.target.value;
-    // set values for state
-    const res = await axios.get(
-      `https://jiqj9h6n9f.execute-api.ap-south-1.amazonaws.com/prod/api/get_data?state=${selectedStateRef.current}`
-    );
-    const districts = [
-      ...new Set(res.data.message.map((item) => item.district)),
-    ];
-    setDistrictNames(districts);
-  };
-  const handleDistrictChange = async (event) => {
-    // set next values zero
-    setMarketNames([]);
-    setCommodityNames([]);
-    selectedDistrictRef.current = event.target.value;
-    // set values for district
-    const res = await axios.get(
-      `https://jiqj9h6n9f.execute-api.ap-south-1.amazonaws.com/prod/api/get_data?state=${selectedStateRef.current}&&district=${selectedDistrictRef.current}`
-    );
-    const markets = [...new Set(res.data.message.map((item) => item.market))];
-    setMarketNames(markets);
-  };
-  const handleMarketChange = async (event) => {
-    // set next values zero
-    setCommodityNames([]);
-    selectedMarketRef.current = event.target.value;
-    // set values for market
-    const res = await axios.get(
-      `https://jiqj9h6n9f.execute-api.ap-south-1.amazonaws.com/prod/api/get_data?state=${selectedStateRef.current}&district=${selectedDistrictRef.current}&market=${selectedMarketRef.current}`
-    );
-    const commodities = [
-      ...new Set(res.data.message.map((item) => item.commodity)),
-    ];
-    if (commodities.length > 0) {
-      setCommodityNames(commodities);
-    } else {
-      setCommodityNames(["No data found"]);
-    }
+  const handleChartTypeChange = (type) => {
+    setChartType(type);
   };
 
   return (
-    <div className="crop-container">
-      <h1> {!changeLang ? "Crop Price History" : "फसल मूल्य इतिहास"}</h1>
-      {isStateLoading && (
-        <div className="loading">
-          <span>Loading...</span>
-        </div>
-      )}
-      {!isStateLoading && (
-        <div className="selects">
-          <select onChange={handleStateChange} name="" id="">
-            <option value="">
-              {!changeLang ? "SELECT STATE" : "राज्य चुनें"}
-            </option>
-            {stateNames.map((state, i) => {
-              return (
-                <option key={i} value={state}>
-                  {state}
-                </option>
-              );
-            })}
-          </select>
-          <select onChange={handleDistrictChange} name="" id="">
-            <option value="">
-              {!changeLang ? "SELECT DISTRICT" : "जिले का चयन करें"}
-            </option>
-            {districtNames.map((district, i) => {
-              return (
-                <option key={i} value={district}>
-                  {district}
-                </option>
-              );
-            })}
-          </select>
-          <select onChange={handleMarketChange} name="" id="">
-            <option value="">
-              {!changeLang ? "SELECT MANDI" : "मंडी का चयन करें"}
-            </option>
-            {marketNames.map((market, i) => {
-              return (
-                <option key={i} value={market}>
-                  {market}
-                </option>
-              );
-            })}
-          </select>
-          <select onChange={handleCommodityChange} name="" id="">
-            <option value="">
-              {!changeLang ? "SELECT COMMODITY" : "कमोडिटी का चयन करें"}
-            </option>
-            {commodityNames.map((state, i) => {
-              return (
-                <option key={i} value={state}>
-                  {state}
-                </option>
-              );
-            })}
-          </select>
-          <button
-            type="button"
-            onClick={() => {
-              getPriceAndDate();
+    <div className="App">
+      <h1>Crop Price History</h1>
+      <FilterForm onFilterChange={handleFilterChange} />
+      <DataTable data={data} noDataMessage={noDataMessage} />
+      <div style={{ margin: '32px 96px 10px', display: 'flex', alignItems: 'center' }}>
+        <Box display="flex" justifyContent="center" alignItems="center" gap={2}>
+          <Button
+            variant={chartType === 'bar' ? 'contained' : 'outlined'}
+            color={chartType === 'bar' ? 'success' : 'success'}
+            onClick={() => handleChartTypeChange('bar')}
+            sx={{
+              minWidth: '150px',
+              height: '45px',
+              fontWeight: 'bold',
+              borderColor: chartType === 'bar' ? 'success.main' : 'success.main',
+              color: chartType === 'bar' ? 'white' : 'success.main',
+              backgroundColor: chartType === 'bar' ? 'success.main' : 'transparent',
+              '&:hover': {
+                backgroundColor: 'success.main',
+                color: 'white',
+                borderColor: 'success.main',
+              },
             }}
           >
-            {!changeLang ? "Show" : "दिखाना"}
-          </button>
-        </div>
-      )}
-      {isLoading && (
-        <div style={{ textAlign: "center", marginTop: "16vh" }}>Loading...</div>
-      )}
-      {!isLoading && (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: "6vh",
-          }}
-        >
-          {isChart === false && (
-            <span style={{ textAlign: "center", marginTop: "10vh" }}>
-              No Data Found
-            </span>
-          )}
-          {isChart && <Bar options={options} data={chartData} />}
-        </div>
-      )}
+            Bar Chart
+          </Button>
+          <Button
+            variant={chartType === 'line' ? 'contained' : 'outlined'}
+            color={chartType === 'line' ? 'primary' : 'primary'}
+            onClick={() => handleChartTypeChange('line')}
+            sx={{
+              minWidth: '150px',
+              height: '45px',
+              fontWeight: 'bold',
+              borderColor: chartType === 'line' ? 'primary.main' : 'primary.main',
+              color: chartType === 'line' ? 'white' : 'primary.main',
+              backgroundColor: chartType === 'line' ? 'primary.main' : 'transparent',
+              '&:hover': {
+                backgroundColor: 'primary.main',
+                color: 'white',
+                borderColor: 'primary.main',
+              },
+            }}
+          >
+            Line Chart
+          </Button>
+        </Box>
+      </div>
+      <CropPriceChart 
+        historicalData={historicalData} 
+        compareMarketData={compareMarketData} 
+        chartType={chartType} 
+      />
     </div>
   );
 };
