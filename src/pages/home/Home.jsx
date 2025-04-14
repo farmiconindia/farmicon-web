@@ -54,7 +54,7 @@ const Home = ({i, changeLang }) => {
           <div className="left">
             {!changeLang ? (
               <div className="content">
-                <p className="inc">Increase my</p>
+                <p className="inc">Increase your</p>
                 <p>Yield with</p>
                 <span className="gradient">FARMICON</span>
                 <a className="downloadApp" href="#">Download App</a>
