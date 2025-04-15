@@ -73,7 +73,7 @@ const Home = ({i, changeLang }) => {
           <div className="left">
             {!changeLang ? (
               <div className="content" data-aos="fade-right">
-                <p className="inc" >Increase your</p>
+                <p className="inc" >Increase Farm</p>
                 <p>Yield with</p>
                 <span className="gradient">FARMICON</span>
                 <a className="downloadApp" href="#">Download App</a>
