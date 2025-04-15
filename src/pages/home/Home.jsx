@@ -115,7 +115,7 @@ const Home = ({i, changeLang }) => {
                 Welcome to FarmiconBot, your AI-powered agricultural assistant. With a single click, access expert guidance, market reach, and essential services for crops and vegetables.
                 Our AI model offers solutions  {" "}
                   <em> crop diseases, weather updates and all the agricultural queries </em>
-                 for ensuring your farming success. Simplify your farming with FarmiconBot today!
+                 for ensuring your farming success. Simplify your farming with FarmiconBot today!.
                 </p>
                 <div className="allServices" data-aos="fade-up">
                 <Link to="/ai">AI Assistant</Link>
