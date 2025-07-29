@@ -1,0 +1,107 @@
+.fadeup {
+  animation: fadeup 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.fadein {
+  animation: fadein 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.fadeinSlow {
+  animation: fadein 1.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.scrollRow {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  padding: 1rem 0;
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.scrollTrack {
+  display: flex;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.scrollRight {
+  animation: scrollRight 60s linear infinite;
+  display: flex;
+  gap: 2rem;
+  /* Each card is 300px + 2rem gap, multiply by number of cards */
+  min-width: fit-content;
+}
+
+.scrollLeft {
+  animation: scrollLeft 60s linear infinite;
+  display: flex;
+  gap: 2rem;
+  min-width: fit-content;
+}
+
+.card {
+  flex: 0 0 300px;
+  width: 300px;
+  transform-origin: center;
+  position: relative;
+}
+
+.scrollRow:hover .scrollLeft,
+.scrollRow:hover .scrollRight {
+  animation-play-state: paused;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  background: radial-gradient(circle at 50% 50%, 
+              rgba(255,255,255,0) 0%, 
+              rgba(255,255,255,0.2) 100%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+@keyframes fadeup {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: none; 
+  }
+}
+
+@keyframes fadein {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+
+@keyframes scrollRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 1rem));
+  }
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(calc(-50% - 1rem));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
