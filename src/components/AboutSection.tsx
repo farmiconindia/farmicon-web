@@ -1,7 +1,11 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const AboutSection = () => {
+  const { t } = useLanguage();
   return (
     <section
       id="about"
@@ -11,9 +15,9 @@ const AboutSection = () => {
         backdropFilter: 'blur(6px)',
       }}
     >
-      <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">About Farmicon</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">{t('about.title')}</h2>
       <p className="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto mb-8">
-        Farmicon bridges tradition and technology, supporting Indian farmers, FPOs, and mandi sellers with modern tools and knowledge. Our mission is to make farming accessible, profitable, and sustainable for everyone.
+        {t('about.description')}
       </p>
       {/* Tractor GIF Animation */}
       <div className="mx-auto w-96 h-64 rounded-lg flex items-center justify-center mb-4 overflow-hidden">

@@ -1,7 +1,11 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ContactSection = () => {
+  const { t } = useLanguage();
   return (
     <section id="contact" className="py-20 px-4 relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -31,22 +35,22 @@ const ContactSection = () => {
             {/* Contact Form */}
             <div className="space-y-6">
               <div className="text-left">
-                <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-3">Contact Us</h2>
-                <p className="text-slate-800">Have questions or want to partner with us? Send us a message.</p>
+                <h2 className="text-3xl md:text-4xl font-bold text-green-900 mb-3">{t('contact.title')}</h2>
+                <p className="text-slate-800">{t('contact.subtitle')}</p>
               </div>
               <form className="space-y-4">
                 <input 
                   type="text" 
-                  placeholder="Name" 
+                  placeholder={t('contact.form.name')}
                   className="w-full p-3 rounded-xl bg-white/70 border border-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500/50 transition-all duration-300 placeholder:text-slate-600"
                 />
                 <input 
                   type="email" 
-                  placeholder="Email" 
+                  placeholder={t('contact.form.email')}
                   className="w-full p-3 rounded-xl bg-white/70 border border-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500/50 transition-all duration-300 placeholder:text-slate-600"
                 />
                 <textarea 
-                  placeholder="Message" 
+                  placeholder={t('contact.form.message')}
                   rows={4} 
                   className="w-full p-3 rounded-xl bg-white/70 border border-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-green-500/50 transition-all duration-300 placeholder:text-slate-600"
                 />
@@ -54,7 +58,7 @@ const ContactSection = () => {
                   type="submit" 
                   className="w-full px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-xl font-bold shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
                 >
-                  Send Message
+                  {t('contact.form.submit')}
                 </button>
               </form>
             </div>
@@ -62,7 +66,7 @@ const ContactSection = () => {
             {/* Contact Information */}
             <div className="space-y-8 text-left">
               <div>
-                <h3 className="text-xl font-bold text-green-900 mb-2">Contact Details</h3>
+                <h3 className="text-xl font-bold text-green-900 mb-2">{t('contact.contactDetails')}</h3>
                 <div className="space-y-3 text-slate-800">
                   <p className="flex items-center gap-2">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-600" viewBox="0 0 20 20" fill="currentColor">
@@ -83,22 +87,22 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-green-900 mb-2">Address</h3>
+                <h3 className="text-xl font-bold text-green-900 mb-2">{t('contact.address.title')}</h3>
                 <p className="flex items-start gap-2 text-slate-800">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mt-1 text-green-600 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                   </svg>
                   <span>
-                    I-3, Tides Business Incubator<br />
-                    IIT Roorkee, Roorkee<br />
-                    Uttarakhand 247667
+                    {t('contact.address.line1')}<br />
+                    {t('contact.address.line2')}<br />
+                    {t('contact.address.line3')}
                   </span>
                 </p>
               </div>
 
               <div className="pt-4 flex items-center gap-4">
                 <p className="text-sm text-slate-600 italic flex-1">
-                  We&apos;ll get back to you within 24-48 hours during business days.
+                  {t('contact.responseTime')}
                 </p>
                 {/* Download App Button */}
                 <a
@@ -116,7 +120,7 @@ const ContactSection = () => {
                       className="object-contain"
                     />
                   </div>
-                  <span>Download App</span>
+                  <span>{t('nav.downloadApp')}</span>
                 </a>
               </div>
             </div>

@@ -1,7 +1,11 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const HeroSection = () => {
+  const { t } = useLanguage();
   return (
     <section
       id="hero"
@@ -28,16 +32,16 @@ const HeroSection = () => {
           />
         </div>
         <h1 className="text-4xl md:text-6xl font-extrabold text-green-900 mb-4 animate-fadein drop-shadow-lg">
-          Empowering Indian Farmers with Technology
+          {t('hero.title')}
         </h1>
         <p className="text-lg md:text-2xl text-slate-800 mb-8 max-w-2xl mx-auto animate-fadein-slow">
-          Farmicon is your all-in-one platform for smarter, easier, and more profitable farming.
+          {t('hero.subtitle')}
         </p>
         <a
           href="#download"
           className="px-8 py-4 bg-gradient-to-r from-green-50 to-blue-50 text-slate-900 rounded-2xl font-bold shadow-xl hover:scale-105 hover:from-green-100 hover:to-blue-100 transition-all duration-200 border border-blue-100 animate-glow"
         >
-          Get the App
+          {t('hero.cta')}
         </a>
       </div>
       {/* Farmer Image - Left Side */}

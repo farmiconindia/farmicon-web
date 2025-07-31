@@ -1,5 +1,6 @@
 import './globals.css';
 import React from 'react';
+import { ClientLayout } from './client-layout';
 
 export const metadata = {
   title: 'Farmicon Landing Page',
@@ -24,7 +25,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="absolute top-1/3 left-1/2 w-1/3 h-1/3 bg-green-100 rounded-full blur-2xl opacity-40 animate-blob3" />
         </div>
         <div className="relative z-10">
-          {children}
+          <ClientLayout>
+            {children}
+          </ClientLayout>
         </div>
         <style>{`
           @keyframes blob1 {

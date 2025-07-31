@@ -1,0 +1,302 @@
+{
+  "en": {
+    "nav": {
+      "about": "About",
+      "features": "Features",
+      "howItWorks": "How It Works",
+      "media": "Media",
+      "testimonials": "Testimonials",
+      "contact": "Contact",
+      "downloadApp": "Download App",
+      "getTheApp": "Get the Farmicon App",
+      "scanQr": "Scan QR or tap to download"
+    },
+    "hero": {
+      "title": "Empowering Indian Farmers with Technology",
+      "subtitle": "Farmicon is your all-in-one platform for smarter, easier, and more profitable farming.",
+      "cta": "Get the App"
+    },
+    "about": {
+      "title": "About Farmicon",
+      "description": "Farmicon bridges tradition and technology, supporting Indian farmers, FPOs, and mandi sellers with modern tools and knowledge. Our mission is to make farming accessible, profitable, and sustainable for everyone."
+    },
+    "features": {
+      "title": "Our Services",
+      "subtitle": "Comprehensive farming solutions powered by technology",
+      "items": {
+        "droneSpray": {
+          "title": "Drone Spray",
+          "desc": "Precision crop spraying for healthier yields."
+        },
+        "farmingChatbot": {
+          "title": "Farming Chatbot",
+          "desc": "24/7 audio-supported help in your language."
+        },
+        "cropPrices": {
+          "title": "Crop Prices",
+          "desc": "Live mandi prices at your fingertips."
+        },
+        "soilTesting": {
+          "title": "Soil Testing",
+          "desc": "Know your soil, grow better crops."
+        },
+        "cropDoctor": {
+          "title": "Crop Doctor",
+          "desc": "Diagnose and treat crop issues instantly."
+        },
+        "weatherUpdates": {
+          "title": "Weather Updates",
+          "desc": "Stay ahead with real-time forecasts."
+        },
+        "govtSchemes": {
+          "title": "Govt. Schemes",
+          "desc": "Easy access to the latest government schemes."
+        },
+        "helpServices": {
+          "title": "Help Services",
+          "desc": "Find and rent modern farming equipment."
+        },
+        "digitalFarming": {
+          "title": "Digital Farming",
+          "desc": "Expert tips and best practices."
+        },
+        "landMapping": {
+          "title": "Land Mapping",
+          "desc": "Smart tools for land management."
+        },
+        "ledger": {
+          "title": "Ledger",
+          "desc": "Simple digital record-keeping for your farm."
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "How Farmicon Works",
+      "subtitle": "Get started with Farmicon in four simple steps",
+      "steps": {
+        "downloadApp": {
+          "title": "Download the App",
+          "desc": "Get Farmicon from the Play Store."
+        },
+        "signUp": {
+          "title": "Sign Up",
+          "desc": "Register as a farmer, FPO, or mandi seller."
+        },
+        "connect": {
+          "title": "Connect & Share",
+          "desc": "Join the farming community."
+        },
+        "growAndProfit": {
+          "title": "Grow & Profit",
+          "desc": "Make informed decisions and boost your yield."
+        }
+      }
+    },
+    "downloadApp": {
+      "title": "Get Farmicon Today",
+      "subtitle": "Start your journey towards smarter farming. Download the app now!"
+    },
+    "media": {
+      "title": "In the News & Recognized By"
+    },
+    "testimonials": {
+      "title": "What Our Users Say",
+      "subtitle": "Join thousands of farmers who are already benefiting from Farmicon",
+      "users": {
+        "user1": {
+          "quote": "Farmicon's technology has transformed my farming. The drone spraying service has saved me both time and money while ensuring better crop health."
+        },
+        "user2": {
+          "quote": "मैं किसी भी समय हिंदी में खेती के बारे में सलाह ले सकती हूं। ऐप का चैटबोट बहुत मददगार है और हमेशा उपलब्ध रहता है।"
+        },
+        "user3": {
+          "quote": "Real-time mandi prices and direct buyer connections have helped me get 40% better prices for my crops. Farmicon is a game-changer for farmers."
+        }
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "subtitle": "Have questions or want to partner with us? Send us a message.",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "submit": "Send Message"
+      },
+      "contactDetails": "Contact Details",
+      "address": {
+        "title": "Address",
+        "line1": "I-3, Tides Business Incubator",
+        "line2": "IIT Roorkee, Roorkee",
+        "line3": "Uttarakhand 247667"
+      },
+      "responseTime": "We'll get back to you within 24-48 hours during business days."
+    },
+    "footer": {
+      "quickLinks": "Quick Links",
+      "contactUs": "Contact Us",
+      "downloadApp": "Download Farmicon App",
+      "scanQrText": "Scan QR code or click below to download our app",
+      "social": {
+        "facebook": "Facebook",
+        "whatsapp": "WhatsApp",
+        "youtube": "YouTube"
+      },
+      "legal": {
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Service"
+      },
+      "copyright": "© 2025 Farmicon. All rights reserved."
+    }
+  },
+  "hi": {
+    "nav": {
+      "about": "हमारे बारे में",
+      "features": "सुविधाएं",
+      "howItWorks": "कैसे काम करता है",
+      "media": "मीडिया",
+      "testimonials": "प्रशंसापत्र",
+      "contact": "संपर्क करें",
+      "downloadApp": "ऐप डाउनलोड करें",
+      "getTheApp": "फार्मिकॉन ऐप पाएं",
+      "scanQr": "QR स्कैन करें या डाउनलोड करने के लिए टैप करें"
+    },
+    "hero": {
+      "title": "तकनीक के साथ भारतीय किसानों का सशक्तिकरण",
+      "subtitle": "फार्मिकॉन आपका ऑल-इन-वन प्लेटफॉर्म है स्मार्ट, आसान और अधिक लाभदायक खेती के लिए।",
+      "cta": "ऐप पाएं"
+    },
+    "about": {
+      "title": "फार्मिकॉन के बारे में",
+      "description": "फार्मिकॉन परंपरा और तकनीक को जोड़ता है, भारतीय किसानों, एफपीओ और मंडी विक्रेताओं को आधुनिक उपकरणों और ज्ञान के साथ सहायता करता है। हमारा मिशन खेती को सभी के लिए सुलभ, लाभदायक और टिकाऊ बनाना है।"
+    },
+    "features": {
+      "title": "हमारी सेवाएं",
+      "subtitle": "तकनीक द्वारा संचालित व्यापक कृषि समाधान",
+      "items": {
+        "droneSpray": {
+          "title": "ड्रोन स्प्रे",
+          "desc": "स्वस्थ उपज के लिए सटीक फसल छिड़काव।"
+        },
+        "farmingChatbot": {
+          "title": "कृषि चैटबोट",
+          "desc": "24/7 आपकी भाषा में ऑडियो-समर्थित मदद।"
+        },
+        "cropPrices": {
+          "title": "फसल के दाम",
+          "desc": "लाइव मंडी के भाव आपकी उंगलियों पर।"
+        },
+        "soilTesting": {
+          "title": "मिट्टी परीक्षण",
+          "desc": "अपनी मिट्टी को जानें, बेहतर फसल उगाएं।"
+        },
+        "cropDoctor": {
+          "title": "फसल डॉक्टर",
+          "desc": "तुरंत फसल की समस्याओं का निदान और उपचार।"
+        },
+        "weatherUpdates": {
+          "title": "मौसम अपडेट",
+          "desc": "रीयल-टाइम पूर्वानुमान के साथ आगे रहें।"
+        },
+        "govtSchemes": {
+          "title": "सरकारी योजनाएं",
+          "desc": "नवीनतम सरकारी योजनाओं तक आसान पहुंच।"
+        },
+        "helpServices": {
+          "title": "सहायता सेवाएं",
+          "desc": "आधुनिक कृषि उपकरण ढूंढें और किराए पर लें।"
+        },
+        "digitalFarming": {
+          "title": "डिजिटल खेती",
+          "desc": "विशेषज्ञ सुझाव और सर्वोत्तम प्रथाएं।"
+        },
+        "landMapping": {
+          "title": "भूमि मैपिंग",
+          "desc": "भूमि प्रबंधन के लिए स्मार्ट टूल्स।"
+        },
+        "ledger": {
+          "title": "खाता-बही",
+          "desc": "आपकी खेती के लिए सरल डिजिटल रिकॉर्ड-कीपिंग।"
+        }
+      }
+    },
+    "howItWorks": {
+      "title": "फार्मिकॉन कैसे काम करता है",
+      "subtitle": "चार सरल चरणों में फार्मिकॉन के साथ शुरुआत करें",
+      "steps": {
+        "downloadApp": {
+          "title": "ऐप डाउनलोड करें",
+          "desc": "प्ले स्टोर से फार्मिकॉन पाएं।"
+        },
+        "signUp": {
+          "title": "साइन अप करें",
+          "desc": "किसान, एफपीओ, या मंडी विक्रेता के रूप में पंजीकरण करें।"
+        },
+        "connect": {
+          "title": "जुड़ें और साझा करें",
+          "desc": "कृषि समुदाय से जुड़ें।"
+        },
+        "growAndProfit": {
+          "title": "विकास और लाभ",
+          "desc": "सूचित निर्णय लें और अपनी उपज बढ़ाएं।"
+        }
+      }
+    },
+    "downloadApp": {
+      "title": "आज ही फार्मिकॉन पाएं",
+      "subtitle": "स्मार्ट खेती की ओर अपनी यात्रा शुरू करें। अभी ऐप डाउनलोड करें!"
+    },
+    "media": {
+      "title": "समाचारों में और इनसे मान्यता प्राप्त"
+    },
+    "testimonials": {
+      "title": "हमारे उपयोगकर्ता क्या कहते हैं",
+      "subtitle": "हजारों किसानों से जुड़ें जो पहले से ही फार्मिकॉन का लाभ उठा रहे हैं",
+      "users": {
+        "user1": {
+          "quote": "फार्मिकॉन की तकनीक ने मेरी खेती को बदल दिया है। ड्रोन स्प्रेइंग सेवा ने मेरा समय और पैसा बचाया है और फसल को स्वस्थ रखा है।"
+        },
+        "user2": {
+          "quote": "मैं किसी भी समय हिंदी में खेती के बारे में सलाह ले सकती हूं। ऐप का चैटबोट बहुत मददगार है और हमेशा उपलब्ध रहता है।"
+        },
+        "user3": {
+          "quote": "रीयल-टाइम मंडी मूल्य और सीधे खरीदारों से जुड़ाव ने मेरी फसलों के लिए 40% बेहतर कीमत पाने में मदद की है। फार्मिकॉन किसानों के लिए गेम-चेंजर है।"
+        }
+      }
+    },
+    "contact": {
+      "title": "संपर्क करें",
+      "subtitle": "कोई प्रश्न है या साझेदारी करना चाहते हैं? हमें संदेश भेजें।",
+      "form": {
+        "name": "नाम",
+        "email": "ईमेल",
+        "message": "संदेश",
+        "submit": "संदेश भेजें"
+      },
+      "contactDetails": "संपर्क विवरण",
+      "address": {
+        "title": "पता",
+        "line1": "आई-3, टाइड्स बिजनेस इनक्यूबेटर",
+        "line2": "आईआईटी रुड़की, रुड़की",
+        "line3": "उत्तराखंड 247667"
+      },
+      "responseTime": "हम व्यावसायिक दिनों में 24-48 घंटों के भीतर आपसे संपर्क करेंगे।"
+    },
+    "footer": {
+      "quickLinks": "त्वरित लिंक",
+      "contactUs": "संपर्क करें",
+      "downloadApp": "फार्मिकॉन ऐप डाउनलोड करें",
+      "scanQrText": "QR कोड स्कैन करें या ऐप डाउनलोड करने के लिए नीचे क्लिक करें",
+      "social": {
+        "facebook": "फेसबुक",
+        "whatsapp": "व्हाट्सएप",
+        "youtube": "यूट्यूब"
+      },
+      "legal": {
+        "privacy": "गोपनीयता नीति",
+        "terms": "सेवा की शर्तें"
+      },
+      "copyright": "© 2025 फार्मिकॉन। सर्वाधिकार सुरक्षित।"
+    }
+  }
+}

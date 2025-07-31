@@ -1,7 +1,11 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer className="bg-gradient-to-br from-green-900 to-green-800 text-white py-12 px-4 mt-8">
       <div className="max-w-7xl mx-auto">
@@ -20,21 +24,28 @@ const Footer = () => {
               <span className="font-bold text-2xl">Farmicon</span>
             </div>
             <p className="text-green-100 text-sm leading-relaxed">
-              Empowering Indian farmers with technology for smarter, easier, and more profitable farming solutions.
+              {t('hero.subtitle')}
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
-              {['About', 'Features', 'How It Works', 'Media', 'Testimonials', 'Contact'].map((item) => (
-                <li key={item}>
+              {[
+                { key: 'about', link: t('nav.about') },
+                { key: 'features', link: t('nav.features') },
+                { key: 'howitworks', link: t('nav.howItWorks') },
+                { key: 'media', link: t('nav.media') },
+                { key: 'testimonials', link: t('nav.testimonials') },
+                { key: 'contact', link: t('nav.contact') }
+              ].map(({ key, link }) => (
+                <li key={key}>
                   <a 
-                    href={`#${item.toLowerCase().replace(/ /g, '')}`}
+                    href={`#${key}`}
                     className="text-green-100 hover:text-white transition-colors duration-200"
                   >
-                    {item}
+                    {link}
                   </a>
                 </li>
               ))}
@@ -43,7 +54,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
+            <h3 className="font-semibold text-lg mb-4">{t('footer.contactUs')}</h3>
             <div className="space-y-3 text-green-100">
               <p className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -65,9 +76,9 @@ const Footer = () => {
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
                 <span className="text-sm">
-                  I-3, Tides Business Incubator<br />
-                  IIT Roorkee, Roorkee<br />
-                  Uttarakhand 247667
+                  {t('contact.address.line1')}<br />
+                  {t('contact.address.line2')}<br />
+                  {t('contact.address.line3')}
                 </span>
               </p>
             </div>
@@ -75,7 +86,7 @@ const Footer = () => {
 
           {/* Download App Section */}
           <div className="lg:pl-4">
-            <h3 className="font-semibold text-lg mb-4">Download Farmicon App</h3>
+            <h3 className="font-semibold text-lg mb-4">{t('footer.downloadApp')}</h3>
             <div className="space-y-4">
               <div className="flex items-center gap-4 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10">
                 {/* QR Code */}
@@ -90,7 +101,7 @@ const Footer = () => {
                 </div>
                 {/* Download Text */}
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm text-green-100 mb-2">Scan QR code or click below to download our app</p>
+                  <p className="text-sm text-green-100 mb-2">{t('footer.scanQrText')}</p>
                   <a
                     href="https://play.google.com/store/apps/details?id=com.farmicon.application&pcampaignid=web_shareImpact.com"
                     target="_blank"
@@ -104,7 +115,7 @@ const Footer = () => {
                       height={20}
                       className="w-5 h-5"
                     />
-                    <span>Download App</span>
+                    <span>{t('nav.downloadApp')}</span>
                   </a>
                 </div>
               </div>
@@ -116,23 +127,27 @@ const Footer = () => {
         <div className="border-t border-green-700/50 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-6">
-              {['Facebook', 'WhatsApp', 'YouTube'].map((social) => (
+              {[
+                { key: 'facebook', label: t('footer.social.facebook') },
+                { key: 'whatsapp', label: t('footer.social.whatsapp') },
+                { key: 'youtube', label: t('footer.social.youtube') }
+              ].map(({ key, label }) => (
                 <a
-                  key={social}
+                  key={key}
                   href="#"
                   className="text-green-100 hover:text-white transition-colors duration-200"
                 >
-                  {social}
+                  {label}
                 </a>
               ))}
             </div>
             <div className="flex items-center gap-6 text-sm text-green-100">
-              <a href="#" className="hover:text-white transition-colors duration-200">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition-colors duration-200">Terms of Service</a>
+              <a href="#" className="hover:text-white transition-colors duration-200">{t('footer.legal.privacy')}</a>
+              <a href="#" className="hover:text-white transition-colors duration-200">{t('footer.legal.terms')}</a>
             </div>
           </div>
           <div className="text-center mt-6 text-green-200 text-sm">
-            &copy; {new Date().getFullYear()} Farmicon. All rights reserved.
+            {t('footer.copyright')}
           </div>
         </div>
       </div>
@@ -140,4 +155,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;

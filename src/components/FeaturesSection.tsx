@@ -1,22 +1,32 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import styles from '../styles/Features.module.css';
+import { useLanguage } from '../contexts/LanguageContext';
 
-const features = [
-  { name: 'Drone Spray', desc: 'Precision crop spraying for healthier yields.', image: '/drone.png' },
-  { name: 'Farming Chatbot', desc: '24/7 audio-supported help in your language.', image: '/chat.png' },
-  { name: 'Crop Prices', desc: 'Live mandi prices at your fingertips.', image: '/crop price.png' },
-  { name: 'Soil Testing', desc: 'Know your soil, grow better crops.', image: '/soil testing.png' },
-  { name: 'Crop Doctor', desc: 'Diagnose and treat crop issues instantly.', image: '/crop doctor.png' },
-  { name: 'Weather Updates', desc: 'Stay ahead with real-time forecasts.', image: '/weather.png' },
-  { name: 'Govt. Schemes', desc: 'Easy access to the latest government schemes.', image: '/government schemes.png' },
-  { name: 'Help Services', desc: 'Find and rent modern farming equipment.', image: '/help sevices.png' },
-  { name: 'Digital Farming', desc: 'Expert tips and best practices.', image: '/digiFarming.gif' },
-  { name: 'Land Mapping', desc: 'Smart tools for land management.', image: '/land mapping.png' },
-  { name: 'Ledger', desc: 'Simple digital record-keeping for your farm.', image: '/ledger.png' },
+const featureKeys = [
+  { key: 'droneSpray', image: '/drone.png' },
+  { key: 'farmingChatbot', image: '/chat.png' },
+  { key: 'cropPrices', image: '/crop price.png' },
+  { key: 'soilTesting', image: '/soil testing.png' },
+  { key: 'cropDoctor', image: '/crop doctor.png' },
+  { key: 'weatherUpdates', image: '/weather.png' },
+  { key: 'govtSchemes', image: '/government schemes.png' },
+  { key: 'helpServices', image: '/help sevices.png' },
+  { key: 'digitalFarming', image: '/digiFarming.gif' },
+  { key: 'landMapping', image: '/land mapping.png' },
+  { key: 'ledger', image: '/ledger.png' }
 ];
 
 const FeaturesSection = () => {
+  const { t } = useLanguage();
+  
+  const features = featureKeys.map(({ key, image }) => ({
+    name: t(`features.items.${key}.title`),
+    desc: t(`features.items.${key}.desc`),
+    image
+  }));
   return (
     <section id="features" className="py-20 px-4 bg-gradient-to-b from-blue-50 to-green-50 text-center relative overflow-hidden">
       {/* Background Decoration */}
@@ -27,10 +37,10 @@ const FeaturesSection = () => {
       
       <div className="relative z-10">
         <h2 className={`text-4xl md:text-5xl font-bold text-green-800 mb-4 ${styles.fadein}`}>
-          Our Services
+          {t('features.title')}
         </h2>
         <p className={`text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto ${styles.fadeinSlow}`}>
-          Comprehensive farming solutions powered by technology
+          {t('features.subtitle')}
         </p>
         
         <div className="w-full">

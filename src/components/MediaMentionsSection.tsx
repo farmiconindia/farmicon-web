@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
 import Marquee from 'react-fast-marquee';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const media = [
   { name: 'AgriTech Awards 2024' },
@@ -10,9 +13,10 @@ const media = [
 ];
 
 const MediaMentionsSection = () => {
+  const { t } = useLanguage();
   return (
     <section id="media" className="py-16 px-4 bg-blue-50 text-center">
-      <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-8">In the News & Recognized By</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-8">{t('media.title')}</h2>
       <Marquee gradient={false} speed={40} pauseOnHover>
         {media.map((item) => (
           <div key={item.name} className="mx-8 inline-block">

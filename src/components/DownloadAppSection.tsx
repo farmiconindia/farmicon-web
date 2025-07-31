@@ -1,9 +1,13 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.farmicon.application&pcampaignid=web_shareImpact.com';
 
 const DownloadAppSection = () => {
+  const { t } = useLanguage();
   return (
     <section id="download" className="py-20 px-4 bg-gradient-to-b from-white to-green-50/30 relative overflow-hidden">
       {/* Background Elements */}
@@ -16,10 +20,10 @@ const DownloadAppSection = () => {
       <div className="max-w-6xl mx-auto relative">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-green-800 mb-4 [text-shadow:0_2px_10px_rgba(0,0,0,0.1)]">
-            Get Farmicon Today
+            {t('downloadApp.title')}
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Start your journey towards smarter farming. Download the app now!
+            {t('downloadApp.subtitle')}
           </p>
         </div>
 

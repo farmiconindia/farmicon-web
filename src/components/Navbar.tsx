@@ -2,9 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { useLanguage } from '../contexts/LanguageContext';
+import LanguageToggle from './LanguageToggle';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t, language } = useLanguage();
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -21,75 +24,81 @@ const Navbar: React.FC = () => {
   return (
     <nav className="sticky top-0 z-[60] w-full px-4 md:px-6 py-2 md:py-3 flex items-center justify-between shadow-xl bg-gradient-to-r from-green-50 to-blue-50">
       {/* Logo */}
-      <div className="flex items-center space-x-3">
-        <div className="w-8 h-8 relative">
-          <Image
-            src="/logo.png"
-            alt="Farmicon Logo"
-            fill
-            sizes="(max-width: 768px) 32px, 32px"
-            priority
-            className="object-contain"
-          />
-        </div>
-        <span className="font-extrabold text-2xl text-green-900">Farmicon</span>
-      </div>
-
-      {/* Desktop Navigation */}
-      <div className="hidden md:flex items-center">
-        <div className="flex items-center space-x-8 mr-8">
-          {['About', 'Features', 'How It Works', 'Media', 'Testimonials', 'Contact'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase().replace(/ /g, '')}`}
-              className="font-medium text-slate-800 hover:text-green-600 transition-colors duration-200"
-            >
-              {item}
-            </a>
-          ))}
-        </div>
-        
-        {/* Download Button - Desktop */}
-        <a
-          href="https://play.google.com/store/apps/details?id=com.farmicon.application&pcampaignid=web_shareImpact.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-xl font-bold shadow-lg hover:shadow-xl hover:scale-105 active:scale-[0.98] transition-all duration-200 border border-white/10"
-        >
-          <div className="w-5 h-5 relative">
+      <div className="flex items-center">
+        <div className="flex items-center space-x-3">
+          <div className="w-8 h-8 relative">
             <Image
               src="/logo.png"
               alt="Farmicon Logo"
               fill
-              sizes="20px"
+              sizes="(max-width: 768px) 32px, 32px"
+              priority
               className="object-contain"
             />
           </div>
-          <span>Download App</span>
+          <span className="font-extrabold text-2xl text-green-900">{language === 'hi' ? 'फार्मिकॉन' : 'Farmicon'}</span>
+        </div>
+      </div>
+
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex items-center justify-center flex-1">
+        <div className="flex items-center justify-center space-x-8">
+          {[
+            { key: 'about', label: t('nav.about') },
+            { key: 'features', label: t('nav.features') },
+            { key: 'howitworks', label: t('nav.howItWorks') },
+            { key: 'media', label: t('nav.media') },
+            { key: 'testimonials', label: t('nav.testimonials') },
+            { key: 'contact', label: t('nav.contact') }
+          ].map(({ key, label }) => (
+            <a
+              key={key}
+              href={`#${key}`}
+              className="font-medium text-slate-800 hover:text-green-600 transition-colors duration-200"
+            >
+              {label}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Language and Download Buttons */}
+      <div className="hidden md:flex items-center space-x-4">
+        <LanguageToggle />
+        <a
+          href="#download"
+          className="px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-green-500 to-blue-500 rounded-full hover:from-green-600 hover:to-blue-600 transition-all duration-200 shadow-sm hover:shadow-md"
+        >
+          {t('nav.downloadApp')}
         </a>
       </div>
 
-      {/* Mobile Menu Button */}
-      <button 
-        className="md:hidden p-2 rounded-lg transition-colors hover:bg-black/5"
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-        aria-label="Toggle menu"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={2}
-          stroke="currentColor"
-          className="w-6 h-6 text-green-900"
+      {/* Mobile Language Toggle and Menu Button */}
+      <div className="md:hidden flex items-center gap-2">
+        <div className="flex items-center">
+          <LanguageToggle />
+        </div>
+        <button 
+          className="p-2 rounded-lg transition-colors hover:bg-black/5"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
-          />
-        </svg>
-      </button>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-6 h-6 text-green-900"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+            />
+          </svg>
+        </button>
+      </div>
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
@@ -157,23 +166,35 @@ const Navbar: React.FC = () => {
           {/* Navigation Links */}
           <div className="flex-1 bg-white overflow-y-auto scrollbar-none">
             <div className="py-2">
-              {['About', 'Features', 'How It Works', 'Media', 'Testimonials', 'Contact'].map((item) => (
+              {[
+                { key: 'about', label: t('nav.about') },
+                { key: 'features', label: t('nav.features') },
+                { key: 'howitworks', label: t('nav.howItWorks') },
+                { key: 'media', label: t('nav.media') },
+                { key: 'testimonials', label: t('nav.testimonials') },
+                { key: 'contact', label: t('nav.contact') }
+              ].map(({ key, label }) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase().replace(/ /g, '')}`}
+                  key={key}
+                  href={`#${key}`}
                   className="block px-6 py-3.5 text-slate-800 text-lg font-medium hover:bg-gradient-to-r hover:from-green-50 hover:to-blue-50 active:from-green-100 active:to-blue-100 transition-all duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item}
+                  {label}
                 </a>
               ))}
+            </div>
+
+            {/* Language Switcher in Mobile Menu */}
+            <div className="px-6 py-4 flex justify-center">
+              <LanguageToggle />
             </div>
           </div>
 
           {/* Mobile Download Section */}
           <div className="flex-shrink-0 w-full border-t border-gray-100 bg-gradient-to-br from-green-50/80 to-blue-50/80">
             <div className="p-6 space-y-4 text-center">
-              <h3 className="text-xl text-green-900 font-bold">Get the Farmicon App</h3>
+              <h3 className="text-xl text-green-900 font-bold">{t('nav.getTheApp')}</h3>
               
               {/* QR Code */}
               <div className="bg-white mx-auto w-48 h-48 p-3 rounded-2xl shadow-lg">
@@ -201,10 +222,10 @@ const Navbar: React.FC = () => {
                   height={24}
                   className="w-6 h-6"
                 />
-                <span>Download App</span>
+                <span>{t('nav.downloadApp')}</span>
               </a>
               
-              <p className="text-sm text-slate-600">Scan QR code or tap to download</p>
+              <p className="text-sm text-slate-600">{t('nav.scanQr')}</p>
             </div>
           </div>
         </div>
