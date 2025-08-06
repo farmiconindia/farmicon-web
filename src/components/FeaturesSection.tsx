@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import styles from '../styles/Features.module.css';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -21,12 +22,18 @@ const featureKeys = [
 
 const FeaturesSection = () => {
   const { t } = useLanguage();
+  const router = useRouter();
   
   const features = featureKeys.map(({ key, image }) => ({
     name: t(`features.items.${key}.title`),
     desc: t(`features.items.${key}.desc`),
-    image
+    image,
+    key
   }));
+
+  const handleServiceClick = () => {
+    router.push('/services');
+  };
   return (
     <section id="features" className="py-20 px-4 bg-gradient-to-b from-blue-50 to-green-50 text-center relative overflow-hidden">
       {/* Background Decoration */}
@@ -51,8 +58,9 @@ const FeaturesSection = () => {
                 {features.slice(0, 6).map((feature) => (
                   <div 
                     key={feature.name}
+                    onClick={handleServiceClick}
                     className={`${styles.card} group bg-white/80 backdrop-blur rounded-2xl shadow-lg p-6 flex flex-col items-center 
-                              hover:bg-white hover:shadow-xl transition-all duration-300 ease-out`}
+                              hover:bg-white hover:shadow-xl transition-all duration-300 ease-out cursor-pointer`}
                   >
                     <div className="w-24 h-24 rounded-xl flex items-center justify-center mb-6 
                                 bg-gradient-to-br from-green-50 to-blue-50 group-hover:from-green-100 group-hover:to-blue-100 
@@ -78,8 +86,9 @@ const FeaturesSection = () => {
                 {features.slice(0, 6).map((feature) => (
                   <div 
                     key={`${feature.name}-dup`}
+                    onClick={handleServiceClick}
                     className={`${styles.card} group bg-white/80 backdrop-blur rounded-2xl shadow-lg p-6 flex flex-col items-center 
-                              hover:bg-white hover:shadow-xl transition-all duration-300 ease-out`}
+                              hover:bg-white hover:shadow-xl transition-all duration-300 ease-out cursor-pointer`}
                   >
                     <div className="w-24 h-24 rounded-xl flex items-center justify-center mb-6 
                                 bg-gradient-to-br from-green-50 to-blue-50 group-hover:from-green-100 group-hover:to-blue-100 

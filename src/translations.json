@@ -1,8 +1,9 @@
 {
   "en": {
     "nav": {
+      "home": "Home",
       "about": "About",
-      "features": "Features",
+      "services": "Services",
       "howItWorks": "How It Works",
       "media": "Media",
       "testimonials": "Testimonials",
@@ -151,8 +152,9 @@
   },
   "hi": {
     "nav": {
+      "home": "होम",
       "about": "हमारे बारे में",
-      "features": "सुविधाएं",
+      "services": "सेवाएं",
       "howItWorks": "कैसे काम करता है",
       "media": "मीडिया",
       "testimonials": "प्रशंसापत्र",

@@ -37,7 +37,7 @@ const DownloadAppSection = () => {
                 alt="Download QR Code"
                 width={180}
                 height={180}
-                className="rounded-xl"
+                className="rounded-xl w-auto h-auto"
               />
             </div>
           </div>

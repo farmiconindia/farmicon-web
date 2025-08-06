@@ -1,0 +1,297 @@
+'use client';
+
+import React, { useState } from 'react';
+import Image from 'next/image';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { motion } from 'framer-motion';
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+
+// Add gradient animation keyframes to style tag
+const gradientAnimation = `
+  @keyframes gradient-x {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+  }
+`;
+
+if (typeof document !== 'undefined') {
+  const style = document.createElement('style');
+  style.innerHTML = gradientAnimation;
+  document.head.appendChild(style);
+}
+
+const servicesData = [
+  { 
+    key: 'droneSpray', 
+    icon: '/drone.png', 
+    bgColor: 'from-green-50 to-blue-50',
+    highlight: 'bg-green-400'
+  },
+  { 
+    key: 'farmingChatbot', 
+    icon: '/chat.png', 
+    bgColor: 'from-blue-50 to-green-50',
+    highlight: 'bg-blue-400'
+  },
+  { 
+    key: 'cropPrices', 
+    icon: '/crop price.png', 
+    bgColor: 'from-green-50 to-blue-50',
+    highlight: 'bg-green-400'
+  },
+  { 
+    key: 'soilTesting', 
+    icon: '/soil testing.png', 
+    bgColor: 'from-blue-50 to-green-50',
+    highlight: 'bg-blue-400'
+  },
+  { 
+    key: 'cropDoctor', 
+    icon: '/crop doctor.png', 
+    bgColor: 'from-green-50 to-blue-50',
+    highlight: 'bg-green-400'
+  },
+  { 
+    key: 'weatherUpdates', 
+    icon: '/weather.png', 
+    bgColor: 'from-blue-50 to-green-50',
+    highlight: 'bg-blue-400'
+  },
+  { 
+    key: 'govtSchemes', 
+    icon: '/government schemes.png', 
+    bgColor: 'from-green-50 to-blue-50',
+    highlight: 'bg-green-400'
+  },
+  { 
+    key: 'helpServices', 
+    icon: '/help sevices.png', 
+    bgColor: 'from-blue-50 to-green-50',
+    highlight: 'bg-blue-400'
+  },
+  { 
+    key: 'digitalFarming', 
+    icon: '/digiFarming.gif', 
+    bgColor: 'from-green-50 to-blue-50',
+    highlight: 'bg-green-400'
+  },
+  { 
+    key: 'landMapping', 
+    icon: '/land mapping.png', 
+    bgColor: 'from-blue-50 to-green-50',
+    highlight: 'bg-blue-400'
+  },
+  { 
+    key: 'ledger', 
+    icon: '/ledger.png', 
+    bgColor: 'from-green-50 to-blue-50',
+    highlight: 'bg-green-400'
+  }
+];
+
+const container = {
+  hidden: { opacity: 0.5 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.05,
+      duration: 0.2
+    }
+  }
+};
+
+const item = {
+  hidden: { opacity: 0.5, y: 10 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.2 } }
+};
+
+export default function ServicesPage() {
+  const { t } = useLanguage();
+  const [activeService, setActiveService] = useState<string | null>(null);
+
+  return (
+    <>
+      <Navbar />
+      <main className="min-h-screen bg-gradient-to-b from-white to-green-50">
+        {/* Hero Section with Parallax and Glassmorphism */}
+      <section className="relative h-[75vh] flex items-center justify-center overflow-hidden pt-16">
+        <div className="absolute inset-0 z-0">
+          {/* Background Image with Blur */}
+          <div className="absolute inset-0 backdrop-blur-[2px]">
+            <Image
+              src="/farm-hero-bg.png"
+              alt="Farm field"
+              fill
+              className="object-cover filter blur-[2px] scale-105 transform w-auto h-auto"
+              priority
+              quality={100}
+            />
+          </div>
+          {/* Overlay with gradient and additional blur */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/30 to-white/40 backdrop-blur-sm" />
+        </div>
+        
+        {/* Glassmorphic Container */}
+        <motion.div 
+          className="relative z-10 w-[95%] max-w-4xl mx-auto px-6 py-12 rounded-3xl overflow-hidden"
+          initial={{ opacity: 0.5, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          {/* Glassmorphic Background */}
+          <div className="absolute inset-0 bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl" />
+          
+          {/* Content */}
+          <div className="relative z-10 text-center">
+            <motion.div
+              initial={{ opacity: 0.5, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.2 }}
+              className="mb-8"
+            >
+             
+            </motion.div>
+            
+            <motion.h1 
+              className="text-4xl md:text-6xl font-bold mb-6 text-green-900 drop-shadow-sm"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              {t('features.title')}
+            </motion.h1>
+            
+            <motion.p 
+              className="text-lg md:text-xl text-white-700 max-w-2xl mx-auto leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              {t('features.subtitle')}
+            </motion.p>
+
+            {/* Decorative Elements */}
+            <div className="absolute top-0 left-0 w-32 h-32 bg-green-400/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 right-0 w-32 h-32 bg-blue-400/10 rounded-full blur-3xl" />
+          </div>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ 
+            duration: 1,
+            delay: 1,
+            repeat: Infinity,
+            repeatType: "reverse"
+          }}
+        >
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-1">
+            <div className="w-1.5 h-3 bg-white/50 rounded-full" />
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Services Grid with Hover Effects */}
+      <section className="px-4 py-16 max-w-7xl mx-auto">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          variants={container}
+          initial="hidden"
+          animate="show"
+        >
+          {servicesData.map((service) => (
+            <motion.div
+              key={service.key}
+              variants={item}
+              onHoverStart={() => setActiveService(service.key)}
+              onHoverEnd={() => setActiveService(null)}
+              className={`
+                relative group cursor-pointer overflow-hidden rounded-2xl
+                transform transition-all duration-300 hover:scale-105
+                ${activeService && activeService !== service.key ? 'opacity-70' : ''}
+              `}
+            >
+              {/* Service Card Content */}
+              <div className={`p-8 bg-gradient-to-br ${service.bgColor} h-full`}>
+                {/* Icon Container with Animation */}
+                <div className="mb-6 relative">
+                  <div className={`
+                    w-20 h-20 mx-auto rounded-2xl overflow-hidden
+                    bg-white/50 backdrop-blur-sm p-4
+                    transform transition-all duration-500
+                    group-hover:scale-110 group-hover:rotate-3
+                  `}>
+                    <Image
+                      src={service.icon}
+                      alt={t(`features.items.${service.key}.title`)}
+                      width={80}
+                      height={80}
+                      className="w-full h-full object-contain w-auto h-auto"
+                    />
+                  </div>
+                  {/* Animated Background Element */}
+                  <div className={`
+                    absolute -inset-2 ${service.highlight} opacity-0
+                    group-hover:opacity-20 blur-2xl transition-all duration-500
+                  `} />
+                </div>
+
+                {/* Text Content */}
+                <div className="relative z-10">
+                  <h3 className="text-2xl font-bold text-green-800 mb-4 text-center
+                    group-hover:text-green-900 transition-colors duration-300">
+                    {t(`features.items.${service.key}.title`)}
+                  </h3>
+                  <p className="text-gray-600 text-center group-hover:text-gray-800
+                    transition-colors duration-300">
+                    {t(`features.items.${service.key}.desc`)}
+                  </p>
+                </div>
+
+                {/* Hover Effect Border */}
+                <div className="absolute inset-0 border-2 border-transparent
+                  group-hover:border-green-400/30 rounded-2xl
+                  transition-all duration-300" />
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+
+      {/* Bottom CTA Section */}
+      <section className="py-20 px-4 bg-gradient-to-t from-green-50 to-transparent">
+        <motion.div 
+          className="max-w-4xl mx-auto text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-6">
+            {t('downloadApp.title')}
+          </h2>
+          <p className="text-xl text-gray-600 mb-8">
+            {t('downloadApp.subtitle')}
+          </p>
+          <motion.button
+            className="px-8 py-4 bg-gradient-to-r from-green-500 to-blue-500
+              text-white font-semibold rounded-full text-lg
+              hover:from-green-600 hover:to-blue-600 transform hover:scale-105
+              transition-all duration-300 shadow-lg hover:shadow-xl"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {t('nav.downloadApp')}
+          </motion.button>
+        </motion.div>
+      </section>
+    </main>
+      <Footer />
+    </>
+  );
+}

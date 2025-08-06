@@ -16,6 +16,7 @@ const HeroSection = () => {
         src="/farm-bg.png"
         alt="Farm background"
         fill
+        sizes="100vw"
         className="absolute inset-0 object-cover opacity-20 blur-sm pointer-events-none z-0"
         style={{ objectPosition: 'center' }}
         priority
@@ -51,6 +52,7 @@ const HeroSection = () => {
             src="/farmer.png"
             alt="Indian Farmer"
             fill
+            sizes="(max-width: 640px) 50vw, 33vw"
             className="object-contain object-bottom scale-[0.85] sm:scale-[0.9] md:scale-100"
             style={{ transform: 'translateX(-15%)' }}
             priority

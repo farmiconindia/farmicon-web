@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useLanguage } from '../contexts/LanguageContext';
 import LanguageToggle from './LanguageToggle';
 
@@ -24,7 +25,7 @@ const Navbar: React.FC = () => {
   return (
     <nav className="sticky top-0 z-[60] w-full px-4 md:px-6 py-2 md:py-3 flex items-center justify-between shadow-xl bg-gradient-to-r from-green-50 to-blue-50">
       {/* Logo */}
-      <div className="flex items-center">
+      <Link href="/" className="flex items-center">
         <div className="flex items-center space-x-3">
           <div className="w-8 h-8 relative">
             <Image
@@ -38,26 +39,27 @@ const Navbar: React.FC = () => {
           </div>
           <span className="font-extrabold text-2xl text-green-900">{language === 'hi' ? 'फार्मिकॉन' : 'Farmicon'}</span>
         </div>
-      </div>
+      </Link>
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center justify-center flex-1">
         <div className="flex items-center justify-center space-x-8">
           {[
-            { key: 'about', label: t('nav.about') },
-            { key: 'features', label: t('nav.features') },
-            { key: 'howitworks', label: t('nav.howItWorks') },
-            { key: 'media', label: t('nav.media') },
-            { key: 'testimonials', label: t('nav.testimonials') },
-            { key: 'contact', label: t('nav.contact') }
-          ].map(({ key, label }) => (
-            <a
+            { key: 'home', label: t('nav.home'), href: '/' },
+            { key: 'about', label: t('nav.about'), href: '/#about' },
+            { key: 'services', label: t('nav.services'), href: '/services' },
+            { key: 'howitworks', label: t('nav.howItWorks'), href: '/#howitworks' },
+            { key: 'media', label: t('nav.media'), href: '/#media' },
+            { key: 'testimonials', label: t('nav.testimonials'), href: '/#testimonials' },
+            { key: 'contact', label: t('nav.contact'), href: '/#contact' }
+          ].map(({ key, label, href }) => (
+            <Link
               key={key}
-              href={`#${key}`}
+              href={href}
               className="font-medium text-slate-800 hover:text-green-600 transition-colors duration-200"
             >
               {label}
-            </a>
+            </Link>
           ))}
         </div>
       </div>
@@ -167,16 +169,16 @@ const Navbar: React.FC = () => {
           <div className="flex-1 bg-white overflow-y-auto scrollbar-none">
             <div className="py-2">
               {[
-                { key: 'about', label: t('nav.about') },
-                { key: 'features', label: t('nav.features') },
-                { key: 'howitworks', label: t('nav.howItWorks') },
-                { key: 'media', label: t('nav.media') },
-                { key: 'testimonials', label: t('nav.testimonials') },
-                { key: 'contact', label: t('nav.contact') }
-              ].map(({ key, label }) => (
+                { key: 'about', label: t('nav.about'), href: '/#about' },
+                { key: 'services', label: t('nav.services'), href: '/services' },
+                { key: 'howitworks', label: t('nav.howItWorks'), href: '/#howitworks' },
+                { key: 'testimonials', label: t('nav.testimonials'), href: '/#testimonials' },
+                { key: 'contact', label: t('nav.contact'), href: '/#contact' },
+                { key: 'privacy', label: 'Privacy Policy', href: '/privacy-policy' }
+              ].map(({ key, label, href }) => (
                 <a
                   key={key}
-                  href={`#${key}`}
+                  href={href}
                   className="block px-6 py-3.5 text-slate-800 text-lg font-medium hover:bg-gradient-to-r hover:from-green-50 hover:to-blue-50 active:from-green-100 active:to-blue-100 transition-all duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >

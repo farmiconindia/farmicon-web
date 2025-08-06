@@ -7,7 +7,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 const Footer = () => {
   const { t } = useLanguage();
   return (
-    <footer className="bg-gradient-to-br from-green-900 to-green-800 text-white py-12 px-4 mt-8">
+    <footer className="bg-gradient-to-br from-green-900 to-green-800 text-white py-12 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
@@ -33,16 +33,16 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               {[
-                { key: 'about', link: t('nav.about') },
-                { key: 'features', link: t('nav.features') },
-                { key: 'howitworks', link: t('nav.howItWorks') },
-                { key: 'media', link: t('nav.media') },
-                { key: 'testimonials', link: t('nav.testimonials') },
-                { key: 'contact', link: t('nav.contact') }
-              ].map(({ key, link }) => (
+                { key: 'about', link: t('nav.about'), href: '/#about' },
+                { key: 'services', link: t('nav.services'), href: '/services' },
+                { key: 'howitworks', link: t('nav.howItWorks'), href: '/#howitworks' },
+                { key: 'testimonials', link: t('nav.testimonials'), href: '/#testimonials' },
+                { key: 'privacy', link: t('footer.legal.privacy'), href: '/privacy-policy' },
+                { key: 'contact', link: t('nav.contact'), href: '/#contact' }
+              ].map(({ key, link, href }) => (
                 <li key={key}>
                   <a 
-                    href={`#${key}`}
+                    href={href}
                     className="text-green-100 hover:text-white transition-colors duration-200"
                   >
                     {link}
@@ -126,7 +126,7 @@ const Footer = () => {
         {/* Social Links & Copyright */}
         <div className="border-t border-green-700/50 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-6">
+            {/* <div className="flex items-center gap-6">
               {[
                 { key: 'facebook', label: t('footer.social.facebook') },
                 { key: 'whatsapp', label: t('footer.social.whatsapp') },
@@ -140,11 +140,11 @@ const Footer = () => {
                   {label}
                 </a>
               ))}
-            </div>
-            <div className="flex items-center gap-6 text-sm text-green-100">
+            </div> */}
+            {/* <div className="flex items-center gap-6 text-sm text-green-100">
               <a href="#" className="hover:text-white transition-colors duration-200">{t('footer.legal.privacy')}</a>
               <a href="#" className="hover:text-white transition-colors duration-200">{t('footer.legal.terms')}</a>
-            </div>
+            </div> */}
           </div>
           <div className="text-center mt-6 text-green-200 text-sm">
             {t('footer.copyright')}
