@@ -16,14 +16,14 @@ const testimonials = [
   {
     key: 'user2',
     name: 'Sita Patel',
-    location: 'Maharashtra',
+    location: 'Uttarakhand',
     role: 'Cotton Farmer',
     rating: 5
   },
   {
     key: 'user3',
     name: 'Ajay Singh',
-    location: 'Punjab',
+    location: 'Uttar Pradesh',
     role: 'Progressive Farmer',
     rating: 5
   }
