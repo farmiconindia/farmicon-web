@@ -2,6 +2,8 @@
 
 A modern, animated, and accessible landing page for Farmicon – an all-in-one platform for Indian farmers and the agricultural ecosystem.
 
+
+
 ## Tech Stack
 - Next.js (App Router, TypeScript)
 - Tailwind CSS
