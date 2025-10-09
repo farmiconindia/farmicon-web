@@ -1,0 +1,43 @@
+
+Final Idea
+
+We develop a mobile and web based citizen science platform that facilitates real time detection, classification, and labeling of debris and pollutants in surface water bodies (rivers, lakes, ponds, and coastal areas) using photos and videos taken by users. The system utilizes deep learning models (object detection + instance segmentation) to automatically highlight pollutants (plastic bottles, polythene, polystyrene, industrial waste, algal blooms, etc.) with bounding boxes, labels, and masks.
+
+The platform offers instant on device detection for quick, low cost feedback, while a cloud based inference pipeline provides high accuracy results and severity scoring (e.g., percentage of polluted area). Users can confirm, correct, or add to the labels, and this verified input feeds into a continuous active learning loop that improves the model's accuracy over time.
+
+Each uploaded image or video, along with its labels and detailed metadata (GPS location, timestamp, weather conditions, water flow, device details, user type), is securely stored in a standardized cloud dataset. This dataset continuously grows through user contributions, crowdsourcing, and synthetic augmentation, making it the first large-scale, open benchmark dataset for water pollution monitoring.
+
+An integrated analytics dashboard provides heatmaps, temporal pollution trends, and early warnings for authorities, enabling scientists, NGOs, policymakers, and communities to use the data for research, environmental policy, river rejuvenation programs, and marine conservation efforts.
+
+
+Research Contributions (to make it Q1-level)
+Novel Dataset Creation
+First large scale dataset of water pollution images/videos (crowdsourced + curated + synthetic augmentation).
+Multi-label annotations (plastic, organic waste, algae, industrial discharge, etc.).
+Metadata storage: GPS, time, weather, water flow conditions, device info.
+Hybrid AI System
+Integration of YOLO / SAM (Segment Anything Model) / Vision Transformers for detection + segmentation.
+Self supervised learning to handle unseen pollutant categories.
+Active learning loop: model uncertainty → flagged for user verification → dataset enrichment.
+Citizen Science & Participatory Monitoring
+Support cloud linked personal datasets for researchers with specific monitoring objectives data collection of any specific location.
+Deployment
+On device inference using lightweight quantized models for real time use.
+Cloud based inference APIs for large scale, high accuracy video processing.
+Extended Functionality
+Pollution severity index (quantifying % coverage of pollutants).
+Temporal trend analysis at GPS locations.
+Early warning alerts for industrial discharge or high pollution hotspots. If detected at the same location multiple times.
+Interdisciplinary Angle
+Combines Environmental Science, AI, and Citizen Science.
+Aligned with UN SDG 6 (Clean Water) and SDG 14 (Life Below Water).
+Applications in smart cities, river rejuvenation (e.g., Namami Gange in India), and marine monitoring.
+
+Wireframe / Workflow
+User Uploads Image/Video → via mobile/web app.
+AI Model Detects Pollutants → Bounding boxes + labels (and masks) displayed.
+User Validation → Confirm detections, correct labels, or add missing annotations.
+Data Storage → Images + annotations + metadata stored in the cloud.
+Dataset Expansion → Continuous growth with user corrections and synthetic augmentation.
+Model Retraining Loop → Periodic updates with improved dataset.
+Research & Policy Use → Dataset accessible for scientists, NGOs, government agencies. dashboard shows maps, trends, and alerts.

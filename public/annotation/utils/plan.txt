@@ -1,0 +1,70 @@
+# Development Plan & Implementation Log
+
+This document outlines the step-by-step process followed to create the client-side image annotation tool.
+
+---
+
+### **Step 1: Foundational UI Layout**
+- **Goal:** Create the basic HTML structure and a responsive, mobile-first CSS layout.
+- **Implementation:**
+    - `index.html`: Created all UI elements, including the canvas, buttons (`Upload`, `Camera`, `Auto-annotate`, `Undo`, `Redo`, `Reset`, `Save`), and containers for the label preview and project labels.
+    - `style.css`: Implemented a Flexbox layout that stacks vertically on mobile and sits side-by-side on desktop (`@media (min-width: 768px)`). Styled all buttons and panels for a clean UI.
+
+---
+
+### **Step 2: Image Loading & Canvas Display**
+- **Goal:** Allow users to upload an image from their device and see it on the canvas.
+- **Implementation:**
+    - `app.js` (Lines ~200-230): Added event listeners to the "Upload Image" button (`uploadBtn`) and the hidden file input (`imageLoader`). Used the `FileReader` API to load the image and `ctx.drawImage()` to display it on the canvas.
+
+---
+
+### **Step 3: Manual Bounding Box Creation**
+- **Goal:** Enable users to draw bounding boxes manually on the image.
+- **Implementation:**
+    - `app.js` (Lines ~240-340): Implemented `mousedown`, `mousemove`, and `mouseup` event listeners on the canvas. These functions track the mouse position to draw a rectangle and store its coordinates in the `annotations` array upon completion. The `redrawCanvas` function was created to render the image and all stored annotations.
+    - **Bug Fix:** Corrected the `getMousePos` function to account for CSS scaling vs. canvas resolution, ensuring boxes are drawn accurately.
+
+---
+
+### **Step 4: Annotation Selection & Deletion**
+- **Goal:** Allow users to select and delete the boxes they have drawn.
+- **Implementation:**
+    - `app.js` (Lines ~270-290 in `mousedown`): Added logic to check if a click occurred inside an existing annotation. If so, it's marked as `selectedAnnotation`.
+    - `app.js` (Lines ~130-160 in `redrawCanvas`): The drawing function was updated to render selected boxes with a different color (blue).
+    - `app.js` (Lines ~500-515): A `keydown` event listener was added to the window to detect the 'Delete' key and remove the `selectedAnnotation` from the `annotations` array.
+
+---
+
+### **Step 5: Resizing, Moving, & Advanced Relabeling**
+- **Goal:** Implement full interactivity for annotations, including resizing, moving, and a custom labeling dialog.
+- **Implementation:**
+    - **Resizing/Moving:** `app.js` (Lines ~300-380): The `mousedown` and `mousemove` listeners were expanded to detect clicks on resize handles (corners) or inside the body of a selected box, triggering `isResizing` or `isMoving` states.
+    - **Custom Dialog UI:** `index.html` (Lines ~40-52): Added the HTML for the hidden custom dialog. `style.css` (Lines ~100-150): Styled the dialog as a floating panel.
+    - **Dialog Logic:** `app.js` (Lines ~400-480): Implemented `showLabelDialog`, `hideLabelDialog`, and the `saveLabelBtn` listener. This logic handles showing the dialog, populating it, and committing changes (creating/updating labels and colors) only when "Save" is clicked.
+    - **Project Label Editing:** `app.js` (Lines ~100-115 in `updateProjectLabels`): Added a `dblclick` listener to the label chips in the side panel to open the dialog for editing.
+    - **Bug Fix:** Corrected the dialog logic to prevent annotations from disappearing when typing a new label name.
+
+---
+
+### **Step 6: Undo, Redo, & Reset**
+- **Goal:** Implement a complete history management system.
+- **Implementation:**
+    - `app.js` (Lines ~40-80): Created a `history` array and an index. The `saveState` function takes a deep copy of the current annotations and labels and pushes it to the history.
+    - `app.js`: The `saveState()` function was called after every action that modifies annotations (creation, moving, resizing, deleting, labeling).
+    - `app.js` (Lines ~570-580): The `undoBtn`, `redoBtn`, and `resetBtn` were wired to the `undo`, `redo`, and `loadState(history[0])` functions.
+
+---
+
+### **Step 7: AI Model Integration**
+- **Goal:** Integrate the custom `yolo11s.onnx` model to provide AI-assisted annotation.
+- **Implementation:**
+    - **Model Conversion:** `export_and_extract.py`: A Python script was created to convert `.pt` files to `.onnx` and extract class names into a `.json` file.
+    - **ONNX Runtime:** `index.html` (Line 38): The ONNX.js runtime was included via a CDN.
+    - **Model Loading:** `app.js` (Lines ~518-548): The `loadCustomModel` function was created to fetch the `.onnx` model and its `.json` class names, and to populate the `labels` object with random colors.
+    - **Inference:** `app.js` (Lines ~420-490): The `runInference` and `processModelOutput` functions were implemented. This includes:
+        - **Letterboxing:** Correctly resizing the image while preserving aspect ratio to feed into the model.
+        - **Tensor Processing:** Converting the image to a tensor.
+        - **Transposition & Scaling:** Correctly parsing the model's raw output tensor and scaling the coordinates back to the original image dimensions.
+        - **Non-Max Suppression (NMS):** The `iou` and `nonMaxSuppression` functions were added to filter the thousands of raw predictions down to a clean, final set of boxes.
+    - **Bug Fixes:** Iteratively debugged and fixed issues with coordinate scaling, tensor transposition, and missing NMS logic to match the clean output from the Python test script.
