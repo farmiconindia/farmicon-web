@@ -38,10 +38,12 @@ const Footer = () => {
                 { key: 'howitworks', link: t('nav.howItWorks'), href: '/#howitworks' },
                 { key: 'testimonials', link: t('nav.testimonials'), href: '/#testimonials' },
                 { key: 'privacy', link: t('footer.legal.privacy'), href: '/privacy-policy' },
+                { key: 'terms', link: t('footer.legal.terms'), href: '/terms-and-conditions' },
+                { key: 'refund', link: 'Refund Policy', href: '/refund-policy' },
                 { key: 'contact', link: t('nav.contact'), href: '/#contact' }
               ].map(({ key, link, href }) => (
                 <li key={key}>
-                  <a 
+                  <a
                     href={href}
                     className="text-green-100 hover:text-white transition-colors duration-200"
                   >
@@ -126,25 +128,7 @@ const Footer = () => {
         {/* Social Links & Copyright */}
         <div className="border-t border-green-700/50 pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* <div className="flex items-center gap-6">
-              {[
-                { key: 'facebook', label: t('footer.social.facebook') },
-                { key: 'whatsapp', label: t('footer.social.whatsapp') },
-                { key: 'youtube', label: t('footer.social.youtube') }
-              ].map(({ key, label }) => (
-                <a
-                  key={key}
-                  href="#"
-                  className="text-green-100 hover:text-white transition-colors duration-200"
-                >
-                  {label}
-                </a>
-              ))}
-            </div> */}
-            {/* <div className="flex items-center gap-6 text-sm text-green-100">
-              <a href="#" className="hover:text-white transition-colors duration-200">{t('footer.legal.privacy')}</a>
-              <a href="#" className="hover:text-white transition-colors duration-200">{t('footer.legal.terms')}</a>
-            </div> */}
+            {/* Social links commented out for now */}
           </div>
           <div className="text-center mt-6 text-green-200 text-sm">
             {t('footer.copyright')}
