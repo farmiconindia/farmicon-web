@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -106,9 +107,9 @@ const PricingPage = () => {
                             <h2 className="text-2xl font-bold text-green-900 mb-2">Basic Plan</h2>
                             <div className="text-5xl font-bold text-green-600 mb-4">Free</div>
                             <p className="text-gray-600 mb-8">Ideal for small & early-stage FPOs starting digital operations.</p>
-                            <a href="/" className="w-full py-3 px-6 rounded-xl border-2 border-green-600 text-green-700 font-bold hover:bg-green-50 transition-colors duration-200 block">
+                            <Link href="/" className="w-full py-3 px-6 rounded-xl border-2 border-green-600 text-green-700 font-bold hover:bg-green-50 transition-colors duration-200 block">
                                 Get Started
-                            </a>
+                            </Link>
                         </motion.div>
 
                         {/* Premium Plan Card */}
@@ -124,9 +125,9 @@ const PricingPage = () => {
                             <h2 className="text-2xl font-bold mb-2">Premium Plan</h2>
                             <div className="text-5xl font-bold text-green-100 mb-4">Custom</div>
                             <p className="text-green-100 mb-8">Best for growing FPOs handling large farmer bases and trade volumes.</p>
-                            <a href="/#contact" className="w-full py-3 px-6 rounded-xl bg-white text-green-900 font-bold hover:bg-green-50 transition-colors duration-200 block">
+                            <Link href="/#contact" className="w-full py-3 px-6 rounded-xl bg-white text-green-900 font-bold hover:bg-green-50 transition-colors duration-200 block">
                                 Contact Sales
-                            </a>
+                            </Link>
                         </motion.div>
                     </div>
 
