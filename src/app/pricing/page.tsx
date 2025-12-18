@@ -22,23 +22,6 @@ const CheckIcon = () => (
     </svg>
 );
 
-const CheckIconWhite = () => (
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="w-5 h-5 text-green-200 mx-auto"
-    >
-        <polyline points="20 6 9 17 4 12" />
-    </svg>
-);
-
 const MinusIcon = () => (
     <div className="w-4 h-0.5 bg-gray-300 mx-auto rounded-full" />
 );
@@ -107,7 +90,7 @@ const PricingPage = () => {
                             transition={{ delay: 0.1 }}
                             className="text-xl text-gray-600"
                         >
-                            Choose the plan that fits your FPO's needs
+                            Choose the plan that fits your FPO&apos;s needs
                         </motion.p>
                     </div>
 
@@ -123,9 +106,9 @@ const PricingPage = () => {
                             <h2 className="text-2xl font-bold text-green-900 mb-2">Basic Plan</h2>
                             <div className="text-5xl font-bold text-green-600 mb-4">Free</div>
                             <p className="text-gray-600 mb-8">Ideal for small & early-stage FPOs starting digital operations.</p>
-                            <button className="w-full py-3 px-6 rounded-xl border-2 border-green-600 text-green-700 font-bold hover:bg-green-50 transition-colors duration-200">
+                            <a href="/" className="w-full py-3 px-6 rounded-xl border-2 border-green-600 text-green-700 font-bold hover:bg-green-50 transition-colors duration-200 block">
                                 Get Started
-                            </button>
+                            </a>
                         </motion.div>
 
                         {/* Premium Plan Card */}
@@ -141,9 +124,9 @@ const PricingPage = () => {
                             <h2 className="text-2xl font-bold mb-2">Premium Plan</h2>
                             <div className="text-5xl font-bold text-green-100 mb-4">Custom</div>
                             <p className="text-green-100 mb-8">Best for growing FPOs handling large farmer bases and trade volumes.</p>
-                            <button className="w-full py-3 px-6 rounded-xl bg-white text-green-900 font-bold hover:bg-green-50 transition-colors duration-200">
+                            <a href="/#contact" className="w-full py-3 px-6 rounded-xl bg-white text-green-900 font-bold hover:bg-green-50 transition-colors duration-200 block">
                                 Contact Sales
-                            </button>
+                            </a>
                         </motion.div>
                     </div>
 
