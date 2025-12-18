@@ -51,6 +51,7 @@ const Navbar: React.FC = () => {
             { key: 'howitworks', label: t('nav.howItWorks'), href: '/#howitworks' },
             { key: 'media', label: t('nav.media'), href: '/#media' },
             { key: 'testimonials', label: t('nav.testimonials'), href: '/#testimonials' },
+            { key: 'pricing', label: 'Pricing', href: '/pricing' },
             { key: 'contact', label: t('nav.contact'), href: '/#contact' }
           ].map(({ key, label, href }) => (
             <Link
@@ -80,7 +81,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center">
           <LanguageToggle />
         </div>
-        <button 
+        <button
           className="p-2 rounded-lg transition-colors hover:bg-black/5"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
@@ -104,14 +105,14 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/20 backdrop-blur-sm md:hidden z-[70]"
           onClick={() => setIsMenuOpen(false)}
         />
       )}
 
       {/* Mobile Menu Panel */}
-      <div 
+      <div
         className={`
           fixed top-0 left-0 w-[85vw] max-w-[320px] h-[100dvh] bg-white shadow-2xl transform transition-all duration-500 ease-out z-[80] md:hidden
           ${isMenuOpen ? 'translate-x-0 opacity-100 shadow-2xl' : '-translate-x-full opacity-0 shadow-none'}
@@ -144,7 +145,7 @@ const Navbar: React.FC = () => {
               </div>
               <span className="font-extrabold text-xl text-green-900">Farmicon</span>
             </div>
-            <button 
+            <button
               onClick={() => setIsMenuOpen(false)}
               className="p-2 rounded-lg hover:bg-black/5 active:bg-black/10 transition-colors"
             >
@@ -173,6 +174,7 @@ const Navbar: React.FC = () => {
                 { key: 'services', label: t('nav.services'), href: '/services' },
                 { key: 'howitworks', label: t('nav.howItWorks'), href: '/#howitworks' },
                 { key: 'testimonials', label: t('nav.testimonials'), href: '/#testimonials' },
+                { key: 'pricing', label: 'Pricing', href: '/pricing' },
                 { key: 'contact', label: t('nav.contact'), href: '/#contact' },
                 { key: 'privacy', label: 'Privacy Policy', href: '/privacy-policy' }
               ].map(({ key, label, href }) => (
@@ -197,7 +199,7 @@ const Navbar: React.FC = () => {
           <div className="flex-shrink-0 w-full border-t border-gray-100 bg-gradient-to-br from-green-50/80 to-blue-50/80">
             <div className="p-6 space-y-4 text-center">
               <h3 className="text-xl text-green-900 font-bold">{t('nav.getTheApp')}</h3>
-              
+
               {/* QR Code */}
               <div className="bg-white mx-auto w-48 h-48 p-3 rounded-2xl shadow-lg">
                 <Image
@@ -208,7 +210,7 @@ const Navbar: React.FC = () => {
                   className="w-full h-full rounded-xl"
                 />
               </div>
-              
+
               {/* Download Button */}
               <a
                 href="https://play.google.com/store/apps/details?id=com.farmicon.application&pcampaignid=web_shareImpact.com"
@@ -226,7 +228,7 @@ const Navbar: React.FC = () => {
                 />
                 <span>{t('nav.downloadApp')}</span>
               </a>
-              
+
               <p className="text-sm text-slate-600">{t('nav.scanQr')}</p>
             </div>
           </div>
