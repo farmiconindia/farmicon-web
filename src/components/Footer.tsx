@@ -39,8 +39,8 @@ const Footer = () => {
                 { key: 'testimonials', link: t('nav.testimonials'), href: '/#testimonials' },
                 { key: 'privacy', link: t('footer.legal.privacy'), href: '/privacy-policy' },
                 { key: 'terms', link: t('footer.legal.terms'), href: '/terms-and-conditions' },
-                { key: 'refund', link: 'Refund Policy', href: '/refund-policy' },
-                { key: 'pricing', link: 'Pricing', href: '/pricing' },
+                { key: 'refund', link: t('footer.legal.refund'), href: '/refund-policy' },
+                { key: 'pricing', link: t('footer.legal.pricing'), href: '/pricing' },
                 { key: 'contact', link: t('nav.contact'), href: '/#contact' }
               ].map(({ key, link, href }) => (
                 <li key={key}>

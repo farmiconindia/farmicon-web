@@ -5,9 +5,10 @@
       "about": "About",
       "services": "Services",
       "howItWorks": "How It Works",
-      "media": "Media",
       "testimonials": "Testimonials",
       "contact": "Contact",
+      "pricing": "Pricing",
+      "privacyPolicy": "Privacy Policy",
       "downloadApp": "Download App",
       "getTheApp": "Get the Farmicon App",
       "scanQr": "Scan QR or tap to download"
@@ -97,9 +98,6 @@
       "title": "Get Farmicon Today",
       "subtitle": "Start your journey towards smarter farming. Download the app now!"
     },
-    "media": {
-      "title": "In the News & Recognized By"
-    },
     "testimonials": {
       "title": "What Our Users Say",
       "subtitle": "Join thousands of farmers who are already benefiting from Farmicon",
@@ -145,9 +143,197 @@
       },
       "legal": {
         "privacy": "Privacy Policy",
-        "terms": "Terms of Service"
+        "terms": "Terms & Conditions",
+        "refund": "Refund Policy",
+        "pricing": "Pricing"
       },
       "copyright": "© 2025 Farmicon. All rights reserved."
+    },
+    "pricing": {
+      "title": "Simple, Transparent Pricing",
+      "subtitle": "Choose the plan that fits your FPO's needs",
+      "compareFeatures": "Compare Features",
+      "features": {
+        "farmerManagement": "Farmer Management",
+        "machineryServices": "Machinery Services",
+        "tradeInventory": "Trade & Inventory",
+        "advisoryCommunication": "Advisory & Communication",
+        "supportOthers": "Support & Others"
+      },
+      "basic": {
+        "name": "Basic Plan",
+        "price": "Free",
+        "description": "Ideal for small & early-stage FPOs starting digital operations.",
+        "cta": "Get Started"
+      },
+      "premium": {
+        "name": "Premium Plan",
+        "price": "Contact Sales",
+        "description": "For growing FPOs needing advanced tools and support.",
+        "cta": "Contact Us",
+        "recommended": "Recommended"
+      }
+    },
+    "pages": {
+      "privacyPolicy": "Privacy Policy",
+      "privacyContent": {
+        "intro": {
+          "p1": "Your privacy is critically important to us (Farmicon)",
+          "p2": "Welcome to Farmicon Private Limited (Farmicon)",
+          "address": {
+            "title": "Corporate Office Address:",
+            "line1": "Farmicon India Private Limited",
+            "line2": "I-3, Tides Incubation Centre,",
+            "line3": "IIT Roorkee, Roorkee,",
+            "line4": "Uttarakhand – 247667, India",
+            "contact": "Contact: 8650505520"
+          }
+        },
+        "introduction": {
+          "title": "Introduction",
+          "p1": "It is Farmicon's policy to respect your privacy regarding any information we may collect while operating our website. This Privacy Policy applies to https://www.farmicon.in/ (hereinafter, \"us\", \"we\", or \"https://www.farmicon.in/\"). We respect your privacy and are committed to protecting personally identifiable information you may provide us through the Website. We have adopted this privacy policy (\"Privacy Policy\") to explain what information may be collected on our website, how we use this information, and under what circumstances we may disclose the information to third parties. This Privacy Policy applies only to information we collect through the Website and does not apply to our collection of information from other sources."
+        },
+        "websiteVisitors": {
+          "title": "Website Visitors",
+          "p1": "Like most website operators, Farmicon collects non-personally identifying information of the sort that web browsers and servers typically make available, such as the browser type, language preference, referring site, and the date and time of each visitor request. Farmicon's purpose in collecting non-personally identifying information is to better understand how Farmicon's visitors use its website. From time to time, Farmicon may release non-personally identifying information in the aggregate, e.g., by publishing a report on trends in the usage of its website.",
+          "p2": "Farmicon also collects potentially personally identifying information like Internet Protocol (IP) addresses for logged in users and for users leaving comments on https://www.farmicon.in/ blog posts. Farmicon only discloses logged in user and commenter IP addresses under the same circumstances that it uses and discloses personally identifying information as described below."
+        },
+        "signUp": {
+          "title": "Sign Up for Our Service",
+          "p1": "If you sign up for our service, we will ask you for your name and phone number. The purpose of the processing is to allow you access to our services and to provide the services to you. The purpose is additionally to reach you with important notifications and updates regarding the service.",
+          "subTitle": "Gathering Of Personally Identifying Information",
+          "p2": "Certain visitors to Farmicon's websites choose to interact with Farmicon in ways that require Farmicon to gather personally identifying information. The amount and type of information that Farmicon gathers depends on the nature of the interaction. For example, we ask visitors who sign up for a blog at https://www.farmicon.in/ to provide a username, email address, and phone number."
+        },
+        "collection": {
+          "title": "Collection",
+          "p1": "We collect your personal data when you use our Platform, services or otherwise interact with us during the course of our relationship."
+        },
+        "usageSection": {
+          "title": "Usage",
+          "p1": "We use personal data to provide the services you request. To the extent we use your personal data to market to you, we will provide you the ability to opt-out of such uses."
+        },
+        "sharing": {
+          "title": "Sharing",
+          "p1": "We may share your personal data internally within our group entities, our other corporate entities, and affiliates to provide you access to the services and products offered by them."
+        },
+        "security": {
+          "title": "Security",
+          "p1": "The security of your Personal Information is important to us but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Information, we cannot guarantee its absolute security."
+        },
+        "securityPrecautions": {
+          "title": "Security Precautions",
+          "p1": "To protect your personal data from unauthorised access or disclosure, loss or misuse we adopt reasonable security practices and procedures."
+        },
+        "advertisements": {
+          "title": "Advertisements",
+          "p1": "Ads appearing on our website may be delivered to users by advertising partners, who may set cookies. These cookies allow the ad server to recognize your computer each time they send you an online advertisement to compile information about you or others who use your computer."
+        },
+        "externalLinks": {
+          "title": "Links To External Sites",
+          "p1": "Our Service may contain links to external sites that are not operated by us. If you click on a third-party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy and terms and conditions of every site you visit.",
+          "p2": "https://www.farmicon.in Uses Google AdWords for Remarketing",
+          "p3": "https://www.farmicon.in/ uses the remarketing services to advertise on third-party websites (including Google) to previous visitors to our site. It could mean that we advertise to previous visitors who haven't completed a task on our site, for example using the contact form to make an enquiry.",
+          "p4": "You can set preferences for how Google advertises to you using the Google Ad Preferences page, and if you want to, you can opt out of interest-based advertising entirely by cookie settings or permanently using a browser plugin."
+        },
+        "protection": {
+          "title": "Protection Of Certain Personally Identifying Information",
+          "p1": "Farmicon discloses potentially personally identifying and personally identifying information only to those of its employees, contractors, and affiliated organizations that (i) need to know that information in order to process it on Farmicon's behalf or to provide services available at Farmicon's website, and (ii) that have agreed not to disclose it to others.",
+          "p2": "If you are a registered user of https://www.farmicon.in/ and have supplied your email address, Farmicon may occasionally send you an email to tell you about new features, solicit your feedback, or just keep you up to date with what's going on with Farmicon and our products."
+        },
+        "aggregatedStatistics": {
+          "title": "Aggregated Statistics",
+          "p1": "Farmicon may collect statistics about the behavior of visitors to its website. Farmicon may display this information publicly or provide it to others. However, Farmicon does not disclose your personally identifying information."
+        },
+        "cookies": {
+          "title": "Cookies",
+          "p1": "To enrich and perfect your online experience, Farmicon uses \"Cookies\", similar technologies, and services provided by others to display personalized content, appropriate advertising, and store your preferences on your computer.",
+          "p2": "A cookie is a string of information that a website stores on a visitor's computer, and that the visitor's browser provides to the website each time the visitor returns.",
+          "p3": "By continuing to navigate our website without changing your cookie settings, you hereby acknowledge and agree to Farmicon's use of cookies."
+        },
+        "businessTransfers": {
+          "title": "Business Transfers",
+          "p1": "If Farmicon, or substantially all of its assets, were acquired, or in the unlikely event that Farmicon goes out of business or enters bankruptcy, user information would be one of the assets that is transferred or acquired by a third party."
+        },
+        "dataDeletion": {
+          "title": "Data Deletion and Retention",
+          "p1": "You have an option to delete your account by visiting your profile and settings on our Platform , this action would result in you losing all information related to your account."
+        },
+        "yourRights": {
+          "title": "Your Rights",
+          "p1": "You may access, rectify, and update your personal data directly through the functionalities provided on the Platform."
+        },
+        "consent": {
+          "title": "Consent",
+          "p1": "By visiting our Platform or by providing your information, you consent to the collection, use, storage, disclosure and otherwise processing of your information on the Platform in accordance with this Privacy Policy."
+        },
+        "locationData": {
+          "title": "Location Data",
+          "p1": "We may use and store information about your location if you give us permission to do so (\"Location Data\"). We use this data to provide features of our Service, to improve and customize our Service.",
+          "p2": "You can enable or disable location services when you use our Service at any time by way of your device settings."
+        },
+        "grievanceOfficer": {
+          "title": "Grievance Officer",
+          "p1": "In accordance with The Information Technology Act, 2000 and rules made thereunder, the name and contact details of the Grievance Officer are provided below.",
+          "details": {
+            "nameLabel": "Name:",
+            "nameValue": "Grievance Officer, Farmicon Private Limited",
+            "designationLabel": "Designation:",
+            "designationValue": "Grievance Officer",
+            "addressLabel": "Address:",
+            "addressValue": "I-3, Tides Incubation Centre, IIT Roorkee, Roorkee, Uttarakhand- 247667, India",
+            "contactLabel": "Contact us:",
+            "contactValue": "farmiconindia@gmail.com",
+            "phoneLabel": "Phone:",
+            "phoneValue": "+91 8650505520",
+            "timeLabel": "Time:",
+            "timeValue": "Monday - Friday (9:00 - 18:00)"
+          }
+        }
+      },
+      "termsAndConditions": "Terms & Conditions",
+      "termsContent": {
+        "intro": {
+          "li1": "1. This document is an electronic record in terms of Information Technology Act, 2000 and rules there under as applicable and the amended provisions pertaining to electronic records in various statutes as amended by the Information Technology Act, 2000. This electronic record is generated by a computer system and does not require any physical or digital signatures.",
+          "li2": "2. This document is published in accordance with the provisions of Rule 3 (1) of the Information Technology (Intermediaries guidelines) Rules, 2011 that require publishing the rules and regulations, privacy policy and Terms of Use for access or usage of domain name https://play.google.com/store/apps/details?id=com.farmicon.fpo ('Website'), including the related mobile site and mobile application (hereinafter referred to as 'Platform').",
+          "li3": "3. The Platform is owned by Farmicon India Private Limited, a company incorporated under the Companies Act, 1956 with its registered office at I-3, TIDES Business Incubator, IIT Roorkee , Roorkee ,India (hereinafter referred to as ‘Platform Owner’, 'we', 'us', 'our').",
+          "li4": "4. Your use of the Platform and services and tools are governed by the following terms and conditions (“Terms of Use”) as applicable to the Platform including the applicable policies which are incorporated herein by way of reference. If You transact on the Platform, You shall be subject to the policies that are applicable to the Platform for such transaction. By mere use of the Platform, You shall be contracting with the Platform Owner and these terms and conditions including the policies constitute Your binding obligations, with Platform Owner. These Terms of Use relate to your use of our website, goods (as applicable) or services (as applicable) (collectively, 'Services'). Any terms and conditions proposed by You which are in addition to or which conflict with these Terms of Use are expressly rejected by the Platform Owner and shall be of no force or effect. These Terms of Use can be modified at any time without assigning any reason. It is your responsibility to periodically review these Terms of Use to stay informed of updates.",
+          "li5": "5. For the purpose of these Terms of Use, wherever the context so requires ‘you’, 'your' or ‘user’ shall mean any natural or legal person who has agreed to become a user/buyer on the Platform.",
+          "li6": "6. ACCESSING, BROWSING OR OTHERWISE USING THE PLATFORM INDICATES YOUR AGREEMENT TO ALL THE TERMS AND CONDITIONS UNDER THESE TERMS OF USE, SO PLEASE READ THE TERMS OF USE CAREFULLY BEFORE PROCEEDING."
+        },
+        "usage": {
+          "intro": "7. The use of Platform and/or availing of our Services is subject to the following Terms of Use:",
+          "li1": "1. To access and use the Services, you agree to provide true, accurate and complete information to us during and after registration, and you shall be responsible for all acts done through the use of your registered account on the Platform.",
+          "li2": "2. Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials offered on this website or through the Services, for any specific purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.",
+          "li3": "3. Your use of our Services and the Platform is solely and entirely at your own risk and discretion for which we shall not be liable to you in any manner. You are required to independently assess and ensure that the Services meet your requirements.",
+          "li4": "4. The contents of the Platform and the Services are proprietary to us and are licensed to us. You will not have any authority to claim any intellectual property rights, title, or interest in its contents. The contents includes and is not limited to the design, layout, look and graphics.",
+          "li5": "5. You acknowledge that unauthorized use of the Platform and/or the Services may lead to action against you as per these Terms of Use and/or applicable laws.",
+          "li6": "6. You agree to pay us the charges associated with availing the Services.",
+          "li7": "7. You agree not to use the Platform and/ or Services for any purpose that is unlawful, illegal or forbidden by these Terms, or Indian or local laws that might apply to you.",
+          "li8": "8. You agree and acknowledge that website and the Services may contain links to other third party websites. On accessing these links, you will be governed by the terms of use, privacy policy and such other policies of such third party websites. These links are provided for your convenience for provide further information.",
+          "li9": "9. You understand that upon initiating a transaction for availing the Services you are entering into a legally binding and enforceable contract with the Platform Owner for the Services.",
+          "li10": "10. You shall indemnify and hold harmless Platform Owner, its affiliates, group companies (as applicable) and their respective officers, directors, agents, and employees, from any claim or demand, or actions including reasonable attorney's fees, made by any third party or penalty imposed due to or arising out of Your breach of this Terms of Use, privacy Policy and other Policies, or Your violation of any law, rules or regulations or the rights (including infringement of intellectual property rights) of a third party.",
+          "li11": "11. Notwithstanding anything contained in these Terms of Use, the parties shall not be liable for any failure to perform an obligation under these Terms if performance is prevented or delayed by a force majeure event.",
+          "li12": "12. These Terms and any dispute or claim relating to it, or its enforceability, shall be governed by and construed in accordance with the laws of India.",
+          "li13": "13. All disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts in Roorkee and Uttarakhand.",
+          "li14": "14. All concerns or communications relating to these Terms must be communicated to us using the contact information provided on this website"
+        }
+      },
+      "refundPolicy": "Refund Policy",
+      "refundPolicyContent": {
+        "intro": "This refund and cancellation policy outlines how you can cancel or seek a refund for a product / service that you have purchased through the Platform. Under this policy:",
+        "cancellation": {
+          "li1": "Cancellations will only be considered if the request is made 7 days of placing the order. However, cancellation requests may not be entertained if the orders have been communicated to such sellers / merchant(s) listed on the Platform and they have initiated the process of shipping them, or the product is out for delivery. In such an event, you may choose to reject the product at the doorstep.",
+          "li2": "Farmicon India Private Limited does not accept cancellation requests for perishable items like flowers, eatables, etc. However, the refund / replacement can be made if the user establishes that the quality of the product delivered is not good.",
+          "li3": "In case of receipt of damaged or defective items, please report to our customer service team. The request would be entertained once the seller/ merchant listed on the Platform, has checked and determined the same at its own end. This should be reported within 7 days of receipt of products.",
+          "li4": "In case you feel that the product received is not as shown on the site or as per your expectations, you must bring it to the notice of our customer service within 7 days of receiving the product. The customer service team after looking into your complaint will take an appropriate decision.",
+          "li5": "In case of complaints regarding the products that come with a warranty from the manufacturers, please refer the issue to them."
+        },
+        "return": {
+          "title": "Return Policy",
+          "p1": "We offer refund / exchange within first 7 days from the date of your purchase. If 7 days have passed since your purchase, you will not be offered a return, exchange or refund of any kind. In order to become eligible for a return or an exchange, (i) the purchased item should be unused and in the same condition as you received it, (ii) the item must have original packaging, (iii) if the item that you purchased on a sale, then the item may not be eligible for a return / exchange. Further, only such items are replaced by us (based on an exchange request), if such items are found defective or damaged.",
+          "p2": "You agree that there may be a certain category of products / items that are exempted from returns or refunds. Such categories of the products would be identified to you at the item of purchase. For exchange / return accepted request(s) (as applicable), once your returned product / item is received and inspected by us, we will send you an email to notify you about receipt of the returned / exchanged product. Further. If the same has been approved after the quality check at our end, your request (i.e. return / exchange) will be processed in accordance with our policies."
+        }
+      }
     }
   },
   "hi": {
@@ -155,22 +341,23 @@
       "home": "होम",
       "about": "हमारे बारे में",
       "services": "सेवाएं",
-      "howItWorks": "कैसे काम करता है",
-      "media": "मीडिया",
+      "howItWorks": "यह कैसे काम करता है",
       "testimonials": "प्रशंसापत्र",
       "contact": "संपर्क करें",
+      "pricing": "मूल्य निर्धारण",
+      "privacyPolicy": "गोपनीयता नीति",
       "downloadApp": "ऐप डाउनलोड करें",
-      "getTheApp": "फार्मिकॉन ऐप पाएं",
-      "scanQr": "QR स्कैन करें या डाउनलोड करने के लिए टैप करें"
+      "getTheApp": "फार्मिकॉन ऐप प्राप्त करें",
+      "scanQr": "डाउनलोड करने के लिए QR स्कैन करें या टैप करें"
     },
     "hero": {
-      "title": "तकनीक के साथ भारतीय किसानों का सशक्तिकरण",
-      "subtitle": "फार्मिकॉन आपका ऑल-इन-वन प्लेटफॉर्म है स्मार्ट, आसान और अधिक लाभदायक खेती के लिए।",
-      "cta": "ऐप पाएं"
+      "title": "तकनीक के साथ भारतीय किसानों को सशक्त बनाना",
+      "subtitle": "फार्मिकॉन स्मार्ट, आसान और अधिक लाभदायक खेती के लिए आपका ऑल-इन-वन प्लेटफॉर्म है।",
+      "cta": "ऐप प्राप्त करें"
     },
     "about": {
       "title": "फार्मिकॉन के बारे में",
-      "description": "फार्मिकॉन परंपरा और तकनीक को जोड़ता है, भारतीय किसानों, एफपीओ और मंडी विक्रेताओं को आधुनिक उपकरणों और ज्ञान के साथ सहायता करता है। हमारा मिशन खेती को सभी के लिए सुलभ, लाभदायक और टिकाऊ बनाना है।"
+      "description": "फार्मिकॉन परंपरा और तकनीक को जोड़ता है, आधुनिक उपकरणों और ज्ञान के साथ भारतीय किसानों, एफपीओ और मंडी विक्रेताओं का समर्थन करता है। हमारा मिशन खेती को सभी के लिए सुलभ, लाभदायक और टिकाऊ बनाना है।"
     },
     "features": {
       "title": "हमारी सेवाएं",
@@ -178,27 +365,27 @@
       "items": {
         "droneSpray": {
           "title": "ड्रोन स्प्रे",
-          "desc": "स्वस्थ उपज के लिए सटीक फसल छिड़काव।"
+          "desc": "स्वस्थ पैदावार के लिए सटीक फसल छिड़काव।"
         },
         "farmingChatbot": {
-          "title": "कृषि चैटबोट",
-          "desc": "24/7 आपकी भाषा में ऑडियो-समर्थित मदद।"
+          "title": "खेती चैटबॉट",
+          "desc": "आपकी भाषा में 24/7 ऑडियो-समर्थित सहायता।"
         },
         "cropPrices": {
-          "title": "फसल के दाम",
-          "desc": "लाइव मंडी के भाव आपकी उंगलियों पर।"
+          "title": "फसल की कीमतें",
+          "desc": "आपकी उंगलियों पर लाइव मंडी भाव।"
         },
         "soilTesting": {
           "title": "मिट्टी परीक्षण",
           "desc": "अपनी मिट्टी को जानें, बेहतर फसल उगाएं।"
         },
         "cropDoctor": {
-          "title": "फसल डॉक्टर",
-          "desc": "तुरंत फसल की समस्याओं का निदान और उपचार।"
+          "title": "क्रॉप डॉक्टर",
+          "desc": "फसल की समस्याओं का तुरंत निदान और उपचार करें।"
         },
         "weatherUpdates": {
           "title": "मौसम अपडेट",
-          "desc": "रीयल-टाइम पूर्वानुमान के साथ आगे रहें।"
+          "desc": "वास्तविक समय के पूर्वानुमान के साथ आगे रहें।"
         },
         "govtSchemes": {
           "title": "सरकारी योजनाएं",
@@ -206,19 +393,19 @@
         },
         "helpServices": {
           "title": "सहायता सेवाएं",
-          "desc": "आधुनिक कृषि उपकरण ढूंढें और किराए पर लें।"
+          "desc": "आधुनिक कृषि उपकरण खोजें और किराए पर लें।"
         },
         "digitalFarming": {
           "title": "डिजिटल खेती",
           "desc": "विशेषज्ञ सुझाव और सर्वोत्तम प्रथाएं।"
         },
         "landMapping": {
-          "title": "भूमि मैपिंग",
-          "desc": "भूमि प्रबंधन के लिए स्मार्ट टूल्स।"
+          "title": "भूमि मानचित्रण",
+          "desc": "भूमि प्रबंधन के लिए स्मार्ट उपकरण।"
         },
         "ledger": {
-          "title": "खाता-बही",
-          "desc": "आपकी खेती के लिए सरल डिजिटल रिकॉर्ड-कीपिंग।"
+          "title": "बहीखाता",
+          "desc": "आपके खेत के लिए सरल डिजिटल रिकॉर्ड-कीपिंग।"
         }
       }
     },
@@ -228,47 +415,44 @@
       "steps": {
         "downloadApp": {
           "title": "ऐप डाउनलोड करें",
-          "desc": "प्ले स्टोर से फार्मिकॉन पाएं।"
+          "desc": "प्ले स्टोर से फार्मिकॉन प्राप्त करें।"
         },
         "signUp": {
           "title": "साइन अप करें",
-          "desc": "किसान, एफपीओ, या मंडी विक्रेता के रूप में पंजीकरण करें।"
+          "desc": "किसान, एफपीओ या मंडी विक्रेता के रूप में पंजीकरण करें।"
         },
         "connect": {
           "title": "जुड़ें और साझा करें",
-          "desc": "कृषि समुदाय से जुड़ें।"
+          "desc": "खेती समुदाय में शामिल हों।"
         },
         "growAndProfit": {
-          "title": "विकास और लाभ",
+          "title": "बढ़ें और लाभ कमाएं",
           "desc": "सूचित निर्णय लें और अपनी उपज बढ़ाएं।"
         }
       }
     },
     "downloadApp": {
-      "title": "आज ही फार्मिकॉन पाएं",
+      "title": "आज ही फार्मिकॉन प्राप्त करें",
       "subtitle": "स्मार्ट खेती की ओर अपनी यात्रा शुरू करें। अभी ऐप डाउनलोड करें!"
-    },
-    "media": {
-      "title": "समाचारों में और इनसे मान्यता प्राप्त"
     },
     "testimonials": {
       "title": "हमारे उपयोगकर्ता क्या कहते हैं",
-      "subtitle": "हजारों किसानों से जुड़ें जो पहले से ही फार्मिकॉन का लाभ उठा रहे हैं",
+      "subtitle": "हजारों किसानों में शामिल हों जो पहले से ही फार्मिकॉन से लाभान्वित हो रहे हैं",
       "users": {
         "user1": {
-          "quote": "फार्मिकॉन की तकनीक ने मेरी खेती को बदल दिया है। ड्रोन स्प्रेइंग सेवा ने मेरा समय और पैसा बचाया है और फसल को स्वस्थ रखा है।"
+          "quote": "फार्मिकॉन की तकनीक ने मेरी खेती को बदल दिया है। ड्रोन छिड़काव सेवा ने मुझे समय और पैसा दोनों बचाया है जबकि बेहतर फसल स्वास्थ्य सुनिश्चित किया है।"
         },
         "user2": {
           "quote": "मैं किसी भी समय हिंदी में खेती के बारे में सलाह ले सकती हूं। ऐप का चैटबोट बहुत मददगार है और हमेशा उपलब्ध रहता है।"
         },
         "user3": {
-          "quote": "रीयल-टाइम मंडी मूल्य और सीधे खरीदारों से जुड़ाव ने मेरी फसलों के लिए 40% बेहतर कीमत पाने में मदद की है। फार्मिकॉन किसानों के लिए गेम-चेंजर है।"
+          "quote": "वास्तविक समय मंडी की कीमतें और सीधे खरीदार कनेक्शन ने मुझे अपनी फसलों के लिए 40% बेहतर कीमतें प्राप्त करने में मदद की है। फार्मिकॉन किसानों के लिए एक गेम-चेंजर है।"
         }
       }
     },
     "contact": {
       "title": "संपर्क करें",
-      "subtitle": "कोई प्रश्न है या साझेदारी करना चाहते हैं? हमें संदेश भेजें।",
+      "subtitle": "प्रश्न हैं या हमारे साथ भागीदार बनना चाहते हैं? हमें एक संदेश भेजें।",
       "form": {
         "name": "नाम",
         "email": "ईमेल",
@@ -278,17 +462,17 @@
       "contactDetails": "संपर्क विवरण",
       "address": {
         "title": "पता",
-        "line1": "आई-3, टाइड्स बिजनेस इनक्यूबेटर",
+        "line1": "I-3, टाइड्स बिजनेस इनक्यूबेटर",
         "line2": "आईआईटी रुड़की, रुड़की",
         "line3": "उत्तराखंड 247667"
       },
-      "responseTime": "हम व्यावसायिक दिनों में 24-48 घंटों के भीतर आपसे संपर्क करेंगे।"
+      "responseTime": "हम व्यावसायिक दिनों के दौरान 24-48 घंटों के भीतर आपसे संपर्क करेंगे।"
     },
     "footer": {
       "quickLinks": "त्वरित लिंक",
       "contactUs": "संपर्क करें",
       "downloadApp": "फार्मिकॉन ऐप डाउनलोड करें",
-      "scanQrText": "QR कोड स्कैन करें या ऐप डाउनलोड करने के लिए नीचे क्लिक करें",
+      "scanQrText": "ऐप डाउनलोड करने के लिए QR कोड स्कैन करें या नीचे क्लिक करें",
       "social": {
         "facebook": "फेसबुक",
         "whatsapp": "व्हाट्सएप",
@@ -296,9 +480,197 @@
       },
       "legal": {
         "privacy": "गोपनीयता नीति",
-        "terms": "सेवा की शर्तें"
+        "terms": "नियम और शर्तें",
+        "refund": "धनवापसी नीति",
+        "pricing": "मूल्य निर्धारण"
       },
       "copyright": "© 2025 फार्मिकॉन। सर्वाधिकार सुरक्षित।"
+    },
+    "pricing": {
+      "title": "सरल, पारदर्शी मूल्य निर्धारण",
+      "subtitle": "वह योजना चुनें जो आपके FPO की आवश्यकताओं के अनुरूप हो",
+      "compareFeatures": "सुविधाओं की तुलना करें",
+      "features": {
+        "farmerManagement": "किसान प्रबंधन",
+        "machineryServices": "मशीनरी सेवाएं",
+        "tradeInventory": "व्यापार और सूची",
+        "advisoryCommunication": "सलाह और संचार",
+        "supportOthers": "सहायता और अन्य"
+      },
+      "basic": {
+        "name": "बेसिक प्लान",
+        "price": "निःशुल्क",
+        "description": "छोटे और शुरुआती चरण के FPO के लिए आदर्श जो डिजिटल संचालन शुरू कर रहे हैं।",
+        "cta": "शुरू करें"
+      },
+      "premium": {
+        "name": "प्रीमियम प्लान",
+        "price": "बिक्री से संपर्क करें",
+        "description": "बढ़ते एफपीओ के लिए जिन्हें उन्नत उपकरणों और सहायता की आवश्यकता है।",
+        "cta": "संपर्क करें",
+        "recommended": "अनुशंसित"
+      }
+    },
+    "pages": {
+      "privacyPolicy": "गोपनीयता नीति",
+      "privacyContent": {
+        "intro": {
+          "p1": "Your privacy is critically important to us (Farmicon)",
+          "p2": "Welcome to Farmicon Private Limited (Farmicon)",
+          "address": {
+            "title": "Corporate Office Address:",
+            "line1": "Farmicon India Private Limited",
+            "line2": "I-3, Tides Incubation Centre,",
+            "line3": "IIT Roorkee, Roorkee,",
+            "line4": "Uttarakhand – 247667, India",
+            "contact": "Contact: 8650505520"
+          }
+        },
+        "introduction": {
+          "title": "Introduction",
+          "p1": "It is Farmicon's policy to respect your privacy regarding any information we may collect while operating our website. This Privacy Policy applies to https://www.farmicon.in/ (hereinafter, \"us\", \"we\", or \"https://www.farmicon.in/\"). We respect your privacy and are committed to protecting personally identifiable information you may provide us through the Website. We have adopted this privacy policy (\"Privacy Policy\") to explain what information may be collected on our website, how we use this information, and under what circumstances we may disclose the information to third parties. This Privacy Policy applies only to information we collect through the Website and does not apply to our collection of information from other sources."
+        },
+        "websiteVisitors": {
+          "title": "Website Visitors",
+          "p1": "Like most website operators, Farmicon collects non-personally identifying information of the sort that web browsers and servers typically make available, such as the browser type, language preference, referring site, and the date and time of each visitor request. Farmicon's purpose in collecting non-personally identifying information is to better understand how Farmicon's visitors use its website. From time to time, Farmicon may release non-personally identifying information in the aggregate, e.g., by publishing a report on trends in the usage of its website.",
+          "p2": "Farmicon also collects potentially personally identifying information like Internet Protocol (IP) addresses for logged in users and for users leaving comments on https://www.farmicon.in/ blog posts. Farmicon only discloses logged in user and commenter IP addresses under the same circumstances that it uses and discloses personally identifying information as described below."
+        },
+        "signUp": {
+          "title": "Sign Up for Our Service",
+          "p1": "If you sign up for our service, we will ask you for your name and phone number. The purpose of the processing is to allow you access to our services and to provide the services to you. The purpose is additionally to reach you with important notifications and updates regarding the service.",
+          "subTitle": "Gathering Of Personally Identifying Information",
+          "p2": "Certain visitors to Farmicon's websites choose to interact with Farmicon in ways that require Farmicon to gather personally identifying information. The amount and type of information that Farmicon gathers depends on the nature of the interaction. For example, we ask visitors who sign up for a blog at https://www.farmicon.in/ to provide a username, email address, and phone number."
+        },
+        "collection": {
+          "title": "Collection",
+          "p1": "We collect your personal data when you use our Platform, services or otherwise interact with us during the course of our relationship."
+        },
+        "usageSection": {
+          "title": "Usage",
+          "p1": "We use personal data to provide the services you request. To the extent we use your personal data to market to you, we will provide you the ability to opt-out of such uses."
+        },
+        "sharing": {
+          "title": "Sharing",
+          "p1": "We may share your personal data internally within our group entities, our other corporate entities, and affiliates to provide you access to the services and products offered by them."
+        },
+        "security": {
+          "title": "Security",
+          "p1": "The security of your Personal Information is important to us but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Information, we cannot guarantee its absolute security."
+        },
+        "securityPrecautions": {
+          "title": "Security Precautions",
+          "p1": "To protect your personal data from unauthorised access or disclosure, loss or misuse we adopt reasonable security practices and procedures."
+        },
+        "advertisements": {
+          "title": "Advertisements",
+          "p1": "Ads appearing on our website may be delivered to users by advertising partners, who may set cookies. These cookies allow the ad server to recognize your computer each time they send you an online advertisement to compile information about you or others who use your computer."
+        },
+        "externalLinks": {
+          "title": "Links To External Sites",
+          "p1": "Our Service may contain links to external sites that are not operated by us. If you click on a third-party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy and terms and conditions of every site you visit.",
+          "p2": "https://www.farmicon.in Uses Google AdWords for Remarketing",
+          "p3": "https://www.farmicon.in/ uses the remarketing services to advertise on third-party websites (including Google) to previous visitors to our site. It could mean that we advertise to previous visitors who haven't completed a task on our site, for example using the contact form to make an enquiry.",
+          "p4": "You can set preferences for how Google advertises to you using the Google Ad Preferences page, and if you want to, you can opt out of interest-based advertising entirely by cookie settings or permanently using a browser plugin."
+        },
+        "protection": {
+          "title": "Protection Of Certain Personally Identifying Information",
+          "p1": "Farmicon discloses potentially personally identifying and personally identifying information only to those of its employees, contractors, and affiliated organizations that (i) need to know that information in order to process it on Farmicon's behalf or to provide services available at Farmicon's website, and (ii) that have agreed not to disclose it to others.",
+          "p2": "If you are a registered user of https://www.farmicon.in/ and have supplied your email address, Farmicon may occasionally send you an email to tell you about new features, solicit your feedback, or just keep you up to date with what's going on with Farmicon and our products."
+        },
+        "aggregatedStatistics": {
+          "title": "Aggregated Statistics",
+          "p1": "Farmicon may collect statistics about the behavior of visitors to its website. Farmicon may display this information publicly or provide it to others. However, Farmicon does not disclose your personally identifying information."
+        },
+        "cookies": {
+          "title": "Cookies",
+          "p1": "To enrich and perfect your online experience, Farmicon uses \"Cookies\", similar technologies, and services provided by others to display personalized content, appropriate advertising, and store your preferences on your computer.",
+          "p2": "A cookie is a string of information that a website stores on a visitor's computer, and that the visitor's browser provides to the website each time the visitor returns.",
+          "p3": "By continuing to navigate our website without changing your cookie settings, you hereby acknowledge and agree to Farmicon's use of cookies."
+        },
+        "businessTransfers": {
+          "title": "Business Transfers",
+          "p1": "If Farmicon, or substantially all of its assets, were acquired, or in the unlikely event that Farmicon goes out of business or enters bankruptcy, user information would be one of the assets that is transferred or acquired by a third party."
+        },
+        "dataDeletion": {
+          "title": "Data Deletion and Retention",
+          "p1": "You have an option to delete your account by visiting your profile and settings on our Platform , this action would result in you losing all information related to your account."
+        },
+        "yourRights": {
+          "title": "Your Rights",
+          "p1": "You may access, rectify, and update your personal data directly through the functionalities provided on the Platform."
+        },
+        "consent": {
+          "title": "Consent",
+          "p1": "By visiting our Platform or by providing your information, you consent to the collection, use, storage, disclosure and otherwise processing of your information on the Platform in accordance with this Privacy Policy."
+        },
+        "locationData": {
+          "title": "Location Data",
+          "p1": "We may use and store information about your location if you give us permission to do so (\"Location Data\"). We use this data to provide features of our Service, to improve and customize our Service.",
+          "p2": "You can enable or disable location services when you use our Service at any time by way of your device settings."
+        },
+        "grievanceOfficer": {
+          "title": "Grievance Officer",
+          "p1": "In accordance with The Information Technology Act, 2000 and rules made thereunder, the name and contact details of the Grievance Officer are provided below.",
+          "details": {
+            "nameLabel": "Name:",
+            "nameValue": "Grievance Officer, Farmicon Private Limited",
+            "designationLabel": "Designation:",
+            "designationValue": "Grievance Officer",
+            "addressLabel": "Address:",
+            "addressValue": "I-3, Tides Incubation Centre, IIT Roorkee, Roorkee, Uttarakhand- 247667, India",
+            "contactLabel": "Contact us:",
+            "contactValue": "farmiconindia@gmail.com",
+            "phoneLabel": "Phone:",
+            "phoneValue": "+91 8650505520",
+            "timeLabel": "Time:",
+            "timeValue": "Monday - Friday (9:00 - 18:00)"
+          }
+        }
+      },
+      "termsAndConditions": "नियम और शर्तें",
+      "termsContent": {
+        "intro": {
+          "li1": "1. This document is an electronic record in terms of Information Technology Act, 2000 and rules there under as applicable and the amended provisions pertaining to electronic records in various statutes as amended by the Information Technology Act, 2000. This electronic record is generated by a computer system and does not require any physical or digital signatures.",
+          "li2": "2. This document is published in accordance with the provisions of Rule 3 (1) of the Information Technology (Intermediaries guidelines) Rules, 2011 that require publishing the rules and regulations, privacy policy and Terms of Use for access or usage of domain name https://play.google.com/store/apps/details?id=com.farmicon.fpo ('Website'), including the related mobile site and mobile application (hereinafter referred to as 'Platform').",
+          "li3": "3. The Platform is owned by Farmicon India Private Limited, a company incorporated under the Companies Act, 1956 with its registered office at I-3, TIDES Business Incubator, IIT Roorkee , Roorkee ,India (hereinafter referred to as ‘Platform Owner’, 'we', 'us', 'our').",
+          "li4": "4. Your use of the Platform and services and tools are governed by the following terms and conditions (“Terms of Use”) as applicable to the Platform including the applicable policies which are incorporated herein by way of reference. If You transact on the Platform, You shall be subject to the policies that are applicable to the Platform for such transaction. By mere use of the Platform, You shall be contracting with the Platform Owner and these terms and conditions including the policies constitute Your binding obligations, with Platform Owner. These Terms of Use relate to your use of our website, goods (as applicable) or services (as applicable) (collectively, 'Services'). Any terms and conditions proposed by You which are in addition to or which conflict with these Terms of Use are expressly rejected by the Platform Owner and shall be of no force or effect. These Terms of Use can be modified at any time without assigning any reason. It is your responsibility to periodically review these Terms of Use to stay informed of updates.",
+          "li5": "5. For the purpose of these Terms of Use, wherever the context so requires ‘you’, 'your' or ‘user’ shall mean any natural or legal person who has agreed to become a user/buyer on the Platform.",
+          "li6": "6. ACCESSING, BROWSING OR OTHERWISE USING THE PLATFORM INDICATES YOUR AGREEMENT TO ALL THE TERMS AND CONDITIONS UNDER THESE TERMS OF USE, SO PLEASE READ THE TERMS OF USE CAREFULLY BEFORE PROCEEDING."
+        },
+        "usage": {
+          "intro": "7. The use of Platform and/or availing of our Services is subject to the following Terms of Use:",
+          "li1": "1. To access and use the Services, you agree to provide true, accurate and complete information to us during and after registration, and you shall be responsible for all acts done through the use of your registered account on the Platform.",
+          "li2": "2. Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials offered on this website or through the Services, for any specific purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.",
+          "li3": "3. Your use of our Services and the Platform is solely and entirely at your own risk and discretion for which we shall not be liable to you in any manner. You are required to independently assess and ensure that the Services meet your requirements.",
+          "li4": "4. The contents of the Platform and the Services are proprietary to us and are licensed to us. You will not have any authority to claim any intellectual property rights, title, or interest in its contents. The contents includes and is not limited to the design, layout, look and graphics.",
+          "li5": "5. You acknowledge that unauthorized use of the Platform and/or the Services may lead to action against you as per these Terms of Use and/or applicable laws.",
+          "li6": "6. You agree to pay us the charges associated with availing the Services.",
+          "li7": "7. You agree not to use the Platform and/ or Services for any purpose that is unlawful, illegal or forbidden by these Terms, or Indian or local laws that might apply to you.",
+          "li8": "8. You agree and acknowledge that website and the Services may contain links to other third party websites. On accessing these links, you will be governed by the terms of use, privacy policy and such other policies of such third party websites. These links are provided for your convenience for provide further information.",
+          "li9": "9. You understand that upon initiating a transaction for availing the Services you are entering into a legally binding and enforceable contract with the Platform Owner for the Services.",
+          "li10": "10. You shall indemnify and hold harmless Platform Owner, its affiliates, group companies (as applicable) and their respective officers, directors, agents, and employees, from any claim or demand, or actions including reasonable attorney's fees, made by any third party or penalty imposed due to or arising out of Your breach of this Terms of Use, privacy Policy and other Policies, or Your violation of any law, rules or regulations or the rights (including infringement of intellectual property rights) of a third party.",
+          "li11": "11. Notwithstanding anything contained in these Terms of Use, the parties shall not be liable for any failure to perform an obligation under these Terms if performance is prevented or delayed by a force majeure event.",
+          "li12": "12. These Terms and any dispute or claim relating to it, or its enforceability, shall be governed by and construed in accordance with the laws of India.",
+          "li13": "13. All disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts in Roorkee and Uttarakhand.",
+          "li14": "14. All concerns or communications relating to these Terms must be communicated to us using the contact information provided on this website"
+        }
+      },
+      "refundPolicy": "धनवापसी नीति",
+      "refundPolicyContent": {
+        "intro": "This refund and cancellation policy outlines how you can cancel or seek a refund for a product / service that you have purchased through the Platform. Under this policy:",
+        "cancellation": {
+          "li1": "Cancellations will only be considered if the request is made 7 days of placing the order. However, cancellation requests may not be entertained if the orders have been communicated to such sellers / merchant(s) listed on the Platform and they have initiated the process of shipping them, or the product is out for delivery. In such an event, you may choose to reject the product at the doorstep.",
+          "li2": "Farmicon India Private Limited does not accept cancellation requests for perishable items like flowers, eatables, etc. However, the refund / replacement can be made if the user establishes that the quality of the product delivered is not good.",
+          "li3": "In case of receipt of damaged or defective items, please report to our customer service team. The request would be entertained once the seller/ merchant listed on the Platform, has checked and determined the same at its own end. This should be reported within 7 days of receipt of products.",
+          "li4": "In case you feel that the product received is not as shown on the site or as per your expectations, you must bring it to the notice of our customer service within 7 days of receiving the product. The customer service team after looking into your complaint will take an appropriate decision.",
+          "li5": "In case of complaints regarding the products that come with a warranty from the manufacturers, please refer the issue to them."
+        },
+        "return": {
+          "title": "Return Policy",
+          "p1": "We offer refund / exchange within first 7 days from the date of your purchase. If 7 days have passed since your purchase, you will not be offered a return, exchange or refund of any kind. In order to become eligible for a return or an exchange, (i) the purchased item should be unused and in the same condition as you received it, (ii) the item must have original packaging, (iii) if the item that you purchased on a sale, then the item may not be eligible for a return / exchange. Further, only such items are replaced by us (based on an exchange request), if such items are found defective or damaged.",
+          "p2": "You agree that there may be a certain category of products / items that are exempted from returns or refunds. Such categories of the products would be identified to you at the item of purchase. For exchange / return accepted request(s) (as applicable), once your returned product / item is received and inspected by us, we will send you an email to notify you about receipt of the returned / exchanged product. Further. If the same has been approved after the quality check at our end, your request (i.e. return / exchange) will be processed in accordance with our policies."
+        }
+      }
     }
   }
 }

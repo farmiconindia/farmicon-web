@@ -49,9 +49,9 @@ const Navbar: React.FC = () => {
             { key: 'about', label: t('nav.about'), href: '/#about' },
             { key: 'services', label: t('nav.services'), href: '/services' },
             { key: 'howitworks', label: t('nav.howItWorks'), href: '/#howitworks' },
-            { key: 'media', label: t('nav.media'), href: '/#media' },
+
             { key: 'testimonials', label: t('nav.testimonials'), href: '/#testimonials' },
-            { key: 'pricing', label: 'Pricing', href: '/pricing' },
+            { key: 'pricing', label: t('nav.pricing'), href: '/pricing' },
             { key: 'contact', label: t('nav.contact'), href: '/#contact' }
           ].map(({ key, label, href }) => (
             <Link
@@ -174,9 +174,9 @@ const Navbar: React.FC = () => {
                 { key: 'services', label: t('nav.services'), href: '/services' },
                 { key: 'howitworks', label: t('nav.howItWorks'), href: '/#howitworks' },
                 { key: 'testimonials', label: t('nav.testimonials'), href: '/#testimonials' },
-                { key: 'pricing', label: 'Pricing', href: '/pricing' },
+                { key: 'pricing', label: t('nav.pricing'), href: '/pricing' },
                 { key: 'contact', label: t('nav.contact'), href: '/#contact' },
-                { key: 'privacy', label: 'Privacy Policy', href: '/privacy-policy' }
+                { key: 'privacy', label: t('nav.privacyPolicy'), href: '/privacy-policy' }
               ].map(({ key, label, href }) => (
                 <a
                   key={key}

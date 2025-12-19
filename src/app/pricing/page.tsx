@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const CheckIcon = () => (
     <svg
@@ -28,9 +29,11 @@ const MinusIcon = () => (
 );
 
 const PricingPage = () => {
+    const { t } = useLanguage();
+
     const features = [
         {
-            category: "Farmer Management",
+            category: t('pricing.features.farmerManagement'),
             items: [
                 { name: "Farmer Onboarding", basic: "Up to 150", premium: "Unlimited" },
                 { name: "Farms per Farmer", basic: "Unlimited", premium: "Multiple" },
@@ -39,14 +42,14 @@ const PricingPage = () => {
             ]
         },
         {
-            category: "Machinery & Services",
+            category: t('pricing.features.machineryServices'),
             items: [
                 { name: "Listings", basic: "Up to 5", premium: "Unlimited" },
                 { name: "Pricing & Availability Control", basic: false, premium: true },
             ]
         },
         {
-            category: "Trade & Inventory",
+            category: t('pricing.features.tradeInventory'),
             items: [
                 { name: "Crop Listings", basic: "Up to 10", premium: "Unlimited" },
                 { name: "Inventory Management", basic: "Basic", premium: "Full" },
@@ -54,14 +57,14 @@ const PricingPage = () => {
             ]
         },
         {
-            category: "Advisory & Communication",
+            category: t('pricing.features.advisoryCommunication'),
             items: [
                 { name: "Advisories per Month", basic: "15", premium: "Unlimited" },
                 { name: "Group-based Advisories", basic: false, premium: true },
             ]
         },
         {
-            category: "Support & Others",
+            category: t('pricing.features.supportOthers'),
             items: [
                 { name: "Sell Support", basic: true, premium: true },
                 { name: "Reports Download", basic: false, premium: true },
@@ -83,7 +86,7 @@ const PricingPage = () => {
                             animate={{ opacity: 1, y: 0 }}
                             className="text-4xl md:text-5xl font-bold text-green-900 mb-4"
                         >
-                            Simple, Transparent Pricing
+                            {t('pricing.title')}
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -91,7 +94,7 @@ const PricingPage = () => {
                             transition={{ delay: 0.1 }}
                             className="text-xl text-gray-600"
                         >
-                            Choose the plan that fits your FPO&apos;s needs
+                            {t('pricing.subtitle')}
                         </motion.p>
                     </div>
 
@@ -104,11 +107,11 @@ const PricingPage = () => {
                             transition={{ delay: 0.2 }}
                             className="bg-white rounded-3xl p-8 shadow-lg border border-green-100 flex flex-col items-center text-center hover:shadow-xl transition-shadow duration-300"
                         >
-                            <h2 className="text-2xl font-bold text-green-900 mb-2">Basic Plan</h2>
-                            <div className="text-5xl font-bold text-green-600 mb-4">Free</div>
-                            <p className="text-gray-600 mb-8">Ideal for small & early-stage FPOs starting digital operations.</p>
+                            <h2 className="text-2xl font-bold text-green-900 mb-2">{t('pricing.basic.name')}</h2>
+                            <div className="text-5xl font-bold text-green-600 mb-4">{t('pricing.basic.price')}</div>
+                            <p className="text-gray-600 mb-8">{t('pricing.basic.description')}</p>
                             <Link href="/" className="w-full py-3 px-6 rounded-xl border-2 border-green-600 text-green-700 font-bold hover:bg-green-50 transition-colors duration-200 block">
-                                Get Started
+                                {t('pricing.basic.cta')}
                             </Link>
                         </motion.div>
 
@@ -117,16 +120,31 @@ const PricingPage = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.3 }}
-                            className="bg-gradient-to-br from-green-900 to-green-800 rounded-3xl p-8 shadow-xl text-white flex flex-col items-center text-center relative overflow-hidden transform md:-translate-y-4"
+                            className="bg-gradient-to-br from-green-900 to-green-800 rounded-3xl p-8 shadow-xl text-white flex flex-col items-center text-center relative overflow-hidden transform md:-translate-y-4 group"
                         >
-                            <div className="absolute top-0 right-0 bg-yellow-400 text-green-900 text-xs font-bold px-3 py-1 rounded-bl-lg">
-                                RECOMMENDED
+                            {/* Animated shine effect */}
+                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
                             </div>
-                            <h2 className="text-2xl font-bold mb-2">Premium Plan</h2>
-                            <div className="text-5xl font-bold text-green-100 mb-4">Custom</div>
-                            <p className="text-green-100 mb-8">Best for growing FPOs handling large farmer bases and trade volumes.</p>
-                            <Link href="/#contact" className="w-full py-3 px-6 rounded-xl bg-white text-green-900 font-bold hover:bg-green-50 transition-colors duration-200 block">
-                                Contact Sales
+
+                            {/* Sparkle particles */}
+                            <div className="absolute top-4 left-4 w-2 h-2 bg-yellow-300 rounded-full animate-pulse" />
+                            <div className="absolute top-8 right-8 w-1.5 h-1.5 bg-green-300 rounded-full animate-ping" style={{ animationDuration: '2s' }} />
+                            <div className="absolute bottom-12 left-8 w-1 h-1 bg-white rounded-full animate-ping" style={{ animationDuration: '3s' }} />
+                            <div className="absolute top-1/3 right-4 w-1.5 h-1.5 bg-yellow-200 rounded-full animate-pulse" style={{ animationDuration: '1.5s' }} />
+                            <div className="absolute bottom-20 right-12 w-1 h-1 bg-green-200 rounded-full animate-ping" style={{ animationDuration: '2.5s' }} />
+
+                            {/* Glow border effect */}
+                            <div className="absolute inset-0 rounded-3xl border-2 border-green-400/30 animate-pulse" style={{ animationDuration: '3s' }} />
+
+                            <div className="absolute top-0 right-0 bg-yellow-400 text-green-900 text-xs font-bold px-3 py-1 rounded-bl-lg z-10">
+                                {t('pricing.premium.recommended')}
+                            </div>
+                            <h2 className="text-2xl font-bold mb-2 relative z-10">{t('pricing.premium.name')}</h2>
+                            <div className="text-5xl font-bold text-green-100 mb-4 relative z-10">{t('pricing.premium.price')}</div>
+                            <p className="text-green-100 mb-8 relative z-10">{t('pricing.premium.description')}</p>
+                            <Link href="/#contact" className="w-full py-3 px-6 rounded-xl bg-white text-green-900 font-bold hover:bg-green-50 transition-colors duration-200 block relative z-10 hover:scale-105 transform transition-transform">
+                                {t('pricing.premium.cta')}
                             </Link>
                         </motion.div>
                     </div>
@@ -138,14 +156,14 @@ const PricingPage = () => {
                         viewport={{ once: true }}
                         className="max-w-5xl mx-auto"
                     >
-                        <h3 className="text-3xl font-bold text-center text-green-900 mb-12">Compare Features</h3>
+                        <h3 className="text-3xl font-bold text-center text-green-900 mb-12">{t('pricing.compareFeatures')}</h3>
 
                         <div className="bg-white rounded-3xl shadow-lg border border-green-100 overflow-hidden">
                             {/* Table Header */}
                             <div className="grid grid-cols-3 bg-green-50/50 p-6 border-b border-green-100">
                                 <div className="font-bold text-gray-500">Features</div>
-                                <div className="text-center font-bold text-green-800 text-lg">Basic</div>
-                                <div className="text-center font-bold text-green-900 text-lg">Premium</div>
+                                <div className="text-center font-bold text-green-800 text-lg">{t('pricing.basic.name')}</div>
+                                <div className="text-center font-bold text-green-900 text-lg">{t('pricing.premium.name')}</div>
                             </div>
 
                             {/* Table Body */}
