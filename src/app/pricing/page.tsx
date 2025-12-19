@@ -142,7 +142,7 @@ const PricingPage = () => {
                             </div>
                             <h2 className="text-2xl font-bold mb-2 relative z-10">{t('pricing.premium.name')}</h2>
                             <div className="text-5xl font-bold text-green-100 mb-4 relative z-10">{t('pricing.premium.price')}</div>
-                            <p className="text-green-100 mb-8 relative z-10">{t('pricing.premium.description')}</p>
+                            <p className="text-green-100 mb-8 relative z-10">{t('pricing.premium.description')} (Upto Rs 999 /Month)</p>
                             <Link href="/#contact" className="w-full py-3 px-6 rounded-xl bg-white text-green-900 font-bold hover:bg-green-50 transition-colors duration-200 block relative z-10 hover:scale-105 transform transition-transform">
                                 {t('pricing.premium.cta')}
                             </Link>
