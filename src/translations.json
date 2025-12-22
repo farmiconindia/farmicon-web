@@ -125,6 +125,7 @@
       "contactDetails": "Contact Details",
       "address": {
         "title": "Address",
+        "line0": "Farmicon India Private Limited,",
         "line1": "I-3, Tides Business Incubator",
         "line2": "IIT Roorkee, Roorkee",
         "line3": "Uttarakhand 247667"
@@ -462,6 +463,7 @@
       "contactDetails": "संपर्क विवरण",
       "address": {
         "title": "पता",
+        "line0": "फार्मिकॉन इंडिया प्राइवेट लिमिटेड,",
         "line1": "I-3, टाइड्स बिजनेस इनक्यूबेटर",
         "line2": "आईआईटी रुड़की, रुड़की",
         "line3": "उत्तराखंड 247667"
